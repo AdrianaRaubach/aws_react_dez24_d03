@@ -1,0 +1,260 @@
+{
+    "products": [
+        { 
+            "id": "A1B2", 
+            "title": "casual t-shirt", 
+            "price": 79.90,
+            "image": "src/images/products/cover-1.png",
+            "stok": [
+                {"size": "P", "colors": 
+                    [
+                        {"qtd": 5, "color": "blue"}, 
+                        {"qtd": 8, "color":"green"}, 
+                        {"qtd": 12, "color":"red"}, 
+                        {"qtd": 7, "color":"yellow"},
+                        {"qtd": 10, "color":"black"},
+                        {"qtd": 3, "color":"white"}
+                    ]   
+                }
+            ]
+        },
+        { 
+            "id": "C3D4", 
+            "title": "sport t-shirt", 
+            "price": 99.90,
+            "image": "src/images/products/cover-2.png",
+            "stok": [
+                {"size": "P", "colors": 
+                    [
+                        {"qtd": 15, "color": "blue"}, 
+                        {"qtd": 20, "color":"green"}, 
+                        {"qtd": 10, "color":"red"}, 
+                        {"qtd": 5, "color":"yellow"},
+                        {"qtd": 12, "color":"black"},
+                        {"qtd": 8, "color":"white"}
+                    ]   
+                }
+            ]
+        },
+        { 
+            "id": "E5F6", 
+            "title": "graphic t-shirt", 
+            "price": 109.90,
+            "image": "src/images/products/cover-3.png",
+            "stok": [
+                {"size": "P", "colors": 
+                    [
+                        {"qtd": 6, "color": "blue"}, 
+                        {"qtd": 9, "color":"green"}, 
+                        {"qtd": 11, "color":"red"}, 
+                        {"qtd": 4, "color":"yellow"},
+                        {"qtd": 7, "color":"black"},
+                        {"qtd": 2, "color":"white"}
+                    ]   
+                }
+            ]
+        },
+        { 
+            "id": "G7H8", 
+            "title": "striped t-shirt", 
+            "price": 84.90,
+            "image": "src/images/products/cover-4.png",
+            "stok": [
+                {"size": "P", "colors": 
+                    [
+                        {"qtd": 10, "color": "blue"}, 
+                        {"qtd": 10, "color":"green"}, 
+                        {"qtd": 10, "color":"red"}, 
+                        {"qtd": 10, "color":"yellow"},
+                        {"qtd": 10, "color":"black"},
+                        {"qtd": 10, "color":"white"}
+                    ]   
+                }
+            ]
+        },
+        { 
+            "id": "I9J0", 
+            "title": "v-neck t-shirt", 
+            "price": 94.90,
+            "image": "src/images/products/cover-5.png",
+            "stok": [
+                {"size": "P", "colors": 
+                    [
+                        {"qtd": 8, "color": "blue"}, 
+                        {"qtd": 6, "color":"green"}, 
+                        {"qtd": 14, "color":"red"}, 
+                        {"qtd": 9, "color":"yellow"},
+                        {"qtd": 11, "color":"black"},
+                        {"qtd": 5, "color":"white"}
+                    ]   
+                }
+            ]
+        },
+        { 
+            "id": "K1L2", 
+            "title": "oversized t-shirt", 
+            "price": 119.90,
+            "image": "src/images/products/cover-6.png",
+            "stok": [
+                {"size": "P", "colors": 
+                    [
+                        {"qtd": 7, "color": "blue"}, 
+                        {"qtd": 10, "color":"green"}, 
+                        {"qtd": 8, "color":"red"}, 
+                        {"qtd": 12, "color":"yellow"},
+                        {"qtd": 6, "color":"black"},
+                        {"qtd": 4, "color":"white"}
+                    ]   
+                }
+            ]
+        },
+        { 
+            "id": "M3N4", 
+            "title": "basic t-shirt", 
+            "price": 69.90,
+            "image": "src/images/products/cover-7.png",
+            "stok": [
+                {"size": "P", "colors": 
+                    [
+                        {"qtd": 20, "color": "blue"}, 
+                        {"qtd": 15, "color":"green"}, 
+                        {"qtd": 18, "color":"red"}, 
+                        {"qtd": 10, "color":"yellow"},
+                        {"qtd": 12, "color":"black"},
+                        {"qtd": 9, "color":"white"}
+                    ]   
+                }
+            ]
+        },
+        { 
+            "id": "O5P6", 
+            "title": "long sleeve t-shirt", 
+            "price": 129.90,
+            "image": "src/images/products/cover-8.png",
+            "stok": [
+                {"size": "P", "colors": 
+                    [
+                        {"qtd": 9, "color": "blue"}, 
+                        {"qtd": 7, "color":"green"}, 
+                        {"qtd": 13, "color":"red"}, 
+                        {"qtd": 8, "color":"yellow"},
+                        {"qtd": 10, "color":"black"},
+                        {"qtd": 6, "color":"white"}
+                    ]   
+                }
+            ]
+        },
+        { 
+            "id": "Q7R8", 
+            "title": "cropped t-shirt", 
+            "price": 89.90,
+            "image": "src/images/products/cover-9.png",
+            "stok": [
+                {"size": "P", "colors": 
+                    [
+                        {"qtd": 11, "color": "blue"}, 
+                        {"qtd": 14, "color":"green"}, 
+                        {"qtd": 9, "color":"red"}, 
+                        {"qtd": 6, "color":"yellow"},
+                        {"qtd": 8, "color":"black"},
+                        {"qtd": 12, "color":"white"}
+                    ]   
+                }
+            ]
+        },
+        { 
+            "id": "S9T0", 
+            "title": "muscle t-shirt", 
+            "price": 139.90,
+            "image": "src/images/products/cover-10.png",
+            "stok": [
+                {"size": "P", "colors": 
+                    [
+                        {"qtd": 10, "color": "blue"}, 
+                        {"qtd": 12, "color":"green"}, 
+                        {"qtd": 7, "color":"red"}, 
+                        {"qtd": 11, "color":"yellow"},
+                        {"qtd": 9, "color":"black"},
+                        {"qtd": 5, "color":"white"}
+                    ]   
+                }
+            ]
+        },
+        { 
+            "id": "U1V2", 
+            "title": "polo t-shirt", 
+            "price": 149.90,
+            "image": "src/images/products/cover-11.png",
+            "stok": [
+                {"size": "P", "colors": 
+                    [
+                        {"qtd": 8, "color": "blue"}, 
+                        {"qtd": 10, "color":"green"}, 
+                        {"qtd": 6, "color":"red"}, 
+                        {"qtd": 12, "color":"yellow"},
+                        {"qtd": 7, "color":"black"},
+                        {"qtd": 4, "color":"white"}
+                    ]   
+                }
+            ]
+        },
+        { 
+            "id": "W3X4", 
+            "title": "raglan t-shirt", 
+            "price": 79.90,
+            "image": "src/images/products/cover-12.png",
+            "stok": [
+                {"size": "P", "colors": 
+                    [
+                        {"qtd": 13, "color": "blue"}, 
+                        {"qtd": 9, "color":"green"}, 
+                        {"qtd": 11, "color":"red"}, 
+                        {"qtd": 8, "color":"yellow"},
+                        {"qtd": 10, "color":"black"},
+                        {"qtd": 6, "color":"white"}
+                    ]   
+                }
+            ]
+        },
+        { 
+            "id": "Y5Z6", 
+            "title": "hooded t-shirt", 
+            "price": 159.90,
+            "image": "src/images/products/cover-13.png",
+            "stok": [
+                {"size": "P", "colors": 
+                    [
+                        {"qtd": 7, "color": "blue"}, 
+                        {"qtd": 10, "color":"green"}, 
+                        {"qtd": 9, "color":"red"}, 
+                        {"qtd": 12, "color":"yellow"},
+                        {"qtd": 8, "color":"black"},
+                        {"qtd": 5, "color":"white"}
+                    ]   
+                }
+            ]
+        },
+        {
+            "id": "Y5Y0", 
+            "title": "hooded t-shirt", 
+            "price": 159.90,
+            "image": "src/images/products/cover-14.png",
+            "stok": [
+                {"size": "P", "colors": 
+                    [
+                        {"qtd": 7, "color": "blue"}, 
+                        {"qtd": 10, "color":"green"}, 
+                        {"qtd": 9, "color":"red"}, 
+                        {"qtd": 12, "color":"yellow"},
+                        {"qtd": 8, "color":"black"},
+                        {"qtd": 5, "color":"white"}
+                    ]   
+                }
+            ]
+        }
+    ],
+
+    "newsletter": [
+      { "id": "1", "email": "fulano@gmail.com"}
+    ]
+}

@@ -1,13 +1,17 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-inter: "Inter", "sans-serif";
   --color-bk-900: #0E1422;
   --color-bk-800: #202533;
-  --color-bk-500: #5c5f6a;
+  --color-bk-700: #333845;
   --color-bk-600: #474b57;
+  --color-bk-500: #5c5f6a;
   --color-bk-300: #878a92;
   --color-bk-100: #e6e7e8;
   --color-w-100: #f6f6f6;
   --color-w-200: #e9e9eb;
+  --spacing-240px: 240px;
+  --spacing-312px: 312px;
 }

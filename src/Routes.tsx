@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Homepage } from './pages/Homepage'
 import { Listing } from "./pages/Listing";
 import { Product } from "./pages/Product";
@@ -13,20 +13,18 @@ import { About } from "./pages/About";
 
 export const Routers = () => {
   return (
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/listing" element={<Listing />} />
-            <Route path="/product" element={<Product />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/after-payment" element={<AfterPayment />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/sign-up" element={<SignUp />} />
-            <Route path="/reset-password" element={<ForgotPassword />} />
-            <Route path="/about" element={<About />} />
-        </Routes>
-    </BrowserRouter>
+    <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/listing" element={<Listing />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/after-payment" element={<AfterPayment />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/reset-password" element={<ForgotPassword />} />
+        <Route path="/about" element={<About />} />
+    </Routes>
   )
 }

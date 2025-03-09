@@ -6,13 +6,56 @@ import Youtube from '../images/icons/Youtube.png'
 import Visa from '../images/icons/Visa.png'
 import Master from '../images/icons/Mastercard.png'
 import Amex from '../images/icons/Amex.png'
+import { useState } from 'react'
+import api from '../service/api'
+import { MdErrorOutline } from "react-icons/md";
+
+
+type NewsletterProps = {
+    email: string;
+}
 
 export const Footer = () => {
 
+    const [inputEmail, setInputEmail] = useState<string>('')
+    const [error, setError] = useState<string>('')
+    const [formValidate, setFormValidate] = useState<boolean>(true)
+    const [disableBtn, setDisableBtn] = useState<boolean>(false)
+    const [newsletterObj, setNewsletterObj] = useState<NewsletterProps>({email:''})
+    const [btnSubmit, setBtnSubmit] = useState<string>('Subscribe')
+
+    const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setInputEmail(e.target.value)
+        setNewsletterObj({...newsletterObj, email: e.target.value})
+    }
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        console.log(e)
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+        if(inputEmail.length === 0) {
+            setFormValidate(false)
+            setError('Enter your email')
+            
+        } else if (!regexEmail.test(inputEmail)) {
+            setFormValidate(false)
+            setError('Email must be valid')
+        } else {
+            setBtnSubmit('is Sending...')
+            setDisableBtn(true)
+            updateEmailsNewsletter(newsletterObj)
+        }
     }
+
+    const updateEmailsNewsletter = async (newsletterEmail:NewsletterProps) => {
+        
+        try {
+            await api.post('/newsletter', newsletterEmail)
+        } catch {
+            setError('Unable to register, please try again later')
+            setBtnSubmit('Subscribe')
+            setFormValidate(false)
+        }
+      }
 
     const getYear = (today: Date) => {
         return new Intl.DateTimeFormat('pt-BR', { year: 'numeric'}).format(today)
@@ -28,8 +71,11 @@ export const Footer = () => {
                 </div>
                 <div>
                     <form onSubmit={handleSubmit} noValidate className="flex gap-5 flex-col sm:flex-row">
-                        <input placeholder="Your email address" type="email" name="newsletter" className="border border-bk-100 rounded-md px-3 py-3 text-sm md:w-50 xl:w-80 bg-w-100" />
-                        <input className='cursor-pointer flex items-center hover:opacity-85 text-white bg-bk-900 dark:bg-blue-400 py-3 px-6 gap-3 text-sm rounded-sm' type="submit" value="Subscribe" />
+                        <div>
+                            <input onChange={handleInput} value={inputEmail} placeholder="Your email address" type="email" name="newsletter" className="border border-bk-100 rounded-md px-3 py-3 text-sm md:w-50 xl:w-80 bg-w-100 h-11" />
+                            {!formValidate && <p className='flex items-center justify-between bg-red-200 text-red-600 text-xs px-3 pt-2 -mt-1 py-1 rounded-b-md'>{error}<MdErrorOutline className='text-lg' /></p>}
+                        </div>
+                        <input className='cursor-pointer flex items-center hover:opacity-85 text-white bg-bk-900 dark:bg-blue-400 py-3 px-6 gap-3 text-sm rounded-sm h-11' disabled={disableBtn} type="submit" value={btnSubmit} />
                     </form>
                 </div>
             </div>
@@ -51,24 +97,24 @@ export const Footer = () => {
                 <div className='flex justify-evenly md:justify-between md:gap-10 xl:gap-20 2xl:gap-35'>
                     <ul className='flex flex-col gap-4 justify-between'>
                         <Link to="/"><li className='text-sm mb-3 text-bk-300 dark:text-w-100'>SUPPORT</li></Link>
-                        <Link to="/"><li className='font-medium text-sm'>FAQ</li></Link>
-                        <Link to="/"><li className='font-medium text-sm'>Terms of use</li></Link>
-                        <Link to="/"><li className='font-medium text-sm'>Privacy Policy</li></Link>
+                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>FAQ</li></Link>
+                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Terms of use</li></Link>
+                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Privacy Policy</li></Link>
                     </ul>
                     <ul className='flex flex-col gap-4 justify-between'>
                         <Link to="/"><li className='text-sm mb-3 text-bk-300 dark:text-w-100'>COMPANY</li></Link>
-                        <Link to="/"><li className='font-medium text-sm'>About</li></Link>
-                        <Link to="/"><li className='font-medium text-sm'>Contact</li></Link>
-                        <Link to="/"><li className='font-medium text-sm'>Carees</li></Link>
+                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>About</li></Link>
+                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Contact</li></Link>
+                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Carees</li></Link>
                     </ul>
                     <ul className='flex flex-col gap-4 justify-between'>
                         <Link to="/"><li className='text-sm mb-3 text-bk-300 dark:text-w-100'>SHOP</li></Link>
-                        <Link to="/"><li className='font-medium text-sm'>My Account</li></Link>
-                        <Link to="/"><li className='font-medium text-sm'>Checkout</li></Link>
-                        <Link to="/"><li className='font-medium text-sm'>Cart</li></Link>
+                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>My Account</li></Link>
+                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Checkout</li></Link>
+                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Cart</li></Link>
                     </ul>
                 </div>
-                <div className='flex flex-col items-center md:items-start'>
+                <div className='flex flex-col items-center md:items-start gap-8'>
                     <p className='text-sm mb-3 text-bk-300 dark:text-w-100'>ACCEPTED PAYMENT</p>
                     <div className='flex justify-start gap-5'>
                         <img className='grayscale opacity-80' src={Master} alt="master logo" />

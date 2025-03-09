@@ -55,14 +55,14 @@ export const Homepage = () => {
             <Cards price={334} inStock={true} image={image} title='camiseta confortável'></Cards>
           </div>
         </div>
-        <div className='mt-34 px-10 md:px-20 pb-5 lg:px-45 pt-20 flex flex-col sm:flex-row justify-between bg-w-100 dark:bg-bk-900 overflow-hidden'>
+        <div className='mt-34 px-10 md:px-20 pb-2 lg:px-45 pt-12 flex flex-col sm:flex-row justify-between bg-linear-to-r from-w-100 to-white border-t border-b border-w-100 dark:from-bk-900 dark:to-bk-800 dark:border-bk-900 overflow-hidden'>
             <div className='flex flex-col items-start gap-7'>
               <h3 className='text-2xl font-bold text-bk-900 dark:text-w-100'>Browse Our Fashion Paradise!</h3>
               <p className='text-bk-500 text-sm dark:text-gray-400 md:w-90 lg:w-110'>Step into a world of style and explore our diverse collection of clothing categories.</p>
               <Btn text='Start Browsing' link='/products' arrow/>
             </div>
             <div className='flex justify-center'>
-              <img className='h-80 object-cover mt-5 sm:-mt-20 grow-0' src={ImageBanner2} alt="image banner" />
+              <img className='h-70 object-cover mt-5 sm:-mt-12 grow-0' src={ImageBanner2} alt="image banner" />
             </div>
         </div>
         <div className='mt-40 pb-40 px-10 md:px-20 lg:px-45 flex flex-col gap-18'>

@@ -4,6 +4,8 @@
       "id": "A1B4",
       "category": "t-shirt",
       "title": "Casual T-Shirt",
+      "onOffer": false,
+      "totalSold": 200,
       "price": 79.9,
       "detail": "Elevate your everyday style with our Men's Black T-Shirts, the ultimate wardrobe essential for modern men. Crafted with meticulous attention to detail and designed for comfort, these versatile black tees are a must-have addition to your collection.",
       "stars": [
@@ -42,6 +44,8 @@
       "id": "P2F3",
       "category": "perfume",
       "title": "Elegant Perfume",
+      "onOffer": true,
+      "totalSold": 250,
       "price": 120.0,
       "detail": "A sophisticated fragrance with a blend of floral and woody notes, perfect for any occasion.",
       "stars": [
@@ -64,6 +68,8 @@
       "id": "T3R4",
       "category": "trousers",
       "title": "Slim Fit Trousers",
+      "onOffer": false,
+      "totalSold": 300,
       "price": 149.9,
       "detail": "These slim-fit trousers are perfect for a modern, tailored look. Made with high-quality fabric for comfort and durability.",
       "stars": [
@@ -94,6 +100,8 @@
       "id": "S4H5",
       "category": "shoe",
       "title": "Running Shoes",
+      "onOffer": true,
+      "totalSold": 400,
       "price": 199.9,
       "detail": "Designed for maximum comfort and performance, these running shoes are perfect for athletes and casual runners alike.",
       "stars": [
@@ -124,6 +132,8 @@
       "id": "H6B7",
       "category": "handbag",
       "title": "Leather Handbag",
+      "onOffer": true,
+      "totalSold": 270,
       "price": 299.9,
       "detail": "A stylish and functional leather handbag, perfect for everyday use or special occasions.",
       "stars": [
@@ -147,6 +157,8 @@
       "id": "C8H9",
       "category": "hat",
       "title": "Summer Hat",
+      "onOffer": true,
+      "totalSold": 100,
       "price": 49.9,
       "detail": "Stay stylish and protected from the sun with this lightweight and breathable summer hat.",
       "stars": [
@@ -170,6 +182,8 @@
       "id": "T9M0",
       "category": "thermos",
       "title": "Stainless Steel Thermos",
+      "onOffer": true,
+      "totalSold": 290,
       "price": 39.9,
       "detail": "Keep your drinks hot or cold for hours with this durable and stylish stainless steel thermos.",
       "stars": [

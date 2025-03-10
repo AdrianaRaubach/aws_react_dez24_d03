@@ -6,21 +6,43 @@ import Truck from '../images/icons/truck.png'
 import Quality from '../images/icons/quality.png'
 import Secure from '../images/icons/secure.png'
 import { Cards } from '../components/Cards'
-import image from '../images/products/cover-1.png'
-// import api from '../service/api'
-// import { useState, useEffect } from 'react'
+import { ProductsProps } from '../types/PropTypes'
+import api from '../service/api'
+import { useState, useEffect } from 'react'
 import { Btn } from '../components/Btn'
+
+type FilterProps = {
+  count: number;
+}
 
 export const Homepage = () => {
   
-    // const [products, setProducts] = useState([])
+  const [products, setProducts] = useState<ProductsProps[]>([])
   
-    // useEffect(() => {
-    //     api.get('/products').then(response => {
-    //       setProducts(response.data)
-    //     })
-    // },[])
+    useEffect(() => {
+        api.get('/products').then(response => {
+          setProducts(response.data)
+        })
+    },[])
   
+    const filterProductsOnOffer = products.filter(function(this: FilterProps, item) {
+      if(this.count < 4 && item.onOffer) {
+        this.count++
+        return true
+      }
+      return false
+    }, {count: 0})
+
+    const filterProductsBestSellers = products.sort(function (a, b) {
+      return +(a.totalSold < b.totalSold) || +(a.totalSold === b.totalSold) - 1})
+        .filter(function(this: FilterProps) {
+          if(this.count < 4) {
+            this.count++
+            return true
+          }
+        return false
+    }, {count: 0})
+    
     return (
       <main className='dark:bg-bk-800 font-inter'>
         <div className='mt-34 px-10 md:px-20 lg:px-45 flex flex-col sm:flex-row justify-between font-inter overflow-hidden bg-w-100 dark:bg-bk-900 '>
@@ -49,10 +71,13 @@ export const Homepage = () => {
             <h2 className='text-2xl font-bold text-black dark:text-w-100'>Best Selling</h2>
           </div>
           <div className='flex justify-center gap-5 sm:justify-between flex-wrap'>
-            <Cards price={334} inStock={true} image={image} title='camiseta confortável'></Cards>
-            <Cards price={334} inStock={true} image={image} title='camiseta confortável'></Cards>
-            <Cards price={334} inStock={true} image={image} title='camiseta confortável'></Cards>
-            <Cards price={334} inStock={true} image={image} title='camiseta confortável'></Cards>
+            {products.length > 0 &&
+              <div className="flex flex-wrap justify-center sm:justify-between gap-5 w-full">
+                  {filterProductsBestSellers.map(item => 
+                      <Cards key={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} inStock />
+                  )}
+              </div>
+            }
           </div>
         </div>
         <div className='mt-34 px-10 md:px-20 pb-2 lg:px-45 pt-12 flex flex-col sm:flex-row justify-between bg-linear-to-r from-w-100 to-white border-t border-b border-w-100 dark:from-bk-900 dark:to-bk-800 dark:border-bk-900 overflow-hidden'>
@@ -68,10 +93,13 @@ export const Homepage = () => {
         <div className='mt-40 pb-40 px-10 md:px-20 lg:px-45 flex flex-col gap-18'>
           <p className="self-center border border-bk-100 dark:text-w-100 py-1.5 px-4 font-medium rounded-2xl text-sm">On Offer</p>
           <div className='flex justify-center gap-5 sm:justify-between flex-wrap'>
-            <Cards price={334} inStock={true} image={image} title='camiseta confortável'></Cards>
-            <Cards price={334} inStock={true} image={image} title='camiseta confortável'></Cards>
-            <Cards price={334} inStock={true} image={image} title='camiseta confortável'></Cards>
-            <Cards price={334} inStock={true} image={image} title='camiseta confortável'></Cards>
+          {products.length > 0 &&
+              <div className="flex flex-wrap justify-center sm:justify-between gap-5 w-full">
+                  {filterProductsOnOffer.map(item => 
+                      <Cards key={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} inStock />
+                  )}
+              </div>
+            }
           </div>
         </div>
       </main>

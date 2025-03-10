@@ -124,9 +124,9 @@ export const Listing = () => {
 			            }
                     </div>
                     <div className="self-center flex border rounded border-w-200 py-1 px-2 text-xs gap-2">
-                        <button className="px-3 cursor-pointer"><SlArrowLeft /></button>
-                        <p className="bg-w-100 py-2 px-4 rounded">1</p>
-                        <button className="px-3 cursor-pointer"><SlArrowRight /></button>
+                        <button className="px-3 cursor-pointer dark:text-w-100"><SlArrowLeft /></button>
+                        <p className="bg-w-100 py-2 px-4 rounded dark:bg-bk-700 dark:text-w-100">1</p>
+                        <button className="px-3 cursor-pointer dark:text-w-100"><SlArrowRight /></button>
                     </div>
                 </div>
             </div>

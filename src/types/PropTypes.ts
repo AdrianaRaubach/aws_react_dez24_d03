@@ -17,6 +17,8 @@ export type ProductsProps = {
     id: string;
     category: string;
     title: string;
+    onOffer: boolean;
+    totalSold: number;
     price: number;
     detail: string;
     stars: StarRating[];

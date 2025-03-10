@@ -7,15 +7,21 @@ import { FormatDolar } from "../utils/FormatDolar";
 import { Cards } from "../components/Cards";
 import { FiSearch } from "react-icons/fi";
 import { Filters } from "../components/Filters"
+import { SlArrowRight } from "react-icons/sl";
+import { SlArrowLeft } from "react-icons/sl";
+
 
 export const Listing = () => {
     const [valueRange, setValueRange] = useState<number>(0)
     const [searchInput, setSearchInput] = useState<string>('')
     const [products, setProducts] = useState<ProductsProps[]>([])
-
     const [inputChecked, setInputChecked] = useState<string>('')
-    const handleCheckedInput = (e: React.ChangeEvent<HTMLInputElement>) => {
 
+    const handleCheckedInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if(inputChecked === e.target.name) {
+            setInputChecked('')
+            return
+        }
         setInputChecked(e.target.name)
     }
   
@@ -29,13 +35,33 @@ export const Listing = () => {
         setValueRange(Number(e.target.value))
     }
 
+    const handleCloseFilter = (filter : string) => {
+        switch(filter){
+            case "category":
+                setInputChecked('')
+                break
+            case "value":
+                setValueRange(0)
+                break
+            case "search":
+                setSearchInput('')
+                break
+        }
+    }
+
+    const filterItems = products.filter(item => 
+        ((inputChecked !== '') ? item.category === inputChecked: item.category) 
+        && ((valueRange !== 0) ? item.price <= valueRange: item.price <= item.price) 
+        && ((searchInput !== '') ? item.title.toLowerCase().includes(searchInput.toLowerCase()): item.title)
+    )
+
     return (
         <main className='dark:bg-bk-800 font-inter'>
-            <div className="mt-34 px-10 md:px-20 lg:px-45 bg-w-100 dark:bg-bk-900">
+            <div className="mt-42 sm:mt-34 px-10 md:px-20 lg:px-45 bg-w-100 dark:bg-bk-900">
                 <CurrentPage actualPage="Search"/>
             </div>
-            <div className="bg-white dark:bg-bk-800 px-10 md:px-20 lg:px-45 py-10 flex items-start gap-7">
-                <div className=" text-bk-900 dark:text-w-100 text-sm font-medium w-120 p-5 border border-w-200 dark:border-gray-500 rounded-md">
+            <div className="bg-white dark:bg-bk-800 px-10 md:px-20 lg:px-45 py-10 flex flex-col md:flex-row items-start gap-7">
+                <div className=" text-bk-900 dark:text-w-100 text-sm font-medium w-full md:w-248px p-5 border border-w-200 dark:border-gray-500 rounded-md">
                     <h4 className="pb-4">Categories</h4>
                     {products.length > 0 &&
                         <ul>
@@ -69,31 +95,38 @@ export const Listing = () => {
                         }
                     </div>
                 </div>
-                <div>
+                <div className="w-full md:w-9/12 flex flex-col gap-10 pb-25">
                     <div className="flex justify-between">
-                        <div>
-                            <h4 className="text-bk-900 text-sm dark:text-w-100 font-medium pb-5">Applied Filters:</h4>
-                            <div className="flex">
-                                <Filters filter="categoria"/>
-                                <Filters filter={String(valueRange)}/>
-                                <Filters filter={searchInput}/>
+                        {(inputChecked !== '' || valueRange > 0 || searchInput !== '') && 
+                            <div>
+                                <h4 className="text-bk-900 text-sm dark:text-w-100 font-medium pb-5 mt-20 md:mt-0">Applied Filters:</h4>
+                                <div className="flex gap-3 flex-wrap">
+                                    {(inputChecked !== '') && <Filters onClick={()=> handleCloseFilter('category')} filter={inputChecked}/>}
+                                    {(valueRange !== 0 ) && <Filters onClick={()=> handleCloseFilter('value')} filter={String(FormatDolar(valueRange))}/>}
+                                    {(searchInput!== '') && <Filters onClick={()=> handleCloseFilter('search')} filter={searchInput}/>}
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex items-center text-bk-300">
+                        }
+                        <div className="flex items-center text-bk-300 absolute right-10 md:right-20 lg:right-45">
                             <div className="-mr-10 z-50 text-2xl"><FiSearch /></div>
                             <input value={searchInput} onChange={(e) => setSearchInput(e.target.value)} placeholder="Search products" type="texy" name="newsletter" className="border border-bk-100 rounded-md px-3 pl-12 py-3 text-sm md:w-50 xl:w-80 h-11" />
                         </div>
                     </div>
     
                     <div>
-                        <p className="text-bk-500 text-sm dark:text-gray-400 py-10">Showing {products.length} results</p>
+                        <p className="text-bk-500 text-sm dark:text-gray-400 py-10 mt-8 md:mt-0">Showing {products.length} results</p>
                         {products.length > 0 &&
-                            <div className="flex flex-wrap justify-between gap-5">
-                                {products.map(item => 
+                            <div className="flex flex-wrap justify-center sm:justify-between gap-5">
+                                {filterItems.map(item => 
                                     <Cards key={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} inStock />
                                 )}
                             </div>
 			            }
+                    </div>
+                    <div className="self-center flex border rounded border-w-200 py-1 px-2 text-xs gap-2">
+                        <button className="px-3 cursor-pointer"><SlArrowLeft /></button>
+                        <p className="bg-w-100 py-2 px-4 rounded">1</p>
+                        <button className="px-3 cursor-pointer"><SlArrowRight /></button>
                     </div>
                 </div>
             </div>

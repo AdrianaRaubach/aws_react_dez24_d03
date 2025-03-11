@@ -11,10 +11,6 @@ import api from '../service/api'
 import { useState, useEffect } from 'react'
 import { Btn } from '../components/Btn'
 
-type FilterProps = {
-  count: number;
-}
-
 export const Homepage = () => {
   
   const [products, setProducts] = useState<ProductsProps[]>([])
@@ -25,24 +21,11 @@ export const Homepage = () => {
         })
     },[])
   
-    const filterProductsOnOffer = products.filter(function(this: FilterProps, item) {
-      if(this.count < 4 && item.onOffer) {
-        this.count++
-        return true
-      }
-      return false
-    }, {count: 0})
+    const filterProductsOnOffer = products.filter((item) => item.onOffer).slice(0, 4)
 
-    const filterProductsBestSellers = products.sort(function (a, b) {
-      return +(a.totalSold < b.totalSold) || +(a.totalSold === b.totalSold) - 1})
-        .filter(function(this: FilterProps) {
-          if(this.count < 4) {
-            this.count++
-            return true
-          }
-        return false
-    }, {count: 0})
-    
+    const filterProductsBestSellers = products.sort((a, b) =>
+      +(a.totalSold < b.totalSold) || +(a.totalSold === b.totalSold) - 1).slice(0, 4)
+       
     return (
       <main className='dark:bg-bk-800 font-inter'>
         <div className='mt-34 px-10 md:px-20 lg:px-45 flex flex-col sm:flex-row justify-between font-inter overflow-hidden bg-w-100 dark:bg-bk-900 '>

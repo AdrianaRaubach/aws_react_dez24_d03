@@ -9,33 +9,91 @@
       "price": 79.9,
       "detail": "Elevate your everyday style with our Men's Black T-Shirts, the ultimate wardrobe essential for modern men. Crafted with meticulous attention to detail and designed for comfort, these versatile black tees are a must-have addition to your collection.",
       "stars": [
-        { "1": 6 },
-        { "2": 10 },
-        { "3": 4 },
-        { "4": 3 },
-        { "5": 5 }
+        {
+          "1": 6
+        },
+        {
+          "2": 10
+        },
+        {
+          "3": 4
+        },
+        {
+          "4": 3
+        },
+        {
+          "5": 5
+        }
       ],
       "stok": [
         {
           "size": "S",
           "colors": [
-            { "qtd": 5, "color": "blue", "image": "src/images/products/t-shirt/cover-1.png" },
-            { "qtd": 8, "color": "green", "image": "src/images/products/t-shirt/cover-2.png" },
-            { "qtd": 12, "color": "red", "image": "src/images/products/t-shirt/cover-3.png" },
-            { "qtd": 7, "color": "yellow", "image": "src/images/products/t-shirt/cover-4.png" },
-            { "qtd": 10, "color": "black", "image": "src/images/products/t-shirt/cover-5.png" },
-            { "qtd": 3, "color": "white", "image": "src/images/products/t-shirt/cover-6.png" }
+            {
+              "qtd": 5,
+              "color": "blue",
+              "image": "src/images/products/t-shirt/cover-1.png"
+            },
+            {
+              "qtd": 8,
+              "color": "green",
+              "image": "src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 12,
+              "color": "red",
+              "image": "src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "src/images/products/t-shirt/cover-4.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "src/images/products/t-shirt/cover-5.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "src/images/products/t-shirt/cover-6.png"
+            }
           ]
         },
         {
           "size": "M",
           "colors": [
-            { "qtd": 5, "color": "blue", "image": "src/images/products/t-shirt/cover-1.png" },
-            { "qtd": 8, "color": "green", "image": "src/images/products/t-shirt/cover-2.png" },
-            { "qtd": 12, "color": "red", "image": "src/images/products/t-shirt/cover-3.png" },
-            { "qtd": 7, "color": "yellow", "image": "src/images/products/t-shirt/cover-4.png" },
-            { "qtd": 10, "color": "black", "image": "src/images/products/t-shirt/cover-5.png" },
-            { "qtd": 3, "color": "white", "image": "src/images/products/t-shirt/cover-6.png" }
+            {
+              "qtd": 5,
+              "color": "blue",
+              "image": "src/images/products/t-shirt/cover-1.png"
+            },
+            {
+              "qtd": 8,
+              "color": "green",
+              "image": "src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 12,
+              "color": "red",
+              "image": "src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "src/images/products/t-shirt/cover-4.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "src/images/products/t-shirt/cover-5.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "src/images/products/t-shirt/cover-6.png"
+            }
           ]
         }
       ]
@@ -46,20 +104,34 @@
       "title": "Elegant Perfume",
       "onOffer": true,
       "totalSold": 250,
-      "price": 120.0,
+      "price": 120,
       "detail": "A sophisticated fragrance with a blend of floral and woody notes, perfect for any occasion.",
       "stars": [
-        { "1": 2 },
-        { "2": 3 },
-        { "3": 5 },
-        { "4": 10 },
-        { "5": 15 }
+        {
+          "1": 2
+        },
+        {
+          "2": 3
+        },
+        {
+          "3": 5
+        },
+        {
+          "4": 10
+        },
+        {
+          "5": 15
+        }
       ],
       "stok": [
         {
           "size": "100ml",
           "colors": [
-            { "qtd": 15, "color": "clear", "image": "src/images/products/perfume/cover-2.png" }
+            {
+              "qtd": 15,
+              "color": "clear",
+              "image": "src/images/products/perfume/cover-2.png"
+            }
           ]
         }
       ]
@@ -73,25 +145,51 @@
       "price": 149.9,
       "detail": "These slim-fit trousers are perfect for a modern, tailored look. Made with high-quality fabric for comfort and durability.",
       "stars": [
-        { "1": 1 },
-        { "2": 2 },
-        { "3": 8 },
-        { "4": 12 },
-        { "5": 7 }
+        {
+          "1": 1
+        },
+        {
+          "2": 2
+        },
+        {
+          "3": 8
+        },
+        {
+          "4": 12
+        },
+        {
+          "5": 7
+        }
       ],
       "stok": [
         {
           "size": "32",
           "colors": [
-            { "qtd": 10, "color": "black", "image": "src/images/products/trousers/cover-1.png" },
-            { "qtd": 6, "color": "navy", "image": "src/images/products/trousers/cover-2.png" }
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "src/images/products/trousers/cover-1.png"
+            },
+            {
+              "qtd": 6,
+              "color": "navy",
+              "image": "src/images/products/trousers/cover-2.png"
+            }
           ]
         },
         {
           "size": "34",
           "colors": [
-            { "qtd": 8, "color": "black", "image": "src/images/products/trousers/cover-1.png" },
-            { "qtd": 5, "color": "navy", "image": "src/images/products/trousers/cover-2.png" }
+            {
+              "qtd": 8,
+              "color": "black",
+              "image": "src/images/products/trousers/cover-1.png"
+            },
+            {
+              "qtd": 5,
+              "color": "navy",
+              "image": "src/images/products/trousers/cover-2.png"
+            }
           ]
         }
       ]
@@ -105,25 +203,51 @@
       "price": 199.9,
       "detail": "Designed for maximum comfort and performance, these running shoes are perfect for athletes and casual runners alike.",
       "stars": [
-        { "1": 0 },
-        { "2": 1 },
-        { "3": 4 },
-        { "4": 8 },
-        { "5": 12 }
+        {
+          "1": 0
+        },
+        {
+          "2": 1
+        },
+        {
+          "3": 4
+        },
+        {
+          "4": 8
+        },
+        {
+          "5": 12
+        }
       ],
       "stok": [
         {
           "size": "42",
           "colors": [
-            { "qtd": 7, "color": "black", "image": "src/images/products/shoe/cover-1.png" },
-            { "qtd": 5, "color": "white", "image": "src/images/products/shoe/cover-2.png" }
+            {
+              "qtd": 7,
+              "color": "black",
+              "image": "src/images/products/shoe/cover-1.png"
+            },
+            {
+              "qtd": 5,
+              "color": "white",
+              "image": "src/images/products/shoe/cover-2.png"
+            }
           ]
         },
         {
           "size": "44",
           "colors": [
-            { "qtd": 6, "color": "black", "image": "src/images/products/shoe/cover-1.png" },
-            { "qtd": 4, "color": "white", "image": "src/images/products/shoe/cover-2.png" }
+            {
+              "qtd": 6,
+              "color": "black",
+              "image": "src/images/products/shoe/cover-1.png"
+            },
+            {
+              "qtd": 4,
+              "color": "white",
+              "image": "src/images/products/shoe/cover-2.png"
+            }
           ]
         }
       ]
@@ -137,18 +261,36 @@
       "price": 299.9,
       "detail": "A stylish and functional leather handbag, perfect for everyday use or special occasions.",
       "stars": [
-        { "1": 1 },
-        { "2": 2 },
-        { "3": 3 },
-        { "4": 10 },
-        { "5": 14 }
+        {
+          "1": 1
+        },
+        {
+          "2": 2
+        },
+        {
+          "3": 3
+        },
+        {
+          "4": 10
+        },
+        {
+          "5": 14
+        }
       ],
       "stok": [
         {
           "size": "One Size",
           "colors": [
-            { "qtd": 12, "color": "brown", "image": "src/images/products/handbag/cover-1.png" },
-            { "qtd": 9, "color": "black", "image": "src/images/products/handbag/cover-2.png" }
+            {
+              "qtd": 12,
+              "color": "brown",
+              "image": "src/images/products/handbag/cover-1.png"
+            },
+            {
+              "qtd": 9,
+              "color": "black",
+              "image": "src/images/products/handbag/cover-2.png"
+            }
           ]
         }
       ]
@@ -162,18 +304,36 @@
       "price": 49.9,
       "detail": "Stay stylish and protected from the sun with this lightweight and breathable summer hat.",
       "stars": [
-        { "1": 0 },
-        { "2": 1 },
-        { "3": 5 },
-        { "4": 7 },
-        { "5": 9 }
+        {
+          "1": 0
+        },
+        {
+          "2": 1
+        },
+        {
+          "3": 5
+        },
+        {
+          "4": 7
+        },
+        {
+          "5": 9
+        }
       ],
       "stok": [
         {
           "size": "One Size",
           "colors": [
-            { "qtd": 15, "color": "beige", "image": "src/images/products/hat/cover-1.png" },
-            { "qtd": 10, "color": "white", "image": "src/images/products/hat/cover-2.png" }
+            {
+              "qtd": 15,
+              "color": "beige",
+              "image": "src/images/products/hat/cover-1.png"
+            },
+            {
+              "qtd": 10,
+              "color": "white",
+              "image": "src/images/products/hat/cover-2.png"
+            }
           ]
         }
       ]
@@ -187,25 +347,261 @@
       "price": 39.9,
       "detail": "Keep your drinks hot or cold for hours with this durable and stylish stainless steel thermos.",
       "stars": [
-        { "1": 0 },
-        { "2": 0 },
-        { "3": 3 },
-        { "4": 8 },
-        { "5": 12 }
+        {
+          "1": 0
+        },
+        {
+          "2": 0
+        },
+        {
+          "3": 3
+        },
+        {
+          "4": 8
+        },
+        {
+          "5": 12
+        }
       ],
       "stok": [
         {
           "size": "500ml",
           "colors": [
-            { "qtd": 20, "color": "silver", "image": "src/images/products/thermos/cover-1.png" },
-            { "qtd": 15, "color": "black", "image": "src/images/products/thermos/cover-2.png" }
+            {
+              "qtd": 20,
+              "color": "silver",
+              "image": "src/images/products/thermos/cover-1.png"
+            },
+            {
+              "qtd": 15,
+              "color": "black",
+              "image": "src/images/products/thermos/cover-2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T9M1",
+      "category": "thermos",
+      "title": "Stainless Steel Thermos",
+      "onOffer": true,
+      "totalSold": 290,
+      "price": 39.9,
+      "detail": "Keep your drinks hot or cold for hours with this durable and stylish stainless steel thermos.",
+      "stars": [
+        {
+          "1": 0
+        },
+        {
+          "2": 0
+        },
+        {
+          "3": 3
+        },
+        {
+          "4": 8
+        },
+        {
+          "5": 12
+        }
+      ],
+      "stok": [
+        {
+          "size": "500ml",
+          "colors": [
+            {
+              "qtd": 20,
+              "color": "silver",
+              "image": "src/images/products/thermos/cover-1.png"
+            },
+            {
+              "qtd": 15,
+              "color": "black",
+              "image": "src/images/products/thermos/cover-2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T9M2",
+      "category": "thermos",
+      "title": "Stainless Steel Thermos",
+      "onOffer": false,
+      "totalSold": 290,
+      "price": 39.9,
+      "detail": "Keep your drinks hot or cold for hours with this durable and stylish stainless steel thermos.",
+      "stars": [
+        {
+          "1": 0
+        },
+        {
+          "2": 0
+        },
+        {
+          "3": 3
+        },
+        {
+          "4": 8
+        },
+        {
+          "5": 12
+        }
+      ],
+      "stok": [
+        {
+          "size": "500ml",
+          "colors": [
+            {
+              "qtd": 20,
+              "color": "silver",
+              "image": "src/images/products/thermos/cover-1.png"
+            },
+            {
+              "qtd": 15,
+              "color": "black",
+              "image": "src/images/products/thermos/cover-2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T9M3",
+      "category": "thermos",
+      "title": "Stainless Steel Thermos",
+      "onOffer": false,
+      "totalSold": 290,
+      "price": 39.9,
+      "detail": "Keep your drinks hot or cold for hours with this durable and stylish stainless steel thermos.",
+      "stars": [
+        {
+          "1": 0
+        },
+        {
+          "2": 0
+        },
+        {
+          "3": 3
+        },
+        {
+          "4": 8
+        },
+        {
+          "5": 12
+        }
+      ],
+      "stok": [
+        {
+          "size": "500ml",
+          "colors": [
+            {
+              "qtd": 20,
+              "color": "silver",
+              "image": "src/images/products/thermos/cover-1.png"
+            },
+            {
+              "qtd": 15,
+              "color": "black",
+              "image": "src/images/products/thermos/cover-2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T9M4",
+      "category": "thermos",
+      "title": "Stainless Steel Thermos",
+      "onOffer": false,
+      "totalSold": 290,
+      "price": 39.9,
+      "detail": "Keep your drinks hot or cold for hours with this durable and stylish stainless steel thermos.",
+      "stars": [
+        {
+          "1": 0
+        },
+        {
+          "2": 0
+        },
+        {
+          "3": 3
+        },
+        {
+          "4": 8
+        },
+        {
+          "5": 12
+        }
+      ],
+      "stok": [
+        {
+          "size": "500ml",
+          "colors": [
+            {
+              "qtd": 20,
+              "color": "silver",
+              "image": "src/images/products/thermos/cover-1.png"
+            },
+            {
+              "qtd": 15,
+              "color": "black",
+              "image": "src/images/products/thermos/cover-2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T9M5",
+      "category": "thermos",
+      "title": "Stainless Steel Thermos",
+      "onOffer": false,
+      "totalSold": 290,
+      "price": 39.9,
+      "detail": "Keep your drinks hot or cold for hours with this durable and stylish stainless steel thermos.",
+      "stars": [
+        {
+          "1": 0
+        },
+        {
+          "2": 0
+        },
+        {
+          "3": 3
+        },
+        {
+          "4": 8
+        },
+        {
+          "5": 12
+        }
+      ],
+      "stok": [
+        {
+          "size": "500ml",
+          "colors": [
+            {
+              "qtd": 20,
+              "color": "silver",
+              "image": "src/images/products/thermos/cover-1.png"
+            },
+            {
+              "qtd": 15,
+              "color": "black",
+              "image": "src/images/products/thermos/cover-2.png"
+            }
           ]
         }
       ]
     }
   ],
   "newsletter": [
-    
+    {
+      "id": "11cc",
+      "email": "raubach.adrianadw@gmail.com"
+    }
   ],
   "offers": [
     {

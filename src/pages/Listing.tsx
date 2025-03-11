@@ -10,29 +10,40 @@ import { Filters } from "../components/Filters"
 import { SlArrowRight } from "react-icons/sl";
 import { SlArrowLeft } from "react-icons/sl";
 
-
 export const Listing = () => {
+    const [totalPages, setTotalPages] = useState<number>(1)
     const [valueRange, setValueRange] = useState<number>(0)
     const [searchInput, setSearchInput] = useState<string>('')
     const [products, setProducts] = useState<ProductsProps[]>([])
     const [inputChecked, setInputChecked] = useState<string>('')
+    const [activePage, setActivePage] = useState<number>(0)
+    const itemsPerPage: number = 9
+    const startIndex = activePage * itemsPerPage
+    const endIndex = startIndex + itemsPerPage
+
+    useEffect(() => {
+        api.get('/products').then(response => {
+            setProducts(response.data)
+        })
+    },[])
 
     const handleCheckedInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         if(inputChecked === e.target.name) {
             setInputChecked('')
             return
         }
+        setActivePage(0)
         setInputChecked(e.target.name)
     }
   
-    useEffect(() => {
-        api.get('/products').then(response => {
-            setProducts(response.data)
-        })
-    },[])
-    
     const handleChangeRange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setActivePage(0)
         setValueRange(Number(e.target.value))
+    }
+
+    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setActivePage(0)
+        setSearchInput(e.target.value)
     }
 
     const handleCloseFilter = (filter : string) => {
@@ -49,11 +60,27 @@ export const Listing = () => {
         }
     }
 
+    const categoriesList = [...new Set(products.map((item) => item.category))]
+
     const filterItems = products.filter(item => 
         ((inputChecked !== '') ? item.category === inputChecked: item.category) 
         && ((valueRange !== 0) ? item.price <= valueRange: item.price <= item.price) 
         && ((searchInput !== '') ? item.title.toLowerCase().includes(searchInput.toLowerCase()): item.title)
-    )
+    ).slice(startIndex, endIndex)
+
+    const previousPage = () => {
+        if(activePage === 0) return
+        setActivePage(activePage - 1)
+    }
+
+    const nextPage = () => {
+        if(activePage === totalPages) return
+        setActivePage(activePage + 1)
+    }
+
+    useEffect(() => {
+        setTotalPages((Math.ceil((filterItems.length)/itemsPerPage)))    
+    },[filterItems])
 
     return (
         <main className='dark:bg-bk-800 font-inter'>
@@ -65,13 +92,13 @@ export const Listing = () => {
                     <h4 className="pb-4">Categories</h4>
                     {products.length > 0 &&
                         <ul>
-                            {products.map(item => 
-                                <label  key={item.category} className="flex gap-2 font-normal text-bk-600 dark:text-gray-400 py-4 border-b border-w-200 dark:border-gray-500 cursor-pointer">
-                                    <input type="checkbox" className='hidden peer' name={item.category} checked={inputChecked === item.category} onChange={(e) => handleCheckedInput(e)} />
+                            {categoriesList.map(item => 
+                                <label key={item} className="flex gap-2 font-normal text-bk-600 dark:text-gray-400 py-4 border-b border-w-200 dark:border-gray-500 cursor-pointer">
+                                    <input type="checkbox" className='hidden peer' name={item} checked={inputChecked === item} onChange={(e) => handleCheckedInput(e)} />
                                     <div className='border-2 flex items-center border-w-200 dark:border-gray-400 h-4.5 w-4.5 rounded-xs text-center peer-checked:bg-bk-600 peer-checked:border-bk-600 text-white dark:text-bk-800 text-sm dark:text-dark-800 dark:peer-checked:bg-w-100 dark:peer-checked:border-w-100'>
                                         <IoCheckmarkSharp />
                                     </div>
-                                    <li>{item.category.charAt(0).toUpperCase() + item.category.slice(1).toLowerCase()}</li>
+                                    <li>{item.charAt(0).toUpperCase() + item.slice(1).toLowerCase()}</li>
                                 </label>
                             )}
                         </ul>
@@ -109,13 +136,13 @@ export const Listing = () => {
                         }
                         <div className="flex items-center text-bk-300 absolute right-10 md:right-20 lg:right-45">
                             <div className="-mr-10 z-50 text-2xl"><FiSearch /></div>
-                            <input value={searchInput} onChange={(e) => setSearchInput(e.target.value)} placeholder="Search products" type="texy" name="newsletter" className="border border-bk-100 rounded-md px-3 pl-12 py-3 text-sm md:w-50 xl:w-80 h-11" />
+                            <input value={searchInput} onChange={(e) => handleSearch(e)} placeholder="Search products" type="texy" name="newsletter" className="border border-bk-100 rounded-md px-3 pl-12 py-3 text-sm md:w-50 xl:w-80 h-11" />
                         </div>
                     </div>
     
                     <div>
                         <p className="text-bk-500 text-sm dark:text-gray-400 py-10 mt-8 md:mt-0">Showing {products.length} results</p>
-                        {products.length > 0 &&
+                        {filterItems.length > 0 &&
                             <div className="flex flex-wrap justify-center sm:justify-between gap-5">
                                 {filterItems.map(item => 
                                     <Cards key={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} inStock />
@@ -124,9 +151,9 @@ export const Listing = () => {
 			            }
                     </div>
                     <div className="self-center flex border rounded border-w-200 py-1 px-2 text-xs gap-2">
-                        <button className="px-3 cursor-pointer dark:text-w-100"><SlArrowLeft /></button>
-                        <p className="bg-w-100 py-2 px-4 rounded dark:bg-bk-700 dark:text-w-100">1</p>
-                        <button className="px-3 cursor-pointer dark:text-w-100"><SlArrowRight /></button>
+                        <button className="px-3 cursor-pointer dark:text-w-100" onClick={previousPage}><SlArrowLeft /></button>
+                        <p className="bg-w-100 py-2 px-4 rounded dark:bg-bk-700 dark:text-w-100">{activePage + 1}</p>
+                        <button className="px-3 cursor-pointer dark:text-w-100" onClick={nextPage}><SlArrowRight /></button>
                     </div>
                 </div>
             </div>

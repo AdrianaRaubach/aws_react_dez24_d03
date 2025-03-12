@@ -141,11 +141,11 @@ export const Listing = () => {
                     </div>
     
                     <div>
-                        <p className="text-bk-500 text-sm dark:text-gray-400 py-10 mt-8 md:mt-0">Showing {products.length} results</p>
+                        <p className="text-bk-500 text-sm dark:text-gray-400 py-10 mt-8 md:mt-0">Showing {startIndex+1} - {(endIndex> products.length)? products.length : endIndex} Of {products.length} Results.</p>
                         {filterItems.length > 0 &&
                             <div className="flex flex-wrap justify-center sm:justify-between gap-5">
                                 {filterItems.map(item => 
-                                    <Cards key={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} inStock />
+                                    <Cards key={item.id} routeId={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} inStock />
                                 )}
                             </div>
 			            }

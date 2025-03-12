@@ -38,7 +38,7 @@ export const Header = () => {
 
 
     return (
-        <header className="fixed top-0 w-full border-b border-w-100 dark:border-bk-800 z-100">
+        <header className="fixed top-0 w-full dark:border-bk-800 z-100">
             <div className="flex h-18 sm:h-11 p-3 font-inter text-sm pr-20 sm:px-0 text-white bg-bk-900 dark:bg-blue-300 dark:text-bk-900 items-center justify-center font-light w-full">
                 <p>{offerActive}<Link to="/" className="cursor-pointer font-medium"> Order Now</Link></p>
             </div>

@@ -32,32 +32,32 @@
             {
               "qtd": 5,
               "color": "blue",
-              "image": "src/images/products/t-shirt/cover-1.png"
+              "image": "/src/images/products/t-shirt/cover-1.png"
             },
             {
               "qtd": 8,
               "color": "green",
-              "image": "src/images/products/t-shirt/cover-2.png"
+              "image": "/src/images/products/t-shirt/cover-2.png"
             },
             {
               "qtd": 12,
               "color": "red",
-              "image": "src/images/products/t-shirt/cover-3.png"
+              "image": "/src/images/products/t-shirt/cover-3.png"
             },
             {
               "qtd": 7,
               "color": "yellow",
-              "image": "src/images/products/t-shirt/cover-4.png"
+              "image": "/src/images/products/t-shirt/cover-4.png"
             },
             {
               "qtd": 10,
               "color": "black",
-              "image": "src/images/products/t-shirt/cover-5.png"
+              "image": "/src/images/products/t-shirt/cover-5.png"
             },
             {
               "qtd": 3,
               "color": "white",
-              "image": "src/images/products/t-shirt/cover-6.png"
+              "image": "/src/images/products/t-shirt/cover-6.png"
             }
           ]
         },
@@ -67,32 +67,32 @@
             {
               "qtd": 5,
               "color": "blue",
-              "image": "src/images/products/t-shirt/cover-1.png"
+              "image": "/src/images/products/t-shirt/cover-1.png"
             },
             {
               "qtd": 8,
               "color": "green",
-              "image": "src/images/products/t-shirt/cover-2.png"
+              "image": "/src/images/products/t-shirt/cover-2.png"
             },
             {
               "qtd": 12,
               "color": "red",
-              "image": "src/images/products/t-shirt/cover-3.png"
+              "image": "/src/images/products/t-shirt/cover-3.png"
             },
             {
               "qtd": 7,
               "color": "yellow",
-              "image": "src/images/products/t-shirt/cover-4.png"
+              "image": "/src/images/products/t-shirt/cover-4.png"
             },
             {
               "qtd": 10,
               "color": "black",
-              "image": "src/images/products/t-shirt/cover-5.png"
+              "image": "/src/images/products/t-shirt/cover-5.png"
             },
             {
               "qtd": 3,
               "color": "white",
-              "image": "src/images/products/t-shirt/cover-6.png"
+              "image": "/src/images/products/t-shirt/cover-6.png"
             }
           ]
         }
@@ -130,7 +130,7 @@
             {
               "qtd": 15,
               "color": "clear",
-              "image": "src/images/products/perfume/cover-2.png"
+              "image": "/src/images/products/perfume/cover-2.png"
             }
           ]
         }
@@ -168,12 +168,12 @@
             {
               "qtd": 10,
               "color": "black",
-              "image": "src/images/products/trousers/cover-1.png"
+              "image": "/src/images/products/trousers/cover-1.png"
             },
             {
               "qtd": 6,
               "color": "navy",
-              "image": "src/images/products/trousers/cover-2.png"
+              "image": "/src/images/products/trousers/cover-2.png"
             }
           ]
         },
@@ -183,12 +183,12 @@
             {
               "qtd": 8,
               "color": "black",
-              "image": "src/images/products/trousers/cover-1.png"
+              "image": "/src/images/products/trousers/cover-1.png"
             },
             {
               "qtd": 5,
               "color": "navy",
-              "image": "src/images/products/trousers/cover-2.png"
+              "image": "/src/images/products/trousers/cover-2.png"
             }
           ]
         }
@@ -226,12 +226,12 @@
             {
               "qtd": 7,
               "color": "black",
-              "image": "src/images/products/shoe/cover-1.png"
+              "image": "/src/images/products/shoe/cover-1.png"
             },
             {
               "qtd": 5,
               "color": "white",
-              "image": "src/images/products/shoe/cover-2.png"
+              "image": "/src/images/products/shoe/cover-2.png"
             }
           ]
         },
@@ -241,12 +241,12 @@
             {
               "qtd": 6,
               "color": "black",
-              "image": "src/images/products/shoe/cover-1.png"
+              "image": "/src/images/products/shoe/cover-1.png"
             },
             {
               "qtd": 4,
               "color": "white",
-              "image": "src/images/products/shoe/cover-2.png"
+              "image": "/src/images/products/shoe/cover-2.png"
             }
           ]
         }
@@ -284,12 +284,12 @@
             {
               "qtd": 12,
               "color": "brown",
-              "image": "src/images/products/handbag/cover-1.png"
+              "image": "/src/images/products/handbag/cover-1.png"
             },
             {
               "qtd": 9,
               "color": "black",
-              "image": "src/images/products/handbag/cover-2.png"
+              "image": "/src/images/products/handbag/cover-2.png"
             }
           ]
         }
@@ -327,12 +327,12 @@
             {
               "qtd": 15,
               "color": "beige",
-              "image": "src/images/products/hat/cover-1.png"
+              "image": "/src/images/products/hat/cover-1.png"
             },
             {
               "qtd": 10,
               "color": "white",
-              "image": "src/images/products/hat/cover-2.png"
+              "image": "/src/images/products/hat/cover-2.png"
             }
           ]
         }
@@ -370,12 +370,12 @@
             {
               "qtd": 20,
               "color": "silver",
-              "image": "src/images/products/thermos/cover-1.png"
+              "image": "/src/images/products/thermos/cover-1.png"
             },
             {
               "qtd": 15,
               "color": "black",
-              "image": "src/images/products/thermos/cover-2.png"
+              "image": "/src/images/products/thermos/cover-2.png"
             }
           ]
         }
@@ -413,12 +413,12 @@
             {
               "qtd": 20,
               "color": "silver",
-              "image": "src/images/products/thermos/cover-1.png"
+              "image": "/src/images/products/thermos/cover-1.png"
             },
             {
               "qtd": 15,
               "color": "black",
-              "image": "src/images/products/thermos/cover-2.png"
+              "image": "/src/images/products/thermos/cover-2.png"
             }
           ]
         }
@@ -456,12 +456,12 @@
             {
               "qtd": 20,
               "color": "silver",
-              "image": "src/images/products/thermos/cover-1.png"
+              "image": "/src/images/products/thermos/cover-1.png"
             },
             {
               "qtd": 15,
               "color": "black",
-              "image": "src/images/products/thermos/cover-2.png"
+              "image": "/src/images/products/thermos/cover-2.png"
             }
           ]
         }
@@ -499,12 +499,12 @@
             {
               "qtd": 20,
               "color": "silver",
-              "image": "src/images/products/thermos/cover-1.png"
+              "image": "/src/images/products/thermos/cover-1.png"
             },
             {
               "qtd": 15,
               "color": "black",
-              "image": "src/images/products/thermos/cover-2.png"
+              "image": "/src/images/products/thermos/cover-2.png"
             }
           ]
         }
@@ -542,12 +542,12 @@
             {
               "qtd": 20,
               "color": "silver",
-              "image": "src/images/products/thermos/cover-1.png"
+              "image": "/src/images/products/thermos/cover-1.png"
             },
             {
               "qtd": 15,
               "color": "black",
-              "image": "src/images/products/thermos/cover-2.png"
+              "image": "/src/images/products/thermos/cover-2.png"
             }
           ]
         }
@@ -585,12 +585,12 @@
             {
               "qtd": 20,
               "color": "silver",
-              "image": "src/images/products/thermos/cover-1.png"
+              "image": "/src/images/products/thermos/cover-1.png"
             },
             {
               "qtd": 15,
               "color": "black",
-              "image": "src/images/products/thermos/cover-2.png"
+              "image": "/src/images/products/thermos/cover-2.png"
             }
           ]
         }

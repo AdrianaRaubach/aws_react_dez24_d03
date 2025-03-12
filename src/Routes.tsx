@@ -17,6 +17,7 @@ export const Routers = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/listing" element={<Listing />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/product/:id" element={<Product />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/after-payment" element={<AfterPayment />} />

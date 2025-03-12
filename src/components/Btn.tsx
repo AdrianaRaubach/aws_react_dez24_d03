@@ -9,7 +9,7 @@ type BtnProps= {
 export const Btn = ({text, link, arrow}:BtnProps) => {
 
     return (
-        <Link to={link} className='cursor-pointer flex items-center hover:opacity-85 text-white bg-bk-900 dark:bg-blue-400 py-3 px-6 gap-3 text-sm rounded-sm'>{text}
+        <Link to={link} className='justify-center cursor-pointer flex items-center hover:opacity-85 text-white bg-bk-900 dark:bg-blue-400 py-3 px-6 gap-3 text-sm rounded-sm'>{text}
             {arrow &&  <FaArrowRight />}
         </Link>
     )

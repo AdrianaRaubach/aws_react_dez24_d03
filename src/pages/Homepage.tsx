@@ -57,7 +57,7 @@ export const Homepage = () => {
             {products.length > 0 &&
               <div className="flex flex-wrap justify-center sm:justify-between gap-5 w-full">
                   {filterProductsBestSellers.map(item => 
-                      <Cards key={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} inStock />
+                      <Cards key={item.id} routeId={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} inStock />
                   )}
               </div>
             }
@@ -76,10 +76,10 @@ export const Homepage = () => {
         <div className='mt-40 pb-40 px-10 md:px-20 lg:px-45 flex flex-col gap-18'>
           <p className="self-center border border-bk-100 dark:text-w-100 py-1.5 px-4 font-medium rounded-2xl text-sm">On Offer</p>
           <div className='flex justify-center gap-5 sm:justify-between flex-wrap'>
-          {products.length > 0 &&
+            {products.length > 0 &&
               <div className="flex flex-wrap justify-center sm:justify-between gap-5 w-full">
                   {filterProductsOnOffer.map(item => 
-                      <Cards key={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} inStock />
+                      <Cards key={item.id} routeId={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} inStock />
                   )}
               </div>
             }

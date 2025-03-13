@@ -11,7 +11,7 @@ import { Cards } from '../components/Cards';
 import { LuShare2 } from "react-icons/lu";
 import { IoIosCopy } from "react-icons/io";
 import { Colors } from '../components/Colors'
-
+import { StokLabel } from '../components/StokLabel'
 
 
 export const Product = () => {
@@ -23,9 +23,9 @@ export const Product = () => {
     const [qtdAdd, setQtdAdd] = useState<number>(1)
     const [seeDetail, setSeeDetail] = useState<boolean>(true)
     const [copyLink, setCopyLink] = useState<boolean>(false)
-    const [hasStok, setHasStok] = useState<boolean>(true)
     const [colorChecked, setColorChecked] = useState<string>('')
     const [sizeChecked, setSizeChecked] = useState<string>('')
+    const [indexImage, setIndexImage] = useState<number>(0)
     
     useEffect(() => {
         api.get(`/products/${productId}`).then(response => {
@@ -56,7 +56,7 @@ export const Product = () => {
         }, 1500);
     }
 
-    const ColorSelect = ( e: React.ChangeEvent<HTMLInputElement>) => {
+    const ColorSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
         if(colorChecked === e.target.name) {
             setColorChecked('')
             return
@@ -76,25 +76,36 @@ export const Product = () => {
         return <div>Loading...</div>
     }
     const colorList = [...new Set(product.stok.flatMap((item) => item.colors.map((colorItem) => colorItem.color)))]
-
+    const imagesList = [...new Set(product.stok.flatMap((item) => item.colors.map((colorItem) => colorItem.image)))]
+    const stokTotal = (product.stok.map((item) => 
+        item.colors.map((colorQtd) => colorQtd.qtd))).flat().reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        0,
+    )
+    
     return (
         <main className='mt-34 px-10 md:px-20 lg:px-45 font-inter dark:bg-bk-800'>
             <div className='border-t border-w-100 dark:border-bk-700 mt-45 sm:mt-35'><CurrentPage actualPage={product.title}/></div>
             <div className='flex flex-col md:flex-row md:justify-between gap-20 md:gap-10 xl:gap-30'>
-                <div className=' bg-w-100 flex items-center justify-center py-5 lg:px-12 xl:px-21 dark:bg-bk-700'>
-                    <img className='w-360px' src={product.stok[0].colors[0].image} alt={product.title} />
+                <div className=' bg-w-100 flex flex-col items-center justify-center py-5 lg:px-12 xl:px-21 dark:bg-bk-700'>
+                    <img className='w-360px' src={imagesList[indexImage]} alt={product.title} />
+                    <div className='flex gap-3'>
+                        {imagesList.slice(0, 4).map((image, index) => 
+                                            <button onClick={()=> setIndexImage(index)} className={`w-8px h-8px bg-bk-200 hover:bg-bk-300 rounded-full ${index===indexImage? 'bg-bk-900':''}`}/>
+                                        )}
+                    </div>
                 </div>
-                <div className='flex flex-col gap-3 justify-center'>
+                <div className='flex flex-col gap-3 my-4'>
                     <h2 className='text-2xl font-bold text-bk-900 dark:text-w-100'>{product.title}</h2>
                     <div className='flex gap-3'>
                         <p className="flex items-center gap-2 bg-w-100 text-bk-500 py-1.5 px-4 rounded-2xl text-xs dark:bg-bk-700 dark:text-gray-400">
                             <span className='text-lg'><FaStar /></span>
                             stars and reviews
                         </p>
-                        <p className="border border-bk-100 py-1.5 px-4 rounded-2xl text-xs dark:text-w-100">IN STOCK</p>
+                        <StokLabel inStok={stokTotal>0} />
                     </div>
                     <p className='text-lg font-semibold text-bk-900 py-3 dark:text-w-100'>{FormatDolar(product.price)}</p>
-                    {hasStok && 
+                    {stokTotal > 0 && 
                         <div className='flex flex-col gap-5'>
                             <div>
                                 <p className='text-xs text-bk-500 pb-4 dark:text-gray-400'>AVAIBLE COLORS</p>
@@ -138,9 +149,9 @@ export const Product = () => {
                 <div>
                     <button onClick={ShareLink} className='text-2xl relative text-bk-500 self-start cursor-pointer'><LuShare2 />
                         {copyLink && <p className='absolute border p-1.5 flex gap-2 items-center text-center border-w-200 dark:border-bk-600 rounded text-sm text-bk-500 dark:text-gray-400'>
-                                    <IoIosCopy />
-                                    Copied
-                                </p>}
+                                        <IoIosCopy />
+                                        Copied
+                                    </p>}
                     </button>
                 </div>
             </div>
@@ -161,7 +172,7 @@ export const Product = () => {
                     {filterSimilarProducts.length > 0 &&
                         <div className="flex flex-wrap justify-center sm:justify-between gap-5 w-full">
                             {filterSimilarProducts.map(item => 
-                                <Cards key={item.id} routeId={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} inStock />
+                                <Cards key={item.id} routeId={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} inStok={stokTotal>0} />
                             )}
                         </div>
                     }

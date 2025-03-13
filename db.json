@@ -128,7 +128,7 @@
           "size": "100ml",
           "colors": [
             {
-              "qtd": 15,
+              "qtd": 0,
               "color": "clear",
               "image": "/src/images/products/perfume/cover-2.png"
             }
@@ -171,7 +171,7 @@
               "image": "/src/images/products/trousers/cover-1.png"
             },
             {
-              "qtd": 6,
+              "qtd": 0,
               "color": "navy",
               "image": "/src/images/products/trousers/cover-2.png"
             }
@@ -287,7 +287,7 @@
               "image": "/src/images/products/handbag/cover-1.png"
             },
             {
-              "qtd": 9,
+              "qtd": 12,
               "color": "black",
               "image": "/src/images/products/handbag/cover-2.png"
             }

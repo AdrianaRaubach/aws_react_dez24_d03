@@ -9,13 +9,16 @@
   --color-bk-600: #474b57;
   --color-bk-500: #5c5f6a;
   --color-bk-300: #878a92;
+  --color-bk-200: #B6B7BC;
   --color-bk-100: #e6e7e8;
   --color-w-100: #f6f6f6;
   --color-w-200: #e9e9eb;
+  --spacing-8px: 8px;
   --spacing-240px: 240px;
   --spacing-248px: 248px;
   --spacing-312px: 312px;
   --spacing-360px: 360px;
+  --spacing-1440px: 1440px;
   --color-green: #5A9868;
   --color-blue: #759DF4;
   --color-red: #BE1313 ;

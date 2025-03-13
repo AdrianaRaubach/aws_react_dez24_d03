@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.24.1",
-    "@reduxjs/toolkit": "^2.6.0",
+    "@reduxjs/toolkit": "^2.6.1",
     "@tailwindcss/vite": "^4.0.11",
     "axios": "^1.8.1",
     "json-server": "^1.0.0-beta.3",

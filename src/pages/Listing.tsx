@@ -16,7 +16,7 @@ export const Listing = () => {
     const [products, setProducts] = useState<ProductsProps[]>([])
     const [inputChecked, setInputChecked] = useState<string>('')
     const [activePage, setActivePage] = useState<number>(0)
-    const itemsPerPage: number = 4
+    const itemsPerPage: number = 9
     const startIndex = activePage * itemsPerPage
     const endIndex = startIndex + itemsPerPage
 
@@ -144,7 +144,13 @@ export const Listing = () => {
                         {filterItems.length > 0 &&
                             <div className="flex flex-wrap justify-center sm:justify-between gap-5">
                                 {filterItems.map(item => 
-                                    <Cards key={item.id} routeId={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} inStock />
+                                    <Cards key={item.id} routeId={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} 
+                                        inStok={((item.stok.map((item) => 
+                                            item.colors.map((colorQtd) => colorQtd.qtd))).flat().reduce(
+                                            (accumulator, currentValue) => accumulator + currentValue,
+                                            0,
+                                        )) > 0 }
+                                    />
                                 )}
                             </div>
 			            }

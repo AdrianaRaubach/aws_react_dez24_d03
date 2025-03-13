@@ -11,13 +11,12 @@ import { SlArrowRight } from "react-icons/sl";
 import { SlArrowLeft } from "react-icons/sl";
 
 export const Listing = () => {
-    const [totalPages, setTotalPages] = useState<number>(1)
     const [valueRange, setValueRange] = useState<number>(0)
     const [searchInput, setSearchInput] = useState<string>('')
     const [products, setProducts] = useState<ProductsProps[]>([])
     const [inputChecked, setInputChecked] = useState<string>('')
     const [activePage, setActivePage] = useState<number>(0)
-    const itemsPerPage: number = 9
+    const itemsPerPage: number = 4
     const startIndex = activePage * itemsPerPage
     const endIndex = startIndex + itemsPerPage
 
@@ -62,11 +61,13 @@ export const Listing = () => {
 
     const categoriesList = [...new Set(products.map((item) => item.category))]
 
-    const filterItems = products.filter(item => 
+    const results = products.filter(item => 
         ((inputChecked !== '') ? item.category === inputChecked: item.category) 
         && ((valueRange !== 0) ? item.price <= valueRange: item.price <= item.price) 
         && ((searchInput !== '') ? item.title.toLowerCase().includes(searchInput.toLowerCase()): item.title)
-    ).slice(startIndex, endIndex)
+    )
+
+    const filterItems = results.slice(startIndex, endIndex)
 
     const previousPage = () => {
         if(activePage === 0) return
@@ -74,13 +75,9 @@ export const Listing = () => {
     }
 
     const nextPage = () => {
-        if(activePage === totalPages) return
+        if(endIndex >= results.length) return
         setActivePage(activePage + 1)
     }
-
-    useEffect(() => {
-        setTotalPages((Math.ceil((filterItems.length)/itemsPerPage)))    
-    },[filterItems])
 
     return (
         <main className='dark:bg-bk-800 font-inter'>
@@ -141,7 +138,9 @@ export const Listing = () => {
                     </div>
     
                     <div>
-                        <p className="text-bk-500 text-sm dark:text-gray-400 py-10 mt-8 md:mt-0">Showing {startIndex+1} - {(endIndex> products.length)? products.length : endIndex} Of {products.length} Results.</p>
+                        <p className="text-bk-500 text-sm dark:text-gray-400 py-10 mt-8 md:mt-0">
+                            Showing {startIndex+1} - {(endIndex > results.length)? results.length : endIndex} Of {results.length} Results.
+                        </p>
                         {filterItems.length > 0 &&
                             <div className="flex flex-wrap justify-center sm:justify-between gap-5">
                                 {filterItems.map(item => 

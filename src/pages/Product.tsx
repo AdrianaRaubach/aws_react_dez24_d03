@@ -1,8 +1,7 @@
 import api from '../service/api'
 import { useEffect, useState } from 'react'
 import { CurrentPage } from '../components/CurrentPage'
-import { ProductsProps } from '../types/PropTypes'
-import { Btn } from '../components/Btn'
+import { CartProps, ProductsProps } from '../types/PropTypes'
 import { FormatDolar } from '../utils/FormatDolar'
 import { FaStar } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa6";
@@ -12,6 +11,8 @@ import { LuShare2 } from "react-icons/lu";
 import { IoIosCopy } from "react-icons/io";
 import { Colors } from '../components/Colors'
 import { StokLabel } from '../components/StokLabel'
+import { useDispatch } from 'react-redux';
+import { addItem } from '../redux/actions';
 
 
 export const Product = () => {
@@ -26,7 +27,9 @@ export const Product = () => {
     const [colorChecked, setColorChecked] = useState<string>('')
     const [sizeChecked, setSizeChecked] = useState<string>('')
     const [indexImage, setIndexImage] = useState<number>(0)
-    
+
+    const dispatch = useDispatch()
+      
     useEffect(() => {
         api.get(`/products/${productId}`).then(response => {
             setProduct(response.data)
@@ -64,7 +67,7 @@ export const Product = () => {
         setColorChecked(e.target.name) 
     }
     
-    const SizeSelect = ( e: React.ChangeEvent<HTMLInputElement>) => {
+    const SizeSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
         if(sizeChecked === e.target.name) {
             setSizeChecked('')
             return
@@ -83,9 +86,22 @@ export const Product = () => {
         0,
     )
     
+    const HandleAdd = () => {
+        const item: CartProps = {
+            id: product.id,
+            title: product.title,
+            image: product.stok[0].colors[0].image,
+            color: colorChecked,
+            size: sizeChecked,
+            qtd: qtdAdd,
+            price: product.price
+        }
+        dispatch(addItem(item))
+    }
+
     return (
         <main className='mt-34 px-10 md:px-20 lg:px-45 font-inter dark:bg-bk-800'>
-            <div className='border-t border-w-100 dark:border-bk-700 mt-45 sm:mt-35'><CurrentPage actualPage={product.title}/></div>
+            <div className='border-t border-w-100 dark:border-bk-700 mt-42 sm:mt-35'><CurrentPage actualPage={product.title}/></div>
             <div className='flex flex-col md:flex-row md:justify-between gap-20 md:gap-10 xl:gap-30'>
                 <div className=' bg-w-100 flex flex-col items-center justify-center py-5 lg:px-12 xl:px-21 dark:bg-bk-700'>
                     <img className='w-360px' src={imagesList[indexImage]} alt={product.title} />
@@ -141,7 +157,10 @@ export const Product = () => {
                                     <button className="px-3 text-bk-500 cursor-pointer dark:text-w-100" onClick={QtdAddPlus}><FaPlus /></button>
                                 </div>
                             </div>
-                            <Btn text='Add to cart' link='/'/>
+                            <button onClick={HandleAdd} 
+                                className='justify-center cursor-pointer flex items-center hover:opacity-85 text-white bg-bk-900 dark:bg-blue-400 py-3 px-6 gap-3 text-sm rounded-sm'>
+                                Add to cart
+                            </button>
                             <p className='text-xs text-bk-500 dark:text-gray-400'>— FREE SHIPPING ON ORDERS $100+</p>
                         </div>
                     }

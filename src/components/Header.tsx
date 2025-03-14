@@ -1,9 +1,11 @@
+import { RootState } from '../redux/reducers';
 import { Link, NavLink } from "react-router-dom"
 import Logo from '../images/icons/Logomark.svg'
 import CartIcon from '../images/icons/cart.png'
 import UserIcon from '../images/icons/User.png'
 import api from '../service/api'
 import { useState, useEffect } from "react"
+import { useSelector } from 'react-redux';
 
 type OffersProps = {
     offer : {
@@ -14,6 +16,7 @@ type OffersProps = {
 
 export const Header = () => {
 
+    const cartProducts = useSelector((state: RootState) => state.cartProducts.length)
     const [offers, setOffers] = useState<OffersProps[]>([])
     const [offerActive, setOfferActive] = useState<string>('')
 
@@ -80,7 +83,10 @@ export const Header = () => {
                     </ul>
                 </div>
                 <div className="flex gap-8 items-center">
-                    <Link to="/cart"><img src={CartIcon} alt="cart" /></Link>
+                    <div className="relative">
+                        <Link to="/cart"><img src={CartIcon} alt="cart" /></Link>
+                        {cartProducts> 0 && <div className="absolute bg-red rounded-full text-w-100 text-xs w-4 h-4 text-center font-semibold top-3 left-3">{cartProducts}</div>}
+                    </div>
                     <Link to="/profile"><img src={UserIcon} alt="profile" /></Link>
                 </div>
             </nav>

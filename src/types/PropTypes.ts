@@ -24,3 +24,15 @@ export type ProductsProps = {
     stars: StarRating[];
     stok: SizeStock[];
 }
+
+export type CartProps = {
+    id: string;
+    title: string;
+    image: string;
+    color: string;
+    size: string;
+    qtd: number;
+    price: number;
+}
+
+export type CartListProps = CartProps[]

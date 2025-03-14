@@ -1,5 +1,6 @@
 type ColorProp = {
     color: string;
+    small?: boolean;
 }
 
 const colorMap: { [key: string]: string } = {
@@ -16,12 +17,12 @@ const colorMap: { [key: string]: string } = {
     white: 'bg-w-100',
 };
 
-export const Colors = ({ color }: ColorProp) => {
+export const Colors = ({ color, small }: ColorProp) => {
     const bgColorClass = colorMap[color]
 
     return (
         
-        <div className={`${bgColorClass} w-5 h-5 rounded-full`}></div>
+        <div className={`${bgColorClass} ${small? "w-3 h-3":"w-5 h-5"} rounded-full`}></div>
         
     );
 };

@@ -15,7 +15,7 @@ import { useDispatch } from 'react-redux';
 import { addItem } from '../redux/actions';
 import { addValue } from '../redux/actions'
 import { OrderSummaryProps } from '../types/PropTypes'
-
+import { ModalErrorSuccess } from '../components/ModalErrorSuccess';
 
 export const Product = () => {
     
@@ -29,6 +29,8 @@ export const Product = () => {
     const [colorChecked, setColorChecked] = useState<string>('')
     const [sizeChecked, setSizeChecked] = useState<string>('')
     const [indexImage, setIndexImage] = useState<number>(0)
+    const [errorAddItem, setErrorAddItem] = useState(false)
+    const [messageError, setMessageError] = useState('')
 
     const dispatch = useDispatch()
       
@@ -89,6 +91,12 @@ export const Product = () => {
     )
     
     const HandleAdd = () => {
+
+        if( colorChecked === '' || sizeChecked === '') {
+            setErrorAddItem(true)
+            setMessageError('Size and color are required')
+            return
+        }
         const item: CartProps = {
             id: product.id,
             title: product.title,
@@ -99,6 +107,8 @@ export const Product = () => {
             price: product.price
         }
         dispatch(addItem(item))
+        setErrorAddItem(false)
+        setMessageError('Item added to cart')
 
         const order: OrderSummaryProps = {
             price: product.price,
@@ -109,6 +119,7 @@ export const Product = () => {
 
     return (
         <main className='mt-34 px-10 md:px-20 lg:px-45 font-inter dark:bg-bk-800'>
+            {messageError !== '' && <div className='fixed right-10'> <ModalErrorSuccess error={errorAddItem} message={messageError} onClick={() => setMessageError('')}/></div>}
             <div className='border-t border-w-100 dark:border-bk-700 mt-42 sm:mt-35'><CurrentPage actualPage={product.title}/></div>
             <div className='flex flex-col md:flex-row md:justify-between gap-20 md:gap-10 xl:gap-30'>
                 <div className=' bg-w-100 flex flex-col items-center justify-center py-5 lg:px-12 xl:px-21 dark:bg-bk-700'>

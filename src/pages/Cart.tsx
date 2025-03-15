@@ -13,6 +13,7 @@ export const Cart = () => {
     const cartSubtotal: number = useSelector((state:RootState) => Number(state.orderSummary.subtotal))
     const cartTotal: number = useSelector((state:RootState) => Number(state.orderSummary.total))
     const shippingTax: number = useSelector((state:RootState) => Number(state.orderSummary.tax))
+    const shipping: string = useSelector((state:RootState) => String(state.orderSummary.shipping))
 
     return (
         <main className="font-inter dark:bg-bk-800 pb-32">
@@ -49,16 +50,16 @@ export const Cart = () => {
                             </div>
                             <div className="flex justify-between">
                                 <p className="text-sm text-bk-500 dark:text-gray-400">Shipping:</p>
-                                <p className="text-bk-900 dark:text-w-100 text-sm">{shippingTax === 0 ? 'Free': 'to be calculated'}</p>
+                                <p className="text-bk-900 dark:text-w-100 text-sm">{shipping}</p>
                             </div>
                             <div className="flex justify-between">
                                 <p className="text-sm text-bk-500 dark:text-gray-400">Tax:</p>
-                                <p className="text-bk-900 dark:text-w-100 text-sm">{shippingTax !== 0 ? 'to be calculated': FormatDolar(Number(shippingTax))}</p>
+                                <p className="text-bk-900 dark:text-w-100 text-sm">{FormatDolar(Number(shippingTax))}</p>
                             </div>
                         </div>
                         <div className="flex justify-between font-medium">
                             <p className="text-sm text-bk-900 dark:text-w-100">Total</p>
-                            <p className="text-sm text-bk-900 dark:text-w-100">{FormatDolar(Number(cartTotal))}</p>
+                            <p className="text-sm text-bk-900 dark:text-w-100">{FormatDolar(Number(cartTotal) + Number(shippingTax))}</p>
                         </div>
                         <Link to={'/checkout'} className='justify-center cursor-pointer flex items-center hover:opacity-85 text-white bg-bk-900 dark:bg-blue-400 py-3 px-6 gap-3 text-sm rounded-sm'>
                             {"Checkout"}

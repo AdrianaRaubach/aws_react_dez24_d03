@@ -64,7 +64,9 @@ export const CartItems = ({image, title, color, size, price, qtd, id}: CartProps
                                 <p className="px-2 text-sm dark:text-w-100">{qtd}</p>
                             <button onClick={IncrementQtd} className="px-2 text-bk-500 cursor-pointer dark:text-w-100"><FaPlus /></button>
                         </div>
-                        <button onClick={RemoveItem} className="bg-w-100 dark:bg-bk-700 text-bk-500 dark:text-gray-400 p-2.5 rounded text-lg cursor-pointer"><IoCloseSharp /></button>
+                        <button onClick={RemoveItem} className="bg-w-100 dark:bg-bk-700 text-bk-500 dark:text-gray-400 p-2.5 rounded text-lg cursor-pointer">
+                            <IoCloseSharp />
+                        </button>
                     </div>
                 </div>
             </div>

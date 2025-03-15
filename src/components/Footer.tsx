@@ -9,7 +9,7 @@ import Amex from '../images/icons/Amex.png'
 import { useState } from 'react'
 import api from '../service/api'
 import { MdErrorOutline } from "react-icons/md";
-
+import { Loading } from './Loading'
 
 type NewsletterProps = {
     email: string;
@@ -40,7 +40,7 @@ export const Footer = () => {
             setFormValidate(false)
             setError('Email must be valid')
         } else {
-            setBtnSubmit('is Sending...')
+            setBtnSubmit('Loading')
             setDisableBtn(true)
             updateEmailsNewsletter(newsletterObj)
         }
@@ -75,7 +75,8 @@ export const Footer = () => {
                             <input onChange={handleInput} value={inputEmail} placeholder="Your email address" type="email" name="newsletter" className="border border-bk-100 rounded-md px-3 py-3 text-sm md:w-50 xl:w-80 bg-w-100 h-11" />
                             {!formValidate && <p className='flex items-center justify-between bg-red-200 text-red-600 text-xs px-3 pt-2 -mt-1 py-1 rounded-b-md'>{error}<MdErrorOutline className='text-lg' /></p>}
                         </div>
-                        <input className='cursor-pointer flex items-center hover:opacity-85 text-white bg-bk-900 dark:bg-blue-400 py-3 px-6 gap-3 text-sm rounded-sm h-11' disabled={disableBtn} type="submit" value={btnSubmit} />
+                        <button className='cursor-pointer flex items-center hover:opacity-85 text-white bg-bk-900 dark:bg-blue-400 py-3 px-6 gap-3 text-sm rounded-sm h-11' disabled={disableBtn} type="submit">
+                            {btnSubmit === 'Loading'? <Loading/>: btnSubmit}</button>
                     </form>
                 </div>
             </div>

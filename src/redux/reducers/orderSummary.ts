@@ -3,8 +3,8 @@ import { OrderSummaryProps } from "../../types/PropTypes"
 
 const initialState: OrderSummaryProps = {
     subtotal: 0,
-    shipping: '',
-    tax: 20,
+    shipping: 'Over $100 Free',
+    tax: 5,
     total: 0,
     price: 0,
     qtd: 0
@@ -20,6 +20,7 @@ const orderSummary = createSlice({
             if (state.tax !== undefined && state.total !== undefined) {
                 if(state.total >= 100) {
                     state.tax = 0
+                    state.shipping = 'Free'
                 }
             } 
 		},
@@ -29,8 +30,10 @@ const orderSummary = createSlice({
             if (state.tax !== undefined && state.total !== undefined) {
                 if(state.total >= 100) {
                     state.tax = 0
+                    state.shipping = 'Free'
                 } else {
-                    state.tax = 20
+                    state.tax = 5
+                    state.shipping = 'Over $100 Free'
                 }
             } 
         },
@@ -40,8 +43,10 @@ const orderSummary = createSlice({
             if (state.tax !== undefined && state.total !== undefined) {
                 if(state.total >= 100) {
                     state.tax = 0
+                    state.shipping = 'Free'
                 } else {
-                    state.tax = 20
+                    state.tax = 5
+                    state.shipping = 'Over $100 Free'
                 }
             } 
         },
@@ -53,8 +58,10 @@ const orderSummary = createSlice({
             if (state.tax !== undefined && state.total !== undefined) {
                 if(state.total >= 100) {
                     state.tax = 0
+                    state.shipping = 'Free'
                 } else {
-                    state.tax = 20
+                    state.tax = 5
+                    state.shipping = 'Over $100 Free'
                 }
             } 
         }

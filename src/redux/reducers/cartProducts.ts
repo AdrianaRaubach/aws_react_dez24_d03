@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { CartProps, CartListProps } from "../../types/PropTypes"
 
-
 const initialState: CartListProps = []
 const cartProducts = createSlice({
 	name: 'cart_products',
@@ -47,10 +46,9 @@ const cartProducts = createSlice({
 			)
 			return newState;	
 		}
-		
 	}
 })
 
-export const { addItem , removeItem} = cartProducts.actions
+export const { addItem , removeItem, incrementQtd, decrementQtd} = cartProducts.actions
 
 export default cartProducts.reducer;

@@ -6,51 +6,44 @@ import { IoCloseSharp } from "react-icons/io5";
 import { FormatDolar } from '../utils/FormatDolar'
 import { useDispatch } from 'react-redux';
 import { removeItem , incrementQtd, decrementQtd} from "../redux/actions";
+import { plusValue, minusValue, removeValue } from '../redux/actions'
+import { OrderSummaryProps } from "../types/PropTypes";
 
 export const CartItems = ({image, title, color, size, price, qtd, id}: CartProps) => {
 
     const dispatch = useDispatch()
+
+    const item: CartProps = {
+        id: id,
+        title: title,
+        image: image,
+        color: color,
+        size: size,
+        qtd: qtd,
+        price: price
+    }
+    const order: OrderSummaryProps = {
+        price: price,
+        qtd: qtd
+    }
+
     const RemoveItem = () => {
-        const item: CartProps = {
-            id: id,
-            title: title,
-            image: image,
-            color: color,
-            size: size,
-            qtd: qtd,
-            price: price
-        }
         dispatch(removeItem(item))
+        dispatch(removeValue(order))
     }
 
     const IncrementQtd = () => {
-        const item: CartProps = {
-            id: id,
-            title: title,
-            image: image,
-            color: color,
-            size: size,
-            qtd: qtd,
-            price: price
-        }
         dispatch(incrementQtd(item))
+        dispatch(plusValue(order))
     }
 
     const DecrementQtd = () => {
-        const item: CartProps = {
-            id: id,
-            title: title,
-            image: image,
-            color: color,
-            size: size,
-            qtd: qtd,
-            price: price
-        }
         dispatch(decrementQtd(item))
+        dispatch(minusValue(order))
     }
 
     return(
-        <div className="flex items-center text-sm w-full gap-8">
+        <div className="flex items-center text-sm w-full gap-8" >
             <div className="flex bg-w-100 dark:bg-bk-700 h-80px px-4 justify-center">
                 <img className="h-62px object-cover" src={image} alt={title} />
             </div>

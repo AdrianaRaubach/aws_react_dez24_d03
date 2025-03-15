@@ -13,6 +13,8 @@ import { Colors } from '../components/Colors'
 import { StokLabel } from '../components/StokLabel'
 import { useDispatch } from 'react-redux';
 import { addItem } from '../redux/actions';
+import { addValue } from '../redux/actions'
+import { OrderSummaryProps } from '../types/PropTypes'
 
 
 export const Product = () => {
@@ -97,6 +99,12 @@ export const Product = () => {
             price: product.price
         }
         dispatch(addItem(item))
+
+        const order: OrderSummaryProps = {
+            price: product.price,
+            qtd: qtdAdd
+        }
+        dispatch(addValue(order))
     }
 
     return (

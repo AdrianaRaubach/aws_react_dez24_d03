@@ -36,3 +36,19 @@ export type CartProps = {
 }
 
 export type CartListProps = CartProps[]
+
+export type Subtotal = number
+
+export type CartState = {
+    items: CartListProps;
+    subtotal: Subtotal;
+}
+
+export type OrderSummaryProps = { 
+    subtotal?: number;
+    shipping?: string;
+    tax?: number;
+    total?: number;
+    price: number;
+    qtd: number;
+}

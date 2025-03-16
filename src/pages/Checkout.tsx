@@ -51,7 +51,7 @@ export const Checkout = () => {
     }
 
     const HandleSubmit = () => {
-        ValidateForm()
+        ValidateForm({email:email, fullName:fullName})
     }
 
     

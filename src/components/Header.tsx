@@ -6,6 +6,9 @@ import UserIcon from '../images/icons/User.png'
 import api from '../service/api'
 import { useState, useEffect } from "react"
 import { useSelector } from 'react-redux';
+import { useAuth } from "@clerk/clerk-react";
+import { ProfileImage } from './ProfileImage';
+
 
 type OffersProps = {
     offer : {
@@ -15,7 +18,7 @@ type OffersProps = {
 }
 
 export const Header = () => {
-
+    const user = useAuth()
     const cartProducts = useSelector((state: RootState) => state.cartProducts.length)
     const [offers, setOffers] = useState<OffersProps[]>([])
     const [offerActive, setOfferActive] = useState<string>('')
@@ -45,8 +48,8 @@ export const Header = () => {
             <div className="flex h-18 sm:h-11 p-3 font-inter text-sm pr-20 sm:px-0 text-white bg-bk-900 dark:bg-blue-300 dark:text-bk-900 items-center justify-center font-light w-full">
                 <p>{offerActive}<Link to="/" className="cursor-pointer font-medium"> Order Now</Link></p>
             </div>
-            <nav className="flex justify-between px-10 md:px-20 lg:px-45 py-7 bg-white dark:bg-bk-900">
-                <div className="flex items-center gap-15 lg:gap-30">
+            <nav className="flex justify-between px-10 md:px-20 lg:px-45 bg-white dark:bg-bk-900">
+                <div className="flex h-24 items-center gap-15 lg:gap-30">
                     <Link to="/">
                         <div className="flex items-center gap-3">
                             <div className="flex bg-bk-900 dark:bg-blue-400 rounded-full w-10 h-10 items-center justify-center">
@@ -84,10 +87,11 @@ export const Header = () => {
                 </div>
                 <div className="flex gap-8 items-center">
                     <div className="relative">
-                        <Link to="/cart"><img src={CartIcon} alt="cart" /></Link>
+                        <Link to="/cart"><img src={CartIcon} className='dark:invert' alt="cart" /></Link>
                         {cartProducts> 0 && <div className="absolute bg-red rounded-full text-w-100 text-xs w-4 h-4 text-center font-semibold top-3 left-3">{cartProducts}</div>}
                     </div>
-                    <Link to="/profile"><img src={UserIcon} alt="profile" /></Link>
+                    {!user.isSignedIn && <Link to="/login"><img src={UserIcon} className='dark:invert' alt="profile" /></Link>}
+                    {user.isSignedIn && <Link to="/profile"> <ProfileImage/></Link>}
                 </div>
             </nav>
         </header>

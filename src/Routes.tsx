@@ -10,6 +10,7 @@ import { Login } from "./pages/Login";
 import { SignUp } from "./pages/SignUp";
 import { ForgotPassword } from "./pages/ForgotPassword";
 import { About } from "./pages/About";
+import { SignedIn, SignedOut } from "@clerk/clerk-react";
 
 export const Routers = () => {
   return (
@@ -22,7 +23,17 @@ export const Routers = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/after-payment" element={<AfterPayment />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={
+          <>
+            <SignedOut>
+              <Login />
+            </SignedOut>
+            <SignedIn>
+              <Profile/>
+            </SignedIn>
+          </>
+          } 
+        />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/reset-password" element={<ForgotPassword />} />
         <Route path="/about" element={<About />} />

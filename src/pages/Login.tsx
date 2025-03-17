@@ -17,6 +17,8 @@ export const Login = () => {
   
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
+
+      setIsSending('is Sending')
   
       if (!isLoaded) return
   
@@ -33,7 +35,10 @@ export const Login = () => {
           console.error(JSON.stringify(signInAttempt, null, 2))
         }
       } catch (err: any) {
-        console.error(JSON.stringify(err, null, 2))
+        const errors = JSON.stringify(err.errors[0].message)
+        setErrorMessage(errors)
+        setError(true)
+        setIsSending('Login')
       }
     }
   

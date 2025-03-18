@@ -5,18 +5,24 @@ import { CurrentPage } from '../components/CurrentPage'
 import { Link } from 'react-router-dom'
 import { ModalErrorSuccess } from '../components/ModalErrorSuccess'
 import { Loading } from '../components/Loading'
+import { ValidateForm } from '../utils/ValidateForm'
 
 export const Login = () => {
     const { isLoaded, signIn, setActive } = useSignIn()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [isSending, setIsSending] = useState('Login')
-    const [error, setError] = useState<boolean>(false)
-    const [errorMessage, setErrorMessage] = useState('')
+    const [errors, setErrors] = useState({
+        error: false,
+        errorMessage:''
+      })
     const navigate = useNavigate()
   
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
+
+      ValidateForm({ emailAddress:email, password}, setErrors)
+      if(!ValidateForm({emailAddress:email, password}, setErrors)) return
 
       setIsSending('is Sending')
   
@@ -36,8 +42,7 @@ export const Login = () => {
         }
       } catch (err: any) {
         const errors = JSON.stringify(err.errors[0].message)
-        setErrorMessage(errors)
-        setError(true)
+        setErrors((prev) => ({...prev, error:true, errorMessage: errors }))
         setIsSending('Login')
       }
     }
@@ -48,14 +53,18 @@ export const Login = () => {
                 <h2 className="text-2xl text-bk-900 dark:text-w-100 font-bold -mb-4">Login</h2>
                 <CurrentPage actualPage="Login" />
             </div>
-            {errorMessage !== '' && <div className='fixed right-10'> <ModalErrorSuccess error={error} message={errorMessage} onClick={() => setErrorMessage('')}/></div>}
+            {errors.errorMessage !== '' && 
+                <div className='fixed right-10'> 
+                    <ModalErrorSuccess error={errors.error} message={errors.errorMessage} onClick={() => setErrors((prev) => ({...prev, errorMessage: "" }))}/>
+                </div>
+            }
             <div className='flex flex-col items-center w-full py-35'>
                 <form className='flex flex-col w-80 gap-4' noValidate onSubmit={handleSubmit}>
                     <div>Google component</div>
                     <div className='flex flex-col'>
                         <label className='text-bk-600 dark:text-gray-400 font-medium text-sm' htmlFor="email">Email</label>
                         <input
-                            className='border border-bk-100 dark-border-bk-700 p-2 rounded-md'
+                            className='border border-bk-100 dark-border-bk-700 p-2 rounded-md text-bk-900 dark:text-w-100'
                             id="email"
                             type="email"
                             name="email"
@@ -66,7 +75,7 @@ export const Login = () => {
                     <div className='flex flex-col'>
                         <label className='text-bk-600 dark:text-gray-400 font-medium text-sm' htmlFor="password">Password</label>
                         <input
-                            className='border border-bk-100 dark-border-bk-700 p-2 rounded-md'
+                            className='border border-bk-100 dark-border-bk-700 p-2 rounded-md text-bk-900 dark:text-w-100'
                             id="password"
                             type="password"
                             name="password"
@@ -78,11 +87,11 @@ export const Login = () => {
                         <div id="clerk-captcha"></div>
                     </div>
                     <div className='flex flex-col gap-8'>
-                        <Link to="/reset-password" className='font-medium self-end text-bk-600 text-xs dark:text-gray-400'>Forgot Password?</Link>
+                        <Link to="/reset-password" className='font-medium self-end text-bk-600 text-xs dark:text-gray-400 hover:opacity-85'>Forgot Password?</Link>
                         <button className='justify-center cursor-pointer flex items-center hover:opacity-85 text-white bg-bk-900 dark:bg-blue-400 py-3 px-6 gap-3 text-sm rounded-sm' 
                             type="submit">{isSending === 'is Sending'? <Loading text={isSending}/>: isSending}
                         </button>
-                        <Link to='/sign-up' className='self-center text-bk-500 dark:text-gray-400 text-sm'>Don't have an account? Sign up</Link>
+                        <Link to='/sign-up' className='self-center text-bk-500 dark:text-gray-400 text-sm hover:opacity-85'>Don't have an account? Sign up</Link>
                     </div>
                 </form>
             </div>

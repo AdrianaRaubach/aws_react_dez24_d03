@@ -5,6 +5,7 @@ import { CurrentPage } from '../components/CurrentPage'
 import { Link } from 'react-router-dom'
 import { ModalErrorSuccess } from '../components/ModalErrorSuccess'
 import { Loading } from '../components/Loading'
+import { ValidateForm } from '../utils/ValidateForm'
 
 export const SignUp = () => {
   const { isLoaded, signUp, setActive } = useSignUp()
@@ -16,10 +17,12 @@ export const SignUp = () => {
   const [verifying, setVerifying] = useState(false)
   const [code, setCode] = useState('')
   const navigate = useNavigate()
-  const [error, setError] = useState<boolean>(false)
-  const [errorMessage, setErrorMessage] = useState('')
   const [isSending, setIsSending] = useState('Create account')
   const [isVerifying, setIsVerifying] = useState('Verify')
+  const [errors, setErrors] = useState({
+    error: false,
+    errorMessage:''
+  })
   
     useEffect(() => {
         const nameParts = fullName.split(' ')
@@ -29,10 +32,12 @@ export const SignUp = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
-
-        setIsSending('is Sending')
-
         if (!isLoaded) return
+
+        ValidateForm({fullName, emailAddress, password}, setErrors)
+        if(!ValidateForm({fullName, emailAddress, password}, setErrors)) return
+        
+        setIsSending('is Sending')
 
         try {
             await signUp.create({
@@ -45,17 +50,15 @@ export const SignUp = () => {
             await signUp.prepareEmailAddressVerification({
                 strategy: 'email_code',
             })
-            setErrorMessage('Success')
-            setError(false)
+            setErrors((prev) => ({...prev, error:false, errorMessage: "Success" }))
             setTimeout(() => {
-                setErrorMessage('')
+                setErrors((prev) => ({...prev, errorMessage: "" }))
                 setVerifying(true)
             }, 500);
 
         } catch (err: any) {
             const errors = JSON.stringify(err.errors[0].message)
-            setErrorMessage(errors)
-            setError(true)
+            setErrors((prev) => ({...prev, error:true, errorMessage: errors }))
             setIsSending('Create account')
         }
     }
@@ -63,7 +66,7 @@ export const SignUp = () => {
     const handleVerify = async (e: React.FormEvent) => {
         e.preventDefault()
 
-        setErrorMessage('')
+        setErrors((prev) => ({...prev, errorMessage: "" }))
 
         setIsVerifying('is Sending')
 
@@ -75,8 +78,7 @@ export const SignUp = () => {
                 code,
             })
             if (completeSignUp.status === 'complete') {
-                setErrorMessage('Success')
-                setError(false)
+                setErrors((prev) => ({...prev, error:false, errorMessage: "Success" }))
                 await setActive({ session: completeSignUp.createdSessionId })
                 navigate('/')
             } else {
@@ -84,8 +86,7 @@ export const SignUp = () => {
             }
         } catch (err: any) {
             const errors = JSON.stringify(err.errors[0].message)
-            setErrorMessage(errors)
-            setError(true)
+            setErrors((prev) => ({...prev, error:true, errorMessage: errors }))
             setIsVerifying('Verify')
         }
     }
@@ -97,18 +98,35 @@ export const SignUp = () => {
                     <h2 className="text-2xl text-bk-900 dark:text-w-100 font-bold -mb-4">Sign up</h2>
                     <CurrentPage actualPage="Sign up" />
                 </div>
-                {errorMessage !== '' && <div className='fixed right-10'> <ModalErrorSuccess error={error} message={errorMessage} onClick={() => setErrorMessage('')}/></div>}
+                {errors.errorMessage !== '' && <div className='fixed right-10'> 
+                    <ModalErrorSuccess error={errors.error} message={errors.errorMessage} 
+                    onClick={() => setErrors((prev) => ({...prev, errorMessage: "" }))}/>
+                    </div>
+                }
                 <div className='flex flex-col items-center w-full pt-35'>
                     <form className='flex flex-col w-80 gap-6' onSubmit={handleVerify}>
-                        <label className='text-md text-bk-700 dark:text-w-100 font-semibold -mb-4'id="code">Enter your verification code</label>
-                        <input className='border border-bk-100 dark-border-bk-700 p-2 rounded-md' value={code} id="code" name="code" onChange={(e) => setCode(e.target.value)} />
+                        <label className='text-md text-bk-700 dark:text-w-100 font-semibold -mb-4'
+                            id="code">Enter your verification code
+                        </label>
+                        <input className='border border-bk-100 dark-border-bk-700 p-2 rounded-md text-bk-900 dark:text-w-100' 
+                            value={code} id="code" name="code" onChange={(e) => setCode(e.target.value)} 
+                        />
                         <button className='justify-center cursor-pointer flex items-center hover:opacity-85 text-white bg-bk-900 dark:bg-blue-400 py-3 px-6 gap-3 text-sm rounded-sm' 
                             type="submit">
                             {isVerifying === 'is Sending'? <Loading text={isVerifying}/>: isVerifying}
                         </button>
                     </form>
-                    {errorMessage === '"Too many requests. Please try again in a bit."' && <Link className='text-sm text-bk-700 dark:text-gray-400 cursor-pointer underline mt-3' to="/">Go to Home</Link>}
-                    {errorMessage === '"failed"' && <button className='text-sm text-bk-700 dark:text-gray-400 cursor-pointer underline mt-3' onClick={()=> setVerifying(false)}>Try Again</button>}
+                    {errors.errorMessage === '"Too many requests. Please try again in a bit."' && 
+                        <Link className='text-sm text-bk-700 dark:text-gray-400 cursor-pointer hover:opacity-85 underline mt-3' to="/">
+                            Go to Home
+                        </Link>
+                    }
+                    {errors.errorMessage === '"failed"' && 
+                        <button className='text-sm text-bk-700 dark:text-gray-400 cursor-pointer underline mt-3 hover:opacity-85' 
+                            onClick={()=> setVerifying(false)}>
+                            Try Again
+                        </button>
+                    }
                 </div>
             </main>
         )
@@ -119,14 +137,17 @@ export const SignUp = () => {
                 <h2 className="text-2xl text-bk-900 dark:text-w-100 font-bold -mb-4">Sign up</h2>
                 <CurrentPage actualPage="Sign up" />
             </div>
-            {errorMessage !== '' && <div className='fixed right-10'> <ModalErrorSuccess error={error} message={errorMessage} onClick={() => setErrorMessage('')}/></div>}
+            {errors.errorMessage !== '' && <div className='fixed right-10'> <ModalErrorSuccess error={errors.error} message={errors.errorMessage} 
+                onClick={() => setErrors((prev) => ({...prev, errorMessage: "" }))}/>
+                </div>
+            }
             <div className='flex flex-col items-center w-full py-35'>
                 <form className='flex flex-col w-80 gap-4' noValidate onSubmit={handleSubmit}>
                     <div>Google component</div>
                     <div className='flex flex-col'>
                         <label className='text-bk-600 dark:text-gray-400 font-medium text-sm' htmlFor="name">Name</label>
                         <input
-                            className='border border-bk-100 dark-border-bk-700 p-2 rounded-md'
+                            className='border border-bk-100 dark-border-bk-700 p-2 rounded-md text-bk-900 dark:text-w-100'
                             id="name"
                             type="name"
                             name="name"
@@ -137,7 +158,7 @@ export const SignUp = () => {
                     <div className='flex flex-col'>
                         <label className='text-bk-600 dark:text-gray-400 font-medium text-sm' htmlFor="email">Email</label>
                         <input
-                            className='border border-bk-100 dark-border-bk-700 p-2 rounded-md'
+                            className='border border-bk-100 dark-border-bk-700 p-2 rounded-md text-bk-900 dark:text-w-100'
                             id="email"
                             type="email"
                             name="email"
@@ -148,7 +169,7 @@ export const SignUp = () => {
                     <div className='flex flex-col'>
                         <label className='text-bk-600 dark:text-gray-400 font-medium text-sm' htmlFor="password">Password</label>
                         <input
-                            className='border border-bk-100 dark-border-bk-700 p-2 rounded-md'
+                            className='border border-bk-100 dark-border-bk-700 p-2 rounded-md text-bk-900 dark:text-w-100'
                             id="password"
                             type="password"
                             name="password"
@@ -164,7 +185,7 @@ export const SignUp = () => {
                         <button className='justify-center cursor-pointer flex items-center hover:opacity-85 text-white bg-bk-900 dark:bg-blue-400 py-3 px-6 gap-3 text-sm rounded-sm' 
                             type="submit">{isSending === 'is Sending'? <Loading text={isSending}/>: isSending}
                         </button>
-                        <Link to='/login' className='self-center text-bk-500 dark:text-gray-400 text-sm'>Already have an account? Log in</Link>
+                        <Link to='/login' className='self-center text-bk-500 dark:text-gray-400 text-sm hover:opacity-85'>Already have an account? Log in</Link>
                     </div>
                 </form>
             </div>

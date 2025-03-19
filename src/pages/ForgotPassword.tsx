@@ -101,7 +101,7 @@ export const ForgotPassword = () => {
                 <form className='flex flex-col w-80 gap-4' noValidate onSubmit={handleSubmit}>
                     {!successfulCreation && (
                         <div className='flex flex-col gap-8'>
-                            <p className='text-sm text-bk-600 dark:text-gray-400'>Please enter the email address associated with your account. We'll promptly send you a link to reset your password.</p>
+                            <p className='text-sm text-bk-600 dark:text-gray-400 leading-6'>Please enter the email address associated with your account. We'll promptly send you a link to reset your password.</p>
                             <div className='flex flex-col'>
                                 <label className='text-bk-600 dark:text-gray-400 font-medium text-sm' htmlFor="email">Email</label>
                                 <input

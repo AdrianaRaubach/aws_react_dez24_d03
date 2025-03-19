@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { ModalErrorSuccess } from '../components/ModalErrorSuccess'
 import { Loading } from '../components/Loading'
 import { ValidateForm } from '../utils/ValidateForm'
+import { GoogleSignInButton } from '../components/GoogleSignInButton'
 
 export const Login = () => {
     const { isLoaded, signIn, setActive } = useSignIn()
@@ -59,8 +60,15 @@ export const Login = () => {
                 </div>
             }
             <div className='flex flex-col items-center w-full py-35'>
+                <div className='w-80'>
+                    <GoogleSignInButton/>
+                    <div className='flex items-center gap-4 my-10'>
+                        <hr className='w-35 text-bk-100' />
+                        <p className='font-inter text-xs font-medium text-bk-500'>OR</p>
+                        <hr className='w-35 text-bk-100' />
+                    </div>
+                </div>
                 <form className='flex flex-col w-80 gap-4' noValidate onSubmit={handleSubmit}>
-                    <div>Google component</div>
                     <div className='flex flex-col'>
                         <label className='text-bk-600 dark:text-gray-400 font-medium text-sm' htmlFor="email">Email</label>
                         <input

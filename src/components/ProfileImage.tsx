@@ -16,7 +16,7 @@ export const ProfileImage = () => {
 
     return (
         <div className="text-sm rounded-full w-12 h-12 bg-primary-b-100 text-primary-b-900 dark:bg-blue-300 text-center dark:text-blue-950 p-3.5">
-            {initials}
+            {String(initials).toUpperCase()}
         </div>
     )
 }

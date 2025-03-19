@@ -6,24 +6,25 @@ import { Link } from 'react-router-dom'
 import { ModalErrorSuccess } from '../components/ModalErrorSuccess'
 import { Loading } from '../components/Loading'
 import { ValidateForm } from '../utils/ValidateForm'
+import { GoogleSignInButton } from '../components/GoogleSignInButton'
 
 export const SignUp = () => {
-  const { isLoaded, signUp, setActive } = useSignUp()
-  const [emailAddress, setEmailAddress] = useState('')
-  const [fullName, setFullName] = useState('')
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [password, setPassword] = useState('')
-  const [verifying, setVerifying] = useState(false)
-  const [code, setCode] = useState('')
-  const navigate = useNavigate()
-  const [isSending, setIsSending] = useState('Create account')
-  const [isVerifying, setIsVerifying] = useState('Verify')
-  const [errors, setErrors] = useState({
-    error: false,
-    errorMessage:''
-  })
-  
+    const { isLoaded, signUp, setActive } = useSignUp()
+    const [emailAddress, setEmailAddress] = useState('')
+    const [fullName, setFullName] = useState('')
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [password, setPassword] = useState('')
+    const [verifying, setVerifying] = useState(false)
+    const [code, setCode] = useState('')
+    const navigate = useNavigate()
+    const [isSending, setIsSending] = useState('Create account')
+    const [isVerifying, setIsVerifying] = useState('Verify')
+    const [errors, setErrors] = useState({
+        error: false,
+        errorMessage:''
+    })
+
     useEffect(() => {
         const nameParts = fullName.split(' ')
         setFirstName(String(nameParts[0]))
@@ -142,8 +143,15 @@ export const SignUp = () => {
                 </div>
             }
             <div className='flex flex-col items-center w-full py-35'>
+                <div className='w-80'>
+                    <GoogleSignInButton/>
+                    <div className='flex items-center gap-4 my-10'>
+                        <hr className='w-35 text-bk-100' />
+                        <p className='font-inter text-xs font-medium text-bk-500'>OR</p>
+                        <hr className='w-35 text-bk-100' />
+                    </div>
+                </div>
                 <form className='flex flex-col w-80 gap-4' noValidate onSubmit={handleSubmit}>
-                    <div>Google component</div>
                     <div className='flex flex-col'>
                         <label className='text-bk-600 dark:text-gray-400 font-medium text-sm' htmlFor="name">Name</label>
                         <input
@@ -181,7 +189,7 @@ export const SignUp = () => {
                         <div id="clerk-captcha"></div>
                     </div>
                     <div className='flex flex-col gap-8'>
-                        <p className='text-bk-500 text-xs dark:text-gray-400'>By creating an account you agree with our Terms of Service, Privacy Policy.</p>
+                        <p className='text-bk-500 text-xs dark:text-gray-400 leading-6'>By creating an account you agree with our Terms of Service, Privacy Policy.</p>
                         <button className='justify-center cursor-pointer flex items-center hover:opacity-85 text-white bg-bk-900 dark:bg-blue-400 py-3 px-6 gap-3 text-sm rounded-sm' 
                             type="submit">{isSending === 'is Sending'? <Loading text={isSending}/>: isSending}
                         </button>

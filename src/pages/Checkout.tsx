@@ -3,10 +3,14 @@ import { RootState } from '../redux/reducers';
 import { CurrentPage } from "../components/CurrentPage";
 import { Link } from "react-router-dom";
 import { FormatDolar } from '../utils/FormatDolar';
+import { CartListProps, OrdersByUser } from '../types/PropTypes';
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ModalErrorSuccess, SearchModal } from '../components/ModalErrorSuccess';
 import { ValidateForm } from '../utils/ValidateForm';
+import api from '../service/api';
+import { useUser } from "@clerk/clerk-react";
+import { useNavigate } from 'react-router-dom';
 
 export const Checkout = () => {
 
@@ -14,6 +18,7 @@ export const Checkout = () => {
     const cartTotal: number = useSelector((state:RootState) => Number(state.orderSummary.total))
     const shippingTax: number = useSelector((state:RootState) => Number(state.orderSummary.tax))
     const shipping: string = useSelector((state:RootState) => String(state.orderSummary.shipping))
+    const cartProducts: CartListProps = useSelector((state:RootState) => state.cartProducts)
     const [zipCode, setZipCode] = useState('')
     const [country, setCountry] = useState('')
     const [city, setCity] = useState('')
@@ -21,48 +26,80 @@ export const Checkout = () => {
     const [street, setStreet] = useState('')
     const [email, setEmail] = useState('')
     const [fullName, setFullName] = useState('')
-    const [zipError, setZipError] = useState('')
     const [searchMessage, setSearchMessage] = useState('')
-    const [error, setError] = useState<boolean>(false)
+    const [errors, setErrors] = useState({
+        error: false,
+        errorMessage:''
+    })
+    const [order, setOrder] = useState<OrdersByUser>()
+    const user = useUser()
+    const today: Date = new Date()
+    const navigate = useNavigate()
 
- 
+    const formatDate = (today: Date) => {
+        return new Intl.DateTimeFormat('en-US', { year: 'numeric', month:'long', day: '2-digit'}).format(today)
+    }
+    useEffect(() => {
+        if(user.user !== null && user.user !== undefined) {
+            setOrder({
+                userId: user.user.id,
+                date: String(formatDate(today)),
+                products: cartProducts,
+            })
+            setEmail(String(user.user?.emailAddresses))
+            setFullName(String(user.user.fullName))
+        }
+    },[])
+    
     const HandleBlur = () =>{
         const regexZip = /^\d{8}$/
         if(!regexZip.test(zipCode)) {
-            setError(true)
-            setZipError('The zip code must contain 8 numeric characters')
+            setErrors((prev) => ({...prev, error:true, errorMessage: "The zip code must contain 8 numeric characters" }))
             return
         }
-        setZipError('')
+        setErrors((prev) => ({...prev,errorMessage: "" }))
         setSearchMessage('Searching for address information...')
         axios.get(`https://brasilapi.com.br/api/cep/v1/${zipCode}`).then(response => {
             setCity(response.data.city)
             setState(response.data.state)
             setStreet(response.data.street)
             setSearchMessage('')
-            setError(false)
-            setZipError('Success')
+            setErrors((prev) => ({...prev, error:false, errorMessage: "Success" }))
+            setTimeout(() => {
+                setErrors((prev) => ({...prev, error:false, errorMessage: "" }))
+            }, 2500);
         }).catch(error => {
             console.log(error.response.data.errors[0].message)
             setSearchMessage('')
-            setError(true)
-            setZipError('Zip code not found, enter the rest of the information or try later')
+            setErrors((prev) => ({...prev, error:true, errorMessage: "Zip code not found, enter the rest of the information or try later" }))
         })
     }
 
     const HandleSubmit = () => {
-        ValidateForm({email:email, fullName:fullName})
-    }
+        ValidateForm({emailAddress:email, fullName:fullName, country:country}, setErrors)
+        if(!ValidateForm({emailAddress:email, fullName:fullName, country:country}, setErrors)) return
+        setErrors((prev) => ({...prev, error:false, errorMessage: "" }))
 
+        api.post('/orders', order).then(response => {
+           console.log("response"+response)
+        })
+        navigate('/after-payment')
+    }
     
     return (
         <main className="font-inter dark:bg-bk-800 pb-32">
-            {zipError !== '' && <div className='fixed top-40 left-10'><ModalErrorSuccess onClick={()=>setZipError('')} error={error} message={zipError}></ModalErrorSuccess></div>}
-            {searchMessage !== '' && <div className='fixed top-40 left-10'><SearchModal onClick={()=>setSearchMessage('')} message={searchMessage}></SearchModal></div>}
             <div className="bg-w-100 mt-34 px-10 md:px-20 lg:px-45 pt-15 pb-5 dark:bg-bk-900">
                 <h2 className="text-2xl text-bk-900 dark:text-w-100 font-bold -mb-4">Checkout</h2>
                 <CurrentPage actualPage="Checkout" />
             </div>
+            {errors.errorMessage !== '' && <div className='fixed top-80 left-10'>
+                <ModalErrorSuccess onClick={()=>setErrors((prev) => ({...prev, error:false, errorMessage: "" }))} error={errors.error} message={errors.errorMessage}></ModalErrorSuccess>
+                </div>
+            }
+            {searchMessage !== '' && <div className='fixed top-80 left-10'>
+                <SearchModal onClick={()=>setSearchMessage('')} message={searchMessage}></SearchModal>
+                </div>
+            }
             <div className='mt-18 px-10 md:px-20 xl:px-45 flex flex-col lg:flex-row font-inter'>
                 <div className='md:pr-5 lg:pr-15 xl:pr-32'>
                     <h4 className='text-bk-900 dark:text-w-100 font-semibold pb-15'>Shipping Address</h4>

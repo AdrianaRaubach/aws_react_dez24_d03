@@ -652,5 +652,89 @@
       "id": "s2df",
       "offer": "Receive up to 10% cashback"
     }
+  ],
+  "orders": [
+    {
+      "id": "e8fe",
+      "userId": "user_2uXUqavnoapBdMDHrdNRTZqXBgz",
+      "date": "19 de março de 2025",
+      "products": [
+        {
+          "id": "S4H5",
+          "title": "Running Shoes",
+          "image": "/src/images/products/shoe/cover-1.png",
+          "color": "white",
+          "size": "44",
+          "qtd": 2,
+          "price": 399.8
+        },
+        {
+          "id": "S4H5",
+          "title": "Running Shoes",
+          "image": "/src/images/products/shoe/cover-1.png",
+          "color": "black",
+          "size": "44",
+          "qtd": 2,
+          "price": 399.8
+        }
+      ]
+    },
+    {
+      "id": "fbae",
+      "userId": "user_2uXUqavnoapBdMDHrdNRTZqXBgz",
+      "date": "March 19, 2025",
+      "products": [
+        {
+          "id": "A1B4",
+          "title": "Casual T-Shirt",
+          "image": "/src/images/products/t-shirt/cover-1.png",
+          "color": "red",
+          "size": "M",
+          "qtd": 1,
+          "price": 79.9
+        }
+      ]
+    },
+    {
+      "id": "5655",
+      "userId": "user_2uXUqavnoapBdMDHrdNRTZqXBgz",
+      "date": "March 19, 2025",
+      "products": [
+        {
+          "id": "A1B4",
+          "title": "Casual T-Shirt",
+          "image": "/src/images/products/t-shirt/cover-1.png",
+          "color": "red",
+          "size": "M",
+          "qtd": 1,
+          "price": 79.9
+        }
+      ]
+    },
+    {
+      "id": "1b7d",
+      "userId": "user_2uYOyKj0g5AlmDDKWX1VkosfHGj",
+      "date": "March 19, 2025",
+      "products": [
+        {
+          "id": "A1B4",
+          "title": "Casual T-Shirt",
+          "image": "/src/images/products/t-shirt/cover-1.png",
+          "color": "yellow",
+          "size": "M",
+          "qtd": 2,
+          "price": 159.8
+        },
+        {
+          "id": "A1B4",
+          "title": "Casual T-Shirt",
+          "image": "/src/images/products/t-shirt/cover-1.png",
+          "color": "green",
+          "size": "S",
+          "qtd": 1,
+          "price": 79.9
+        }
+      ]
+    }
   ]
 }

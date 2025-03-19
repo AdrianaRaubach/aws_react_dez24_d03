@@ -4,6 +4,7 @@ type FormProps = {
     password?: string;
     confirmedPassword?: string;
     code?: string;
+    country?: string;
 }
 
 type ErrorProps = {
@@ -11,20 +12,30 @@ type ErrorProps = {
     error: boolean;
 }
 
-export const ValidateForm = ({emailAddress, fullName, password, confirmedPassword, code}: FormProps, setErrors : React.Dispatch<React.SetStateAction<ErrorProps>>) => {
+export const ValidateForm = ({emailAddress, fullName, password, confirmedPassword, code, country}: FormProps, setErrors : React.Dispatch<React.SetStateAction<ErrorProps>>) => {
 
     const regexFullName = /^[A-Za-zÀ-ÿ]+(?:\s[A-Za-zÀ-ÿ]+)+$/
+    const regexCountry = /^[A-Za-zÀ-ÿ]+$/
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     const regexPassword = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?.&<>#=])[A-Za-z\d@$!%*?.&<>#=]{8,}$/
 
     if(fullName !== undefined && fullName.length === 0) {
-        console.log('entrou aqui')
         setErrors((prev) => ({...prev, error:true, errorMessage: "Enter your full name" }))
         return false
     }
 
     if(fullName !== undefined && !regexFullName.test(fullName)) {
         setErrors((prev) => ({...prev, error:true, errorMessage: "The name must contain only letters and accents and the surname is mandatory" }))
+        return false
+    }
+
+    if(country !== undefined && country.length === 0) {
+        setErrors((prev) => ({...prev, error:true, errorMessage: "Enter your Country" }))
+        return false
+    }
+
+    if(country !== undefined && !regexCountry.test(country)) {
+        setErrors((prev) => ({...prev, error:true, errorMessage: "The Country must contain only letters and accents." }))
         return false
     }
 

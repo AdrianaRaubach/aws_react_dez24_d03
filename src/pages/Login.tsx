@@ -16,7 +16,7 @@ export const Login = () => {
     const [errors, setErrors] = useState({
         error: false,
         errorMessage:''
-      })
+    })
     const navigate = useNavigate()
   
     const handleSubmit = async (e: React.FormEvent) => {

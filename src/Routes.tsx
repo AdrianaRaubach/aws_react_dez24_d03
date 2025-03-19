@@ -11,14 +11,12 @@ import { SignUp } from "./pages/SignUp";
 import { ForgotPassword } from "./pages/ForgotPassword";
 import { About } from "./pages/About";
 import { SignedIn, SignedOut } from "@clerk/clerk-react";
-import { GoogleSignInButton } from "./components/GoogleSignInButton";
 import { GoogleSignInCallback } from "./components/GoogleSignInCallback";
 
 export const Routers = () => {
   return (
     <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/" element={<GoogleSignInButton />} />
         <Route path="/google-callback" element={<GoogleSignInCallback />} />
         <Route path="/listing" element={<Listing />} />
         <Route path="/product" element={<Product />} />

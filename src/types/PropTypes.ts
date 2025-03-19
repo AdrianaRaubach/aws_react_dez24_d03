@@ -52,3 +52,10 @@ export type OrderSummaryProps = {
     price: number;
     qtd: number;
 }
+
+export type OrdersByUser = {
+    userId: string;
+    products: CartProps[];
+    date: string;
+    id?: string;
+}

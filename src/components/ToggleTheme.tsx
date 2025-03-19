@@ -8,6 +8,12 @@ export const ToggleTheme = () => {
     const html = document.querySelector('html')
 
     const handleClick = () => {
+
+        if(localStorage.theme === 'dark') {
+            localStorage.removeItem("theme")
+        } else {
+            localStorage.theme = "dark"
+        }
         html?.classList.toggle('dark')
     }
     return (

@@ -11,7 +11,7 @@ const cartProducts = createSlice({
 			
 			if (indexProd !== -1) {
 				const newState =  state.map((item, index) =>
-					index === indexProd ? { ...item, qtd: item.qtd + 1 , price: ((item.qtd+1) * action.payload.price)} : item)
+					index === indexProd ? { ...item, qtd: item.qtd + action.payload.qtd , price: ((item.qtd+action.payload.qtd) * action.payload.price)} : item)
 				return newState	  
 			}
 			state.push({

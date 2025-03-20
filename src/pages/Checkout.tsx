@@ -35,7 +35,7 @@ export const Checkout = () => {
     const user = useUser()
     const today: Date = new Date()
     const navigate = useNavigate()
-
+    
     const formatDate = (today: Date) => {
         return new Intl.DateTimeFormat('en-US', { year: 'numeric', month:'long', day: '2-digit'}).format(today)
     }
@@ -83,6 +83,13 @@ export const Checkout = () => {
         api.post('/orders', order).then(response => {
            console.log("response"+response)
         })
+
+        localStorage.removeItem('cartProducts')
+        localStorage.removeItem('cartSubtotal')
+        localStorage.removeItem('cartTotal')
+        localStorage.removeItem('shippingTax')
+        localStorage.removeItem('shipping')
+        
         navigate('/after-payment')
     }
     

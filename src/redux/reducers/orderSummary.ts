@@ -51,8 +51,6 @@ const orderSummary = createSlice({
             } 
         },
         removeValue: (state, action: PayloadAction<OrderSummaryProps>) => {
-            console.log('state' + state.price)
-            console.log('action' + action.payload.price)
             if (state.subtotal !== undefined) state.subtotal -= action.payload.price
             if (state.total !== undefined) state.total -= action.payload.price
             if (state.tax !== undefined && state.total !== undefined) {
@@ -64,10 +62,16 @@ const orderSummary = createSlice({
                     state.shipping = 'Over $100 Free'
                 }
             } 
+        },
+        localStorageInfos: (state, action: PayloadAction<OrderSummaryProps>) => {
+            state.shipping = action.payload.shipping
+            state.tax = action.payload.tax
+            state.subtotal = action.payload.subtotal
+            state.total = action.payload.total
         }
 	}
 })
 
-export const { addValue, plusValue, minusValue, removeValue } = orderSummary.actions
+export const { addValue, plusValue, minusValue, removeValue, localStorageInfos } = orderSummary.actions
 
 export default orderSummary.reducer;

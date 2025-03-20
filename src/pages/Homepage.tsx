@@ -32,7 +32,7 @@ export const Homepage = () => {
           <div className='flex items-start flex-col justify-center gap-4 pt-20 sm:pt-10'>
             <h1 className='text-3xl font-semibold text-bk-000 dark:text-w-200'>Fresh Arrivals Online</h1>
             <p className='text-bk-600 dark:text-gray-400 text-sm mb-10'>Discover Our Newest Collection Today.</p>
-            <Btn text='View Collection' link='/products' arrow />
+            <Btn text='View Collection' link='/listing' arrow />
           </div>
           <div className='flex self-center'>
             <div className='bg-w-200 rounded-full w-85 h-85 mt-20'>
@@ -73,7 +73,7 @@ export const Homepage = () => {
             <div className='flex flex-col items-start gap-7'>
               <h3 className='text-2xl font-bold text-bk-900 dark:text-w-100'>Browse Our Fashion Paradise!</h3>
               <p className='text-bk-500 text-sm dark:text-gray-400 md:w-90 lg:w-110'>Step into a world of style and explore our diverse collection of clothing categories.</p>
-              <Btn text='Start Browsing' link='/products' arrow/>
+              <Btn text='Start Browsing' link='/listing' arrow/>
             </div>
             <div className='flex justify-center'>
               <img className='h-70 object-cover mt-5 sm:-mt-12 grow-0' src={ImageBanner2} alt="image banner" />

@@ -9,3 +9,6 @@ export const addValue = createAction<OrderSummaryProps>('order_summary/addValue'
 export const plusValue = createAction<OrderSummaryProps>('order_summary/plusValue')
 export const minusValue = createAction<OrderSummaryProps>('order_summary/minusValue')
 export const removeValue = createAction<OrderSummaryProps>('order_summary/removeValue')
+export const localStorageInfos = createAction<OrderSummaryProps>('order_summary/localStorageInfos')
+export const localStorageCartItems = createAction<OrderSummaryProps>('cart_products/localStorageCartItems')
+export const clearCart = createAction<OrderSummaryProps>('cart_products/clearCart')

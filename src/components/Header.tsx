@@ -91,7 +91,7 @@ export const Header = () => {
                         {cartProducts> 0 && <div className="absolute bg-red rounded-full text-w-100 text-xs w-4 h-4 text-center font-semibold top-3 left-3">{cartProducts}</div>}
                     </div>
                     {!user.isSignedIn && <Link to="/login"><img src={UserIcon} className='dark:invert' alt="profile" /></Link>}
-                    {user.isSignedIn && <Link to="/profile"> <ProfileImage/></Link>}
+                    {user.isSignedIn && <Link to="/profile"><ProfileImage/></Link>}
                 </div>
             </nav>
         </header>

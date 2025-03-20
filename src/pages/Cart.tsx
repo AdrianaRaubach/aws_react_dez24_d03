@@ -6,6 +6,9 @@ import { CartItems } from "../components/CartItems";
 import { CartListProps, CartProps } from '../types/PropTypes';
 import { Btn } from '../components/Btn';
 import { FormatDolar } from '../utils/FormatDolar';
+import { useAuth } from '@clerk/clerk-react'
+import { useEffect } from 'react';
+
 
 export const Cart = () => {
 
@@ -14,6 +17,21 @@ export const Cart = () => {
     const cartTotal: number = useSelector((state:RootState) => Number(state.orderSummary.total))
     const shippingTax: number = useSelector((state:RootState) => Number(state.orderSummary.tax))
     const shipping: string = useSelector((state:RootState) => String(state.orderSummary.shipping))
+    
+    useEffect(() => {
+        localStorage.removeItem('cartProducts')
+        localStorage.removeItem('cartSubtotal')
+        localStorage.removeItem('cartTotal')
+        localStorage.removeItem('shippingTax')
+        localStorage.removeItem('shipping')
+        localStorage.setItem('cartProducts', JSON.stringify(cartProducts))
+        localStorage.setItem('cartSubtotal', cartSubtotal.toString())
+        localStorage.setItem('cartTotal', cartTotal.toString() )
+        localStorage.setItem('shippingTax', shippingTax.toString())
+        localStorage.setItem('shipping', shipping)
+    },[cartProducts, cartSubtotal, cartTotal, shipping, shippingTax])
+
+    const isAuth = useAuth()
 
     return (
         <main className="font-inter dark:bg-bk-800 pb-32">
@@ -61,8 +79,10 @@ export const Cart = () => {
                             <p className="text-sm text-bk-900 dark:text-w-100">Total</p>
                             <p className="text-sm text-bk-900 dark:text-w-100">{FormatDolar(Number(cartTotal) + Number(shippingTax))}</p>
                         </div>
-                        <Link to={'/checkout'} className='justify-center cursor-pointer flex items-center hover:opacity-85 text-white bg-bk-900 dark:bg-blue-400 py-3 px-6 gap-3 text-sm rounded-sm'>
-                            {"Checkout"}
+                        <Link
+                            to={'/checkout'}
+                            className='justify-center cursor-pointer flex items-center hover:opacity-85 text-white bg-bk-900 dark:bg-blue-400 py-3 px-6 gap-3 text-sm rounded-sm'>
+                            {isAuth.isSignedIn? "Checkout" : "Login to Checkout"}
                         </Link>
                         <Link className="text-xs text-center font-medium underline cursor-pointer text-bk-900 dark:text-w-100" to="/listing">Continue Shopping</Link>
                     </div>

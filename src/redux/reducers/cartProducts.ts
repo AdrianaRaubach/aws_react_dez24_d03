@@ -45,10 +45,32 @@ const cartProducts = createSlice({
 				index === indexProd ? { ...item, qtd: item.qtd - 1, price: item.price - action.payload.price / item.qtd} : item
 			)
 			return newState;	
+		},
+
+		clearCart:() => {
+			return []
+		},
+
+		localStorageCartItems: (state, action) => {
+			
+			if (action.payload.length > 0) {
+                action.payload.forEach((item:CartProps) => {
+                    state.push({
+                        id: item.id,
+                        title: item.title,
+                        image: item.image,
+                        color: item.color,
+                        size: item.size,
+                        qtd: item.qtd,
+                        price: item.price,
+                    })
+                })
+            }
+            return state
 		}
 	}
 })
 
-export const { addItem , removeItem, incrementQtd, decrementQtd} = cartProducts.actions
+export const { addItem , removeItem, incrementQtd, decrementQtd, localStorageCartItems, clearCart} = cartProducts.actions
 
 export default cartProducts.reducer;

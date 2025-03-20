@@ -97,22 +97,22 @@ export const Footer = () => {
                 </div>
                 <div className='flex justify-evenly md:justify-between md:gap-10 xl:gap-20 2xl:gap-35'>
                     <ul className='flex flex-col gap-4 justify-between'>
-                        <Link to="/"><li className='text-sm mb-3 text-bk-300 dark:text-w-100'>SUPPORT</li></Link>
-                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>FAQ</li></Link>
-                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Terms of use</li></Link>
+                        <Link to="/support"><li className='text-sm mb-3 text-bk-300 dark:text-w-100'>SUPPORT</li></Link>
+                        <Link to="/faq"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>FAQ</li></Link>
+                        <Link to="/terms-of-use"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Terms of use</li></Link>
                         <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Privacy Policy</li></Link>
                     </ul>
                     <ul className='flex flex-col gap-4 justify-between'>
-                        <Link to="/"><li className='text-sm mb-3 text-bk-300 dark:text-w-100'>COMPANY</li></Link>
-                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>About</li></Link>
-                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Contact</li></Link>
-                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Carees</li></Link>
+                        <Link to="/company"><li className='text-sm mb-3 text-bk-300 dark:text-w-100'>COMPANY</li></Link>
+                        <Link to="/about"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>About</li></Link>
+                        <Link to="/contact"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Contact</li></Link>
+                        <Link to="/carees"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Carees</li></Link>
                     </ul>
                     <ul className='flex flex-col gap-4 justify-between'>
-                        <Link to="/"><li className='text-sm mb-3 text-bk-300 dark:text-w-100'>SHOP</li></Link>
-                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>My Account</li></Link>
-                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Checkout</li></Link>
-                        <Link to="/"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Cart</li></Link>
+                        <Link to="/listing"><li className='text-sm mb-3 text-bk-300 dark:text-w-100'>SHOP</li></Link>
+                        <Link to="/profile"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>My Account</li></Link>
+                        <Link to="/checkout"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Checkout</li></Link>
+                        <Link to="/cart"><li className='font-medium text-sm hover:text-gray-400 dark:hover:text-gray-500'>Cart</li></Link>
                     </ul>
                 </div>
                 <div className='flex flex-col items-center md:items-start gap-8'>

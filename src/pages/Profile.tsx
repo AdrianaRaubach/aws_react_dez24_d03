@@ -52,8 +52,8 @@ export const Profile = () => {
                 <h2 className="text-2xl text-bk-900 dark:text-w-100 font-bold -mb-4">My Account</h2>
                 <CurrentPage actualPage="My Account" />
             </div>
-            <div className="flex w-full px-10 md:px-20 lg:px-45 pb-30">
-                <nav className="border-r border-w-200 dark:border-bk-600 w-60 my-15 pt-20 pb-60">
+            <div className="flex w-full flex-col md:flex-row px-10 lg:px-45 pb-30">
+                <nav className=" border-b md:border-b-0 md:border-r border-w-200 dark:border-bk-600 md:w-60 my-15 md:pt-20 pb-10 md:pb-60">
                     <ul className="flex flex-col gap-4 mr-10">
                         <li className={`cursor-pointer flex items-center gap-3 py-2 px-4 text-sm font-medium hover:bg-w-100 hover:text-bk-900 rounded md w-full 
                             ${subMenu === 'orders'? ' bg-w-100 text-bk-900':'text-bk-500 dark:text-gray-400' }`}
@@ -79,7 +79,7 @@ export const Profile = () => {
                     </ul>
                 </nav>
                 {(subMenu === 'profile') && 
-                    <div className="mt-15 flex flex-col gap-8 ml-12 w-9/12">
+                    <div className="md:mt-15 flex flex-col gap-8 md:ml-12 sm:w-9/12">
                         <h3 className="font-semibold texk-bk-900 dark:text-w-100">Account Details</h3>
                         <ProfileImage/>
                         <div className="flex flex-col">
@@ -87,7 +87,7 @@ export const Profile = () => {
                             <input type="text" 
                                 name="full-name" 
                                 id="full-name" 
-                                className='border border-bk-100 dark:border-bk-500 text-bk-800 dark:text-gray-400 p-2 rounded-md w-86'
+                                className='border border-bk-100 dark:border-bk-500 text-bk-800 dark:text-gray-400 p-2 rounded-md md:w-86'
                                 disabled value={fullName} 
                             />
                         </div>
@@ -96,20 +96,20 @@ export const Profile = () => {
                             <input type="email" 
                                 name="email" 
                                 id="email" 
-                                className='border border-bk-100 dark:border-bk-500 text-bk-800 dark:text-gray-400 p-2 rounded-md w-86'
+                                className='border border-bk-100 dark:border-bk-500 text-bk-800 dark:text-gray-400 p-2 rounded-md md:w-86'
                                 disabled value={email} 
                             />
                         </div>
                     </div>
                 }
                 {(subMenu === 'orders') && 
-                    <div className="w-9/12">
+                    <div className="md:w-9/12">
                         {hasOrders && 
-                            <div className="mt-15 flex flex-col ml-12">
+                            <div className="md:mt-15 flex flex-col md:ml-12">
                                 {orders.map((item: OrdersByUser) => 
-                                    <div className="border-b border-w-200 dark:border-bk-600 flex flex-col py-4 w-160 2xl:w-200" key={item.id}>
+                                    <div className="border-b border-w-200 dark:border-bk-600 flex flex-col py-4 lg:w-130 xl:w-160 2xl:w-200" key={item.id}>
                                         {item.products.map((prod) =>
-                                            <div className="flex justify-between">
+                                            <div className="flex justify-between flex-col sm:flex-row">
                                                 <div key={prod.title} className="flex gap-8 font-inter py-4 items-center">
                                                     <div className="flex bg-w-100 dark:bg-bk-700 h-80px px-3 justify-center">
                                                         <img className="h-62px object-cover" src={prod.image} alt={prod.title} />
@@ -123,7 +123,7 @@ export const Profile = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <Link className="border text-sm rounded self-end px-6 my-8 py-3 font-medium border-bk-900 text-bk-900 hover:text-w-100 hover:bg-bk-900 dark:hover:bg-bk-700 dark:border-gray-400 dark:text-gray-400" 
+                                                <Link className="border text-sm rounded text-center md:self-end px-6 my-8 py-3 font-medium border-bk-900 text-bk-900 hover:text-w-100 hover:bg-bk-900 dark:hover:bg-bk-700 dark:border-gray-400 dark:text-gray-400" 
                                                     to={`/product/${prod.id}`}>View item
                                                 </Link>
                                             </div>
@@ -133,7 +133,7 @@ export const Profile = () => {
                             </div>
                         }
                         {!hasOrders && 
-                            <div className="mt-15 flex flex-col items-center justify-center gap-8 ml-12 py-30">
+                            <div className="md:mt-15 flex flex-col items-center justify-center gap-8 md:ml-12 py-5 md:py-30">
                                 <img src={EmptyPng} alt="empty" className="dark:invert" />
                                 <p className="text-bk-500 text-sm dark:text-gray-400">Your order history is waiting to be filled.</p>
                                 <Btn link="/listing" text="Start Shopping" arrow/>

@@ -43,12 +43,12 @@ export const CartItems = ({image, title, color, size, price, qtd, id}: CartProps
     }
 
     return(
-        <div className="flex items-center text-sm w-full gap-8" >
-            <div className="flex bg-w-100 dark:bg-bk-700 h-80px px-4 justify-center">
-                <img className="h-62px object-cover" src={image} alt={title} />
+        <div className="flex flex-col sm:flex-row items-center text-sm w-full gap-8" >
+            <div className="flex bg-w-100 dark:bg-bk-700 h-30 sm:h-80px px-4 justify-center">
+                <img className="sm:h-62px object-contain sm:object-cover" src={image} alt={title} />
             </div>
-            <div className="flex flex-col gap-5 sm-gap-2 sm:flex-row justify-between w-full">
-                <div className="flex flex-col gap-3">
+            <div className="flex flex-col sm:flex-row gap-5 sm:gap-2 items-center justify-between w-full">
+                <div className="flex sm:flex-col gap-3">
                     <h5 className="font-semibold text-bk-900 dark:text-w-100" >{title}</h5>
                     <div className="flex items-center text-xs text-bk-500 dark:text-gray-300 gap-2">
                         <p>Color:</p>
@@ -56,8 +56,8 @@ export const CartItems = ({image, title, color, size, price, qtd, id}: CartProps
                         <p><s>--</s> Size: {size}</p>
                     </div>
                 </div>
-                <div className="flex flex-col items-start sm:flex-row sm:items-center gap-4">
-                    <p className="font-semibold px-3 text-bk-900 dark:text-w-100">{FormatDolar(price)}</p>
+                <div className="flex items-start flex-row sm:items-center gap-4">
+                    <p className="font-semibold px-3 text-bk-900 dark:text-w-100 self-center">{FormatDolar(price)}</p>
                     <div className="flex gap-4">
                         <div className="flex border rounded border-w-200 p-2.5 text-xs gap-2">
                             <button onClick={DecrementQtd} className="px-2 text-bk-500 cursor-pointer dark:text-w-100"><FaMinus /></button>

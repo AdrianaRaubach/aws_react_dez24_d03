@@ -91,7 +91,11 @@ export const Checkout = () => {
         localStorage.removeItem('shipping')
         
         navigate('/after-payment')
+        console.log(order?.products.map((item) => (item?.color)))
+        console.log(order?.products)
+        console.log(order?.products.map((item) => item.id))
     }
+    
     
     return (
         <main className="font-inter dark:bg-bk-800 pb-32">

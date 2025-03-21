@@ -1,9 +1,89 @@
 {
   "products": [
     {
-      "id": "A1B4",
+      "id": "A1B1",
       "category": "t-shirt",
-      "title": "Casual T-Shirt",
+      "title": "Casual T-Shirt 1",
+      "onOffer": false,
+      "totalSold": 200,
+      "price": 99.9,
+      "detail": "Elevate your everyday style with our Men's Black T-Shirts, the ultimate wardrobe essential for modern men. Crafted with meticulous attention to detail and designed for comfort, these versatile black tees are a must-have addition to your collection.",
+      "stars": [
+        {
+          "1": 6
+        },
+        {
+          "2": 10
+        },
+        {
+          "3": 4
+        },
+        {
+          "4": 3
+        },
+        {
+          "5": 5
+        }
+      ],
+      "averageStars": 3.2,
+      "totalReviews": 100,
+      "stok": [
+        {
+          "size": "S",
+          "colors": [
+            {
+              "qtd": 0,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-1.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        },
+        {
+          "size": "M",
+          "colors": [
+            {
+              "qtd": 5,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-1.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1B2",
+      "category": "t-shirt",
+      "title": "Casual T-Shirt 2",
       "onOffer": false,
       "totalSold": 200,
       "price": 79.9,
@@ -25,34 +105,346 @@
           "5": 5
         }
       ],
+      "averageStars": 3.2,
+      "totalReviews": 100,
       "stok": [
         {
           "size": "S",
           "colors": [
             {
-              "qtd": 5,
+              "qtd": 0,
               "color": "blue",
-              "image": "/src/images/products/t-shirt/cover-1.png"
-            },
-            {
-              "qtd": 8,
-              "color": "green",
-              "image": "/src/images/products/t-shirt/cover-2.png"
-            },
-            {
-              "qtd": 12,
-              "color": "red",
               "image": "/src/images/products/t-shirt/cover-3.png"
             },
             {
               "qtd": 7,
               "color": "yellow",
-              "image": "/src/images/products/t-shirt/cover-4.png"
+              "image": "/src/images/products/t-shirt/cover-2.png"
             },
             {
               "qtd": 10,
               "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        },
+        {
+          "size": "M",
+          "colors": [
+            {
+              "qtd": 5,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-4.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1B3",
+      "category": "t-shirt",
+      "title": "Casual T-Shirt 3",
+      "onOffer": false,
+      "totalSold": 200,
+      "price": 79.9,
+      "detail": "Elevate your everyday style with our Men's Black T-Shirts, the ultimate wardrobe essential for modern men. Crafted with meticulous attention to detail and designed for comfort, these versatile black tees are a must-have addition to your collection.",
+      "stars": [
+        {
+          "1": 6
+        },
+        {
+          "2": 10
+        },
+        {
+          "3": 4
+        },
+        {
+          "4": 3
+        },
+        {
+          "5": 5
+        }
+      ],
+      "averageStars": 3.2,
+      "totalReviews": 100,
+      "stok": [
+        {
+          "size": "S",
+          "colors": [
+            {
+              "qtd": 0,
+              "color": "blue",
               "image": "/src/images/products/t-shirt/cover-5.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        },
+        {
+          "size": "M",
+          "colors": [
+            {
+              "qtd": 5,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1B4",
+      "category": "t-shirt",
+      "title": "Casual T-Shirt 4",
+      "onOffer": false,
+      "totalSold": 200,
+      "price": 79.9,
+      "detail": "Elevate your everyday style with our Men's Black T-Shirts, the ultimate wardrobe essential for modern men. Crafted with meticulous attention to detail and designed for comfort, these versatile black tees are a must-have addition to your collection.",
+      "stars": [
+        {
+          "1": 6
+        },
+        {
+          "2": 10
+        },
+        {
+          "3": 4
+        },
+        {
+          "4": 3
+        },
+        {
+          "5": 5
+        }
+      ],
+      "averageStars": 3.2,
+      "totalReviews": 100,
+      "stok": [
+        {
+          "size": "S",
+          "colors": [
+            {
+              "qtd": 0,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-7.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        },
+        {
+          "size": "M",
+          "colors": [
+            {
+              "qtd": 5,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-8.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1B5",
+      "category": "t-shirt",
+      "title": "Casual T-Shirt 5",
+      "onOffer": false,
+      "totalSold": 200,
+      "price": 79.9,
+      "detail": "Elevate your everyday style with our Men's Black T-Shirts, the ultimate wardrobe essential for modern men. Crafted with meticulous attention to detail and designed for comfort, these versatile black tees are a must-have addition to your collection.",
+      "stars": [
+        {
+          "1": 6
+        },
+        {
+          "2": 10
+        },
+        {
+          "3": 4
+        },
+        {
+          "4": 3
+        },
+        {
+          "5": 5
+        }
+      ],
+      "averageStars": 3.2,
+      "totalReviews": 100,
+      "stok": [
+        {
+          "size": "S",
+          "colors": [
+            {
+              "qtd": 0,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-9.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        },
+        {
+          "size": "M",
+          "colors": [
+            {
+              "qtd": 5,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-10.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1B6",
+      "category": "t-shirt",
+      "title": "Casual T-Shirt 6",
+      "onOffer": false,
+      "totalSold": 200,
+      "price": 79.9,
+      "detail": "Elevate your everyday style with our Men's Black T-Shirts, the ultimate wardrobe essential for modern men. Crafted with meticulous attention to detail and designed for comfort, these versatile black tees are a must-have addition to your collection.",
+      "stars": [
+        {
+          "1": 6
+        },
+        {
+          "2": 10
+        },
+        {
+          "3": 4
+        },
+        {
+          "4": 3
+        },
+        {
+          "5": 5
+        }
+      ],
+      "averageStars": 3.2,
+      "totalReviews": 100,
+      "stok": [
+        {
+          "size": "S",
+          "colors": [
+            {
+              "qtd": 0,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-11.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
             },
             {
               "qtd": 3,
@@ -70,24 +462,14 @@
               "image": "/src/images/products/t-shirt/cover-1.png"
             },
             {
-              "qtd": 8,
-              "color": "green",
-              "image": "/src/images/products/t-shirt/cover-2.png"
-            },
-            {
-              "qtd": 12,
-              "color": "red",
-              "image": "/src/images/products/t-shirt/cover-3.png"
-            },
-            {
               "qtd": 7,
               "color": "yellow",
-              "image": "/src/images/products/t-shirt/cover-4.png"
+              "image": "/src/images/products/t-shirt/cover-2.png"
             },
             {
               "qtd": 10,
               "color": "black",
-              "image": "/src/images/products/t-shirt/cover-5.png"
+              "image": "/src/images/products/t-shirt/cover-3.png"
             },
             {
               "qtd": 3,
@@ -99,38 +481,480 @@
       ]
     },
     {
-      "id": "P2F3",
-      "category": "perfume",
-      "title": "Elegant Perfume",
+      "id": "A1B7",
+      "category": "t-shirt",
+      "title": "Casual T-Shirt 7",
       "onOffer": true,
-      "totalSold": 250,
-      "price": 120,
-      "detail": "A sophisticated fragrance with a blend of floral and woody notes, perfect for any occasion.",
+      "totalSold": 200,
+      "price": 79.9,
+      "detail": "Elevate your everyday style with our Men's Black T-Shirts, the ultimate wardrobe essential for modern men. Crafted with meticulous attention to detail and designed for comfort, these versatile black tees are a must-have addition to your collection.",
       "stars": [
         {
-          "1": 2
+          "1": 6
         },
         {
-          "2": 3
+          "2": 10
         },
         {
-          "3": 5
+          "3": 4
         },
         {
-          "4": 10
+          "4": 3
         },
         {
-          "5": 15
+          "5": 5
         }
       ],
+      "averageStars": 3.2,
+      "totalReviews": 100,
       "stok": [
         {
-          "size": "100ml",
+          "size": "S",
           "colors": [
             {
               "qtd": 0,
-              "color": "clear",
-              "image": "/src/images/products/perfume/cover-2.png"
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        },
+        {
+          "size": "M",
+          "colors": [
+            {
+              "qtd": 5,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-11.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1B8",
+      "category": "t-shirt",
+      "title": "Casual T-Shirt 8",
+      "onOffer": true,
+      "totalSold": 200,
+      "price": 79.9,
+      "detail": "Elevate your everyday style with our Men's Black T-Shirts, the ultimate wardrobe essential for modern men. Crafted with meticulous attention to detail and designed for comfort, these versatile black tees are a must-have addition to your collection.",
+      "stars": [
+        {
+          "1": 6
+        },
+        {
+          "2": 10
+        },
+        {
+          "3": 4
+        },
+        {
+          "4": 3
+        },
+        {
+          "5": 5
+        }
+      ],
+      "averageStars": 3,
+      "totalReviews": 100,
+      "stok": [
+        {
+          "size": "S",
+          "colors": [
+            {
+              "qtd": 0,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-11.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        },
+        {
+          "size": "M",
+          "colors": [
+            {
+              "qtd": 5,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-11.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1B9",
+      "category": "t-shirt",
+      "title": "Casual T-Shirt 9",
+      "onOffer": false,
+      "totalSold": 200,
+      "price": 79.9,
+      "detail": "Elevate your everyday style with our Men's Black T-Shirts, the ultimate wardrobe essential for modern men. Crafted with meticulous attention to detail and designed for comfort, these versatile black tees are a must-have addition to your collection.",
+      "stars": [
+        {
+          "1": 6
+        },
+        {
+          "2": 10
+        },
+        {
+          "3": 4
+        },
+        {
+          "4": 3
+        },
+        {
+          "5": 5
+        }
+      ],
+      "averageStars": 2,
+      "totalReviews": 100,
+      "stok": [
+        {
+          "size": "S",
+          "colors": [
+            {
+              "qtd": 0,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-1.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        },
+        {
+          "size": "M",
+          "colors": [
+            {
+              "qtd": 5,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-1.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A2B4",
+      "category": "t-shirt",
+      "title": "Casual T-Shirt 10",
+      "onOffer": false,
+      "totalSold": 200,
+      "price": 79.9,
+      "detail": "Elevate your everyday style with our Men's Black T-Shirts, the ultimate wardrobe essential for modern men. Crafted with meticulous attention to detail and designed for comfort, these versatile black tees are a must-have addition to your collection.",
+      "stars": [
+        {
+          "1": 6
+        },
+        {
+          "2": 10
+        },
+        {
+          "3": 4
+        },
+        {
+          "4": 3
+        },
+        {
+          "5": 5
+        }
+      ],
+      "averageStars": 4.2,
+      "totalReviews": 100,
+      "stok": [
+        {
+          "size": "S",
+          "colors": [
+            {
+              "qtd": 0,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        },
+        {
+          "size": "M",
+          "colors": [
+            {
+              "qtd": 5,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A3B4",
+      "category": "t-shirt",
+      "title": "Casual T-Shirt 11",
+      "onOffer": false,
+      "totalSold": 200,
+      "price": 79.9,
+      "detail": "Elevate your everyday style with our Men's Black T-Shirts, the ultimate wardrobe essential for modern men. Crafted with meticulous attention to detail and designed for comfort, these versatile black tees are a must-have addition to your collection.",
+      "stars": [
+        {
+          "1": 6
+        },
+        {
+          "2": 10
+        },
+        {
+          "3": 4
+        },
+        {
+          "4": 3
+        },
+        {
+          "5": 5
+        }
+      ],
+      "averageStars": 4.2,
+      "totalReviews": 100,
+      "stok": [
+        {
+          "size": "S",
+          "colors": [
+            {
+              "qtd": 0,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        },
+        {
+          "size": "M",
+          "colors": [
+            {
+              "qtd": 5,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A4B4",
+      "category": "t-shirt",
+      "title": "Casual T-Shirt 12",
+      "onOffer": false,
+      "totalSold": 200,
+      "price": 79.9,
+      "detail": "Elevate your everyday style with our Men's Black T-Shirts, the ultimate wardrobe essential for modern men. Crafted with meticulous attention to detail and designed for comfort, these versatile black tees are a must-have addition to your collection.",
+      "stars": [
+        {
+          "1": 6
+        },
+        {
+          "2": 10
+        },
+        {
+          "3": 4
+        },
+        {
+          "4": 3
+        },
+        {
+          "5": 5
+        }
+      ],
+      "averageStars": 3.9,
+      "totalReviews": 100,
+      "stok": [
+        {
+          "size": "S",
+          "colors": [
+            {
+              "qtd": 0,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-4.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
+            }
+          ]
+        },
+        {
+          "size": "M",
+          "colors": [
+            {
+              "qtd": 5,
+              "color": "blue",
+              "image": "/src/images/products/t-shirt/cover-4.png"
+            },
+            {
+              "qtd": 7,
+              "color": "yellow",
+              "image": "/src/images/products/t-shirt/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "black",
+              "image": "/src/images/products/t-shirt/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/t-shirt/cover-6.png"
             }
           ]
         }
@@ -161,6 +985,8 @@
           "5": 7
         }
       ],
+      "averageStars": 5,
+      "totalReviews": 100,
       "stok": [
         {
           "size": "32",
@@ -195,6 +1021,256 @@
       ]
     },
     {
+      "id": "T3R5",
+      "category": "trousers",
+      "title": "Classic Fit Trousers",
+      "onOffer": true,
+      "totalSold": 150,
+      "price": 129.9,
+      "detail": "These classic-fit trousers offer a timeless look with a comfortable fit. Ideal for both casual and formal occasions.",
+      "stars": [
+        { "1": 0 },
+        { "2": 1 },
+        { "3": 5 },
+        { "4": 10 },
+        { "5": 14 }
+      ],
+      "averageStars": 4.5,
+      "totalReviews": 30,
+      "stok": [
+        {
+          "size": "30",
+          "colors": [
+            {
+              "qtd": 7,
+              "color": "black",
+              "image": "/src/images/products/trousers/cover-2.png"
+            },
+            {
+              "qtd": 3,
+              "color": "beige",
+              "image": "/src/images/products/trousers/cover-1.png"
+            }
+          ]
+        },
+        {
+          "size": "32",
+          "colors": [
+            {
+              "qtd": 5,
+              "color": "navy",
+              "image": "/src/images/products/trousers/cover-3.png"
+            },
+            {
+              "qtd": 0,
+              "color": "brown",
+              "image": "/src/images/products/trousers/cover-2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T3R6",
+      "category": "trousers",
+      "title": "Skinny Fit Trousers",
+      "onOffer": false,
+      "totalSold": 250,
+      "price": 139.9,
+      "detail": "These skinny-fit trousers are designed for a sleek and modern silhouette. Perfect for a night out or a stylish day at work.",
+      "stars": [
+        { "1": 2 },
+        { "2": 3 },
+        { "3": 6 },
+        { "4": 15 },
+        { "5": 24 }
+      ],
+      "averageStars": 4.3,
+      "totalReviews": 50,
+      "stok": [
+        {
+          "size": "28",
+          "colors": [
+            {
+              "qtd": 12,
+              "color": "blue",
+              "image": "/src/images/products/trousers/cover-1.png"
+            },
+            {
+              "qtd": 4,
+              "color": "green",
+              "image": "/src/images/products/trousers/cover-3.png"
+            }
+          ]
+        },
+        {
+          "size": "30",
+          "colors": [
+            {
+              "qtd": 8,
+              "color": "red",
+              "image": "/src/images/products/trousers/cover-2.png"
+            },
+            {
+              "qtd": 6,
+              "color": "black",
+              "image": "/src/images/products/trousers/cover-1.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T3R7",
+      "category": "trousers",
+      "title": "Relaxed Fit Trousers",
+      "onOffer": true,
+      "totalSold": 200,
+      "price": 119.9,
+      "detail": "These relaxed-fit trousers provide maximum comfort without compromising on style. Great for everyday wear.",
+      "stars": [
+        { "1": 1 },
+        { "2": 0 },
+        { "3": 4 },
+        { "4": 18 },
+        { "5": 27 }
+      ],
+      "averageStars": 4.6,
+      "totalReviews": 50,
+      "stok": [
+        {
+          "size": "34",
+          "colors": [
+            {
+              "qtd": 9,
+              "color": "navy",
+              "image": "/src/images/products/trousers/cover-3.png"
+            },
+            {
+              "qtd": 2,
+              "color": "white",
+              "image": "/src/images/products/trousers/cover-2.png"
+            }
+          ]
+        },
+        {
+          "size": "36",
+          "colors": [
+            {
+              "qtd": 6,
+              "color": "brown",
+              "image": "/src/images/products/trousers/cover-1.png"
+            },
+            {
+              "qtd": 0,
+              "color": "beige",
+              "image": "/src/images/products/trousers/cover-3.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T3R8",
+      "category": "trousers",
+      "title": "Cropped Trousers",
+      "onOffer": false,
+      "totalSold": 180,
+      "price": 109.9,
+      "detail": "These cropped trousers are perfect for a trendy and casual look. Pair them with sneakers for a modern vibe.",
+      "stars": [
+        { "1": 0 },
+        { "2": 2 },
+        { "3": 7 },
+        { "4": 20 },
+        { "5": 21 }
+      ],
+      "averageStars": 4.4,
+      "totalReviews": 50,
+      "stok": [
+        {
+          "size": "30",
+          "colors": [
+            {
+              "qtd": 10,
+              "color": "yellow",
+              "image": "/src/images/products/trousers/cover-2.png"
+            },
+            {
+              "qtd": 5,
+              "color": "clear",
+              "image": "/src/images/products/trousers/cover-1.png"
+            }
+          ]
+        },
+        {
+          "size": "32",
+          "colors": [
+            {
+              "qtd": 8,
+              "color": "silver",
+              "image": "/src/images/products/trousers/cover-3.png"
+            },
+            {
+              "qtd": 3,
+              "color": "green",
+              "image": "/src/images/products/trousers/cover-2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T3R9",
+      "category": "trousers",
+      "title": "Cargo Trousers",
+      "onOffer": true,
+      "totalSold": 220,
+      "price": 159.9,
+      "detail": "These cargo trousers combine functionality with style, featuring multiple pockets and a comfortable fit.",
+      "stars": [
+        { "1": 1 },
+        { "2": 1 },
+        { "3": 5 },
+        { "4": 22 },
+        { "5": 21 }
+      ],
+      "averageStars": 4.4,
+      "totalReviews": 50,
+      "stok": [
+        {
+          "size": "32",
+          "colors": [
+            {
+              "qtd": 7,
+              "color": "black",
+              "image": "/src/images/products/trousers/cover-1.png"
+            },
+            {
+              "qtd": 4,
+              "color": "navy",
+              "image": "/src/images/products/trousers/cover-3.png"
+            }
+          ]
+        },
+        {
+          "size": "34",
+          "colors": [
+            {
+              "qtd": 6,
+              "color": "brown",
+              "image": "/src/images/products/trousers/cover-2.png"
+            },
+            {
+              "qtd": 0,
+              "color": "green",
+              "image": "/src/images/products/trousers/cover-1.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "S4H5",
       "category": "shoe",
       "title": "Running Shoes",
@@ -219,6 +1295,8 @@
           "5": 12
         }
       ],
+      "averageStars": 3.2,
+      "totalReviews": 100,
       "stok": [
         {
           "size": "42",
@@ -253,6 +1331,516 @@
       ]
     },
     {
+      "id": "S4H6",
+      "category": "shoe",
+      "title": "Casual Sneakers",
+      "onOffer": false,
+      "totalSold": 300,
+      "price": 149.9,
+      "detail": "These casual sneakers combine style and comfort, making them perfect for everyday wear.",
+      "stars": [
+        { "1": 1 },
+        { "2": 2 },
+        { "3": 5 },
+        { "4": 10 },
+        { "5": 12 }
+      ],
+      "averageStars": 4.1,
+      "totalReviews": 30,
+      "stok": [
+        {
+          "size": "40",
+          "colors": [
+            {
+              "qtd": 8,
+              "color": "white",
+              "image": "/src/images/products/shoe/cover-2.png"
+            },
+            {
+              "qtd": 6,
+              "color": "black",
+              "image": "/src/images/products/shoe/cover-1.png"
+            }
+          ]
+        },
+        {
+          "size": "42",
+          "colors": [
+            {
+              "qtd": 7,
+              "color": "navy",
+              "image": "/src/images/products/shoe/cover-3.png"
+            },
+            {
+              "qtd": 4,
+              "color": "gray",
+              "image": "/src/images/products/shoe/cover-2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S4H7",
+      "category": "shoe",
+      "title": "Hiking Boots",
+      "onOffer": true,
+      "totalSold": 250,
+      "price": 249.9,
+      "detail": "Durable and comfortable hiking boots designed for outdoor adventures. Perfect for rough terrains.",
+      "stars": [
+        { "1": 0 },
+        { "2": 1 },
+        { "3": 3 },
+        { "4": 12 },
+        { "5": 14 }
+      ],
+      "averageStars": 4.4,
+      "totalReviews": 30,
+      "stok": [
+        {
+          "size": "41",
+          "colors": [
+            {
+              "qtd": 9,
+              "color": "brown",
+              "image": "/src/images/products/shoe/cover-1.png"
+            },
+            {
+              "qtd": 5,
+              "color": "green",
+              "image": "/src/images/products/shoe/cover-3.png"
+            }
+          ]
+        },
+        {
+          "size": "43",
+          "colors": [
+            {
+              "qtd": 7,
+              "color": "black",
+              "image": "/src/images/products/shoe/cover-2.png"
+            },
+            {
+              "qtd": 3,
+              "color": "beige",
+              "image": "/src/images/products/shoe/cover-1.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S4H8",
+      "category": "shoe",
+      "title": "Formal Oxford Shoes",
+      "onOffer": false,
+      "totalSold": 180,
+      "price": 299.9,
+      "detail": "Elegant Oxford shoes crafted for formal occasions. Made with premium leather for a polished look.",
+      "stars": [
+        { "1": 0 },
+        { "2": 0 },
+        { "3": 4 },
+        { "4": 10 },
+        { "5": 16 }
+      ],
+      "averageStars": 4.6,
+      "totalReviews": 30,
+      "stok": [
+        {
+          "size": "39",
+          "colors": [
+            {
+              "qtd": 6,
+              "color": "black",
+              "image": "/src/images/products/shoe/cover-1.png"
+            },
+            {
+              "qtd": 4,
+              "color": "brown",
+              "image": "/src/images/products/shoe/cover-3.png"
+            }
+          ]
+        },
+        {
+          "size": "42",
+          "colors": [
+            {
+              "qtd": 5,
+              "color": "black",
+              "image": "/src/images/products/shoe/cover-2.png"
+            },
+            {
+              "qtd": 2,
+              "color": "navy",
+              "image": "/src/images/products/shoe/cover-1.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S4H9",
+      "category": "shoe",
+      "title": "Slip-On Loafers",
+      "onOffer": true,
+      "totalSold": 220,
+      "price": 179.9,
+      "detail": "These slip-on loafers are perfect for a casual yet stylish look. Easy to wear and comfortable.",
+      "stars": [
+        { "1": 1 },
+        { "2": 2 },
+        { "3": 5 },
+        { "4": 15 },
+        { "5": 17 }
+      ],
+      "averageStars": 4.3,
+      "totalReviews": 40,
+      "stok": [
+        {
+          "size": "38",
+          "colors": [
+            {
+              "qtd": 10,
+              "color": "brown",
+              "image": "/src/images/products/shoe/cover-3.png"
+            },
+            {
+              "qtd": 7,
+              "color": "black",
+              "image": "/src/images/products/shoe/cover-1.png"
+            }
+          ]
+        },
+        {
+          "size": "40",
+          "colors": [
+            {
+              "qtd": 8,
+              "color": "navy",
+              "image": "/src/images/products/shoe/cover-2.png"
+            },
+            {
+              "qtd": 5,
+              "color": "beige",
+              "image": "/src/images/products/shoe/cover-3.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S4H10",
+      "category": "shoe",
+      "title": "Canvas Sneakers",
+      "onOffer": false,
+      "totalSold": 350,
+      "price": 99.9,
+      "detail": "Lightweight and breathable canvas sneakers, ideal for casual outings and summer days.",
+      "stars": [
+        { "1": 2 },
+        { "2": 3 },
+        { "3": 6 },
+        { "4": 20 },
+        { "5": 19 }
+      ],
+      "averageStars": 4.2,
+      "totalReviews": 50,
+      "stok": [
+        {
+          "size": "37",
+          "colors": [
+            {
+              "qtd": 12,
+              "color": "white",
+              "image": "/src/images/products/shoe/cover-2.png"
+            },
+            {
+              "qtd": 8,
+              "color": "blue",
+              "image": "/src/images/products/shoe/cover-1.png"
+            }
+          ]
+        },
+        {
+          "size": "39",
+          "colors": [
+            {
+              "qtd": 10,
+              "color": "red",
+              "image": "/src/images/products/shoe/cover-3.png"
+            },
+            {
+              "qtd": 6,
+              "color": "green",
+              "image": "/src/images/products/shoe/cover-2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H6B8",
+      "category": "handbag",
+      "title": "Tote Bag",
+      "onOffer": false,
+      "totalSold": 180,
+      "price": 199.9,
+      "detail": "A spacious and versatile tote bag, perfect for carrying all your essentials in style.",
+      "stars": [
+        { "1": 0 },
+        { "2": 1 },
+        { "3": 4 },
+        { "4": 12 },
+        { "5": 13 }
+      ],
+      "averageStars": 4.3,
+      "totalReviews": 30,
+      "stok": [
+        {
+          "size": "U",
+          "colors": [
+            {
+              "qtd": 10,
+              "color": "beige",
+              "image": "/src/images/products/handbag/cover-3.png"
+            },
+            {
+              "qtd": 8,
+              "color": "navy",
+              "image": "/src/images/products/handbag/cover-1.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H6B9",
+      "category": "handbag",
+      "title": "Crossbody Bag",
+      "onOffer": true,
+      "totalSold": 220,
+      "price": 159.9,
+      "detail": "A compact and stylish crossbody bag, ideal for hands-free convenience and a modern look.",
+      "stars": [
+        { "1": 1 },
+        { "2": 2 },
+        { "3": 5 },
+        { "4": 15 },
+        { "5": 17 }
+      ],
+      "averageStars": 4.2,
+      "totalReviews": 40,
+      "stok": [
+        {
+          "size": "U",
+          "colors": [
+            {
+              "qtd": 12,
+              "color": "black",
+              "image": "/src/images/products/handbag/cover-2.png"
+            },
+            {
+              "qtd": 6,
+              "color": "red",
+              "image": "/src/images/products/handbag/cover-4.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H6B10",
+      "category": "handbag",
+      "title": "Clutch Bag",
+      "onOffer": false,
+      "totalSold": 150,
+      "price": 129.9,
+      "detail": "An elegant clutch bag, perfect for evening events or adding a touch of sophistication to your outfit.",
+      "stars": [
+        { "1": 0 },
+        { "2": 1 },
+        { "3": 3 },
+        { "4": 10 },
+        { "5": 16 }
+      ],
+      "averageStars": 4.5,
+      "totalReviews": 30,
+      "stok": [
+        {
+          "size": "U",
+          "colors": [
+            {
+              "qtd": 9,
+              "color": "silver",
+              "image": "/src/images/products/handbag/cover-1.png"
+            },
+            {
+              "qtd": 5,
+              "color": "white",
+              "image": "/src/images/products/handbag/cover-3.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H6B11",
+      "category": "handbag",
+      "title": "Backpack Purse",
+      "onOffer": true,
+      "totalSold": 190,
+      "price": 179.9,
+      "detail": "A trendy backpack purse that combines functionality with fashion. Perfect for casual outings.",
+      "stars": [
+        { "1": 1 },
+        { "2": 1 },
+        { "3": 4 },
+        { "4": 14 },
+        { "5": 20 }
+      ],
+      "averageStars": 4.4,
+      "totalReviews": 40,
+      "stok": [
+        {
+          "size": "U",
+          "colors": [
+            {
+              "qtd": 11,
+              "color": "green",
+              "image": "/src/images/products/handbag/cover-4.png"
+            },
+            {
+              "qtd": 7,
+              "color": "brown",
+              "image": "/src/images/products/handbag/cover-2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H6B12",
+      "category": "handbag",
+      "title": "Satchel Bag",
+      "onOffer": false,
+      "totalSold": 210,
+      "price": 249.9,
+      "detail": "A classic satchel bag with a timeless design, offering both style and practicality.",
+      "stars": [
+        { "1": 0 },
+        { "2": 0 },
+        { "3": 5 },
+        { "4": 12 },
+        { "5": 23 }
+      ],
+      "averageStars": 4.6,
+      "totalReviews": 40,
+      "stok": [
+        {
+          "size": "U",
+          "colors": [
+            {
+              "qtd": 8,
+              "color": "navy",
+              "image": "/src/images/products/handbag/cover-1.png"
+            },
+            {
+              "qtd": 6,
+              "color": "black",
+              "image": "/src/images/products/handbag/cover-3.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "H6B13",
+      "category": "handbag",
+      "title": "Mini Backpack",
+      "onOffer": true,
+      "totalSold": 170,
+      "price": 139.9,
+      "detail": "A chic mini backpack that's perfect for carrying your essentials while keeping your hands free.",
+      "stars": [
+        { "1": 1 },
+        { "2": 2 },
+        { "3": 6 },
+        { "4": 18 },
+        { "5": 13 }
+      ],
+      "averageStars": 4.2,
+      "totalReviews": 40,
+      "stok": [
+        {
+          "size": "U",
+          "colors": [
+            {
+              "qtd": 10,
+              "color": "yellow",
+              "image": "/src/images/products/handbag/cover-2.png"
+            },
+            {
+              "qtd": 5,
+              "color": "blue",
+              "image": "/src/images/products/handbag/cover-4.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "S4H11",
+      "category": "shoe",
+      "title": "Winter Boots",
+      "onOffer": true,
+      "totalSold": 280,
+      "price": 279.9,
+      "detail": "Stay warm and stylish during the winter with these insulated and waterproof boots.",
+      "stars": [
+        { "1": 0 },
+        { "2": 1 },
+        { "3": 4 },
+        { "4": 12 },
+        { "5": 23 }
+      ],
+      "averageStars": 4.5,
+      "totalReviews": 40,
+      "stok": [
+        {
+          "size": "41",
+          "colors": [
+            {
+              "qtd": 9,
+              "color": "black",
+              "image": "/src/images/products/shoe/cover-1.png"
+            },
+            {
+              "qtd": 5,
+              "color": "brown",
+              "image": "/src/images/products/shoe/cover-3.png"
+            }
+          ]
+        },
+        {
+          "size": "43",
+          "colors": [
+            {
+              "qtd": 7,
+              "color": "navy",
+              "image": "/src/images/products/shoe/cover-2.png"
+            },
+            {
+              "qtd": 3,
+              "color": "gray",
+              "image": "/src/images/products/shoe/cover-1.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "H6B7",
       "category": "handbag",
       "title": "Leather Handbag",
@@ -277,9 +1865,11 @@
           "5": 14
         }
       ],
+      "averageStars": 3.2,
+      "totalReviews": 100,
       "stok": [
         {
-          "size": "One Size",
+          "size": "U",
           "colors": [
             {
               "qtd": 12,
@@ -295,6 +1885,7 @@
         }
       ]
     },
+
     {
       "id": "C8H9",
       "category": "hat",
@@ -320,9 +1911,11 @@
           "5": 9
         }
       ],
+      "averageStars": 4.2,
+      "totalReviews": 100,
       "stok": [
         {
-          "size": "One Size",
+          "size": "U",
           "colors": [
             {
               "qtd": 15,
@@ -339,43 +1932,210 @@
       ]
     },
     {
-      "id": "T9M0",
-      "category": "thermos",
-      "title": "Stainless Steel Thermos",
-      "onOffer": true,
-      "totalSold": 290,
-      "price": 39.9,
-      "detail": "Keep your drinks hot or cold for hours with this durable and stylish stainless steel thermos.",
+      "id": "C8H10",
+      "category": "hat",
+      "title": "Wide Brim Hat",
+      "onOffer": false,
+      "totalSold": 80,
+      "price": 59.9,
+      "detail": "This wide-brim hat offers excellent sun protection and a stylish look, perfect for beach days or outdoor events.",
       "stars": [
-        {
-          "1": 0
-        },
-        {
-          "2": 0
-        },
-        {
-          "3": 3
-        },
-        {
-          "4": 8
-        },
-        {
-          "5": 12
-        }
+        { "1": 0 },
+        { "2": 0 },
+        { "3": 4 },
+        { "4": 10 },
+        { "5": 16 }
       ],
+      "averageStars": 4.6,
+      "totalReviews": 30,
       "stok": [
         {
-          "size": "500ml",
+          "size": "U",
+          "colors": [
+            {
+              "qtd": 12,
+              "color": "black",
+              "image": "/src/images/products/hat/cover-3.png"
+            },
+            {
+              "qtd": 8,
+              "color": "beige",
+              "image": "/src/images/products/hat/cover-1.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C8H11",
+      "category": "hat",
+      "title": "Bucket Hat",
+      "onOffer": true,
+      "totalSold": 120,
+      "price": 39.9,
+      "detail": "A trendy bucket hat that combines fashion and functionality. Ideal for casual outings and sunny days.",
+      "stars": [
+        { "1": 1 },
+        { "2": 2 },
+        { "3": 6 },
+        { "4": 15 },
+        { "5": 16 }
+      ],
+      "averageStars": 4.3,
+      "totalReviews": 40,
+      "stok": [
+        {
+          "size": "U",
+          "colors": [
+            {
+              "qtd": 10,
+              "color": "navy",
+              "image": "/src/images/products/hat/cover-4.png"
+            },
+            {
+              "qtd": 5,
+              "color": "green",
+              "image": "/src/images/products/hat/cover-2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C8H12",
+      "category": "hat",
+      "title": "Panama Hat",
+      "onOffer": false,
+      "totalSold": 90,
+      "price": 69.9,
+      "detail": "A classic Panama hat made from natural materials, offering both elegance and sun protection.",
+      "stars": [
+        { "1": 0 },
+        { "2": 1 },
+        { "3": 3 },
+        { "4": 12 },
+        { "5": 14 }
+      ],
+      "averageStars": 4.5,
+      "totalReviews": 30,
+      "stok": [
+        {
+          "size": "U",
+          "colors": [
+            {
+              "qtd": 7,
+              "color": "brown",
+              "image": "/src/images/products/hat/cover-1.png"
+            },
+            {
+              "qtd": 3,
+              "color": "white",
+              "image": "/src/images/products/hat/cover-3.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C8H13",
+      "category": "hat",
+      "title": "Baseball Cap",
+      "onOffer": true,
+      "totalSold": 200,
+      "price": 29.9,
+      "detail": "A classic baseball cap with an adjustable strap, perfect for sports or casual wear.",
+      "stars": [
+        { "1": 2 },
+        { "2": 3 },
+        { "3": 5 },
+        { "4": 20 },
+        { "5": 20 }
+      ],
+      "averageStars": 4.2,
+      "totalReviews": 50,
+      "stok": [
+        {
+          "size": "U",
+          "colors": [
+            {
+              "qtd": 15,
+              "color": "red",
+              "image": "/src/images/products/hat/cover-2.png"
+            },
+            {
+              "qtd": 10,
+              "color": "blue",
+              "image": "/src/images/products/hat/cover-4.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C8H14",
+      "category": "hat",
+      "title": "Fedora Hat",
+      "onOffer": false,
+      "totalSold": 60,
+      "price": 79.9,
+      "detail": "A stylish fedora hat that adds a touch of sophistication to any outfit. Great for formal or casual occasions.",
+      "stars": [
+        { "1": 0 },
+        { "2": 1 },
+        { "3": 4 },
+        { "4": 10 },
+        { "5": 15 }
+      ],
+      "averageStars": 4.5,
+      "totalReviews": 30,
+      "stok": [
+        {
+          "size": "U",
+          "colors": [
+            {
+              "qtd": 9,
+              "color": "black",
+              "image": "/src/images/products/hat/cover-3.png"
+            },
+            {
+              "qtd": 6,
+              "color": "gray",
+              "image": "/src/images/products/hat/cover-1.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C8H15",
+      "category": "hat",
+      "title": "Beanie Hat",
+      "onOffer": true,
+      "totalSold": 150,
+      "price": 19.9,
+      "detail": "A cozy beanie hat to keep you warm during the colder months. Available in a variety of colors.",
+      "stars": [
+        { "1": 1 },
+        { "2": 2 },
+        { "3": 5 },
+        { "4": 18 },
+        { "5": 24 }
+      ],
+      "averageStars": 4.4,
+      "totalReviews": 50,
+      "stok": [
+        {
+          "size": "U",
           "colors": [
             {
               "qtd": 20,
-              "color": "silver",
-              "image": "/src/images/products/thermos/cover-1.png"
+              "color": "navy",
+              "image": "/src/images/products/hat/cover-4.png"
             },
             {
-              "qtd": 15,
-              "color": "black",
-              "image": "/src/images/products/thermos/cover-2.png"
+              "qtd": 12,
+              "color": "green",
+              "image": "/src/images/products/hat/cover-2.png"
             }
           ]
         }
@@ -383,42 +2143,49 @@
     },
     {
       "id": "T9M1",
-      "category": "thermos",
-      "title": "Stainless Steel Thermos",
-      "onOffer": true,
-      "totalSold": 290,
-      "price": 39.9,
-      "detail": "Keep your drinks hot or cold for hours with this durable and stylish stainless steel thermos.",
+      "category": "sweatshirt",
+      "title": "Hooded Sweatshirt",
+      "onOffer": false,
+      "totalSold": 320,
+      "price": 49.9,
+      "detail": "A comfortable and stylish hooded sweatshirt, perfect for casual wear or lounging at home.",
       "stars": [
-        {
-          "1": 0
-        },
-        {
-          "2": 0
-        },
-        {
-          "3": 3
-        },
-        {
-          "4": 8
-        },
-        {
-          "5": 12
-        }
+        { "1": 0 },
+        { "2": 1 },
+        { "3": 4 },
+        { "4": 10 },
+        { "5": 15 }
       ],
+      "averageStars": 4.4,
+      "totalReviews": 30,
       "stok": [
         {
-          "size": "500ml",
+          "size": "S",
           "colors": [
             {
-              "qtd": 20,
-              "color": "silver",
-              "image": "/src/images/products/thermos/cover-1.png"
+              "qtd": 12,
+              "color": "navy",
+              "image": "/src/images/products/sweatshirt/cover-3.png"
             },
             {
-              "qtd": 15,
+              "qtd": 8,
+              "color": "gray",
+              "image": "/src/images/products/sweatshirt/cover-1.png"
+            }
+          ]
+        },
+        {
+          "size": "M",
+          "colors": [
+            {
+              "qtd": 10,
               "color": "black",
-              "image": "/src/images/products/thermos/cover-2.png"
+              "image": "/src/images/products/sweatshirt/cover-2.png"
+            },
+            {
+              "qtd": 6,
+              "color": "green",
+              "image": "/src/images/products/sweatshirt/cover-4.png"
             }
           ]
         }
@@ -426,42 +2193,49 @@
     },
     {
       "id": "T9M2",
-      "category": "thermos",
-      "title": "Stainless Steel Thermos",
-      "onOffer": false,
-      "totalSold": 290,
-      "price": 39.9,
-      "detail": "Keep your drinks hot or cold for hours with this durable and stylish stainless steel thermos.",
+      "category": "sweatshirt",
+      "title": "Zip-Up Sweatshirt",
+      "onOffer": true,
+      "totalSold": 280,
+      "price": 59.9,
+      "detail": "A versatile zip-up sweatshirt that combines comfort and style, ideal for layering or wearing on its own.",
       "stars": [
-        {
-          "1": 0
-        },
-        {
-          "2": 0
-        },
-        {
-          "3": 3
-        },
-        {
-          "4": 8
-        },
-        {
-          "5": 12
-        }
+        { "1": 1 },
+        { "2": 2 },
+        { "3": 5 },
+        { "4": 12 },
+        { "5": 20 }
       ],
+      "averageStars": 4.3,
+      "totalReviews": 40,
       "stok": [
         {
-          "size": "500ml",
+          "size": "L",
           "colors": [
             {
-              "qtd": 20,
-              "color": "silver",
-              "image": "/src/images/products/thermos/cover-1.png"
+              "qtd": 15,
+              "color": "red",
+              "image": "/src/images/products/sweatshirt/cover-5.png"
             },
             {
-              "qtd": 15,
+              "qtd": 10,
+              "color": "white",
+              "image": "/src/images/products/sweatshirt/cover-2.png"
+            }
+          ]
+        },
+        {
+          "size": "XL",
+          "colors": [
+            {
+              "qtd": 8,
+              "color": "blue",
+              "image": "/src/images/products/sweatshirt/cover-1.png"
+            },
+            {
+              "qtd": 5,
               "color": "black",
-              "image": "/src/images/products/thermos/cover-2.png"
+              "image": "/src/images/products/sweatshirt/cover-3.png"
             }
           ]
         }
@@ -469,42 +2243,49 @@
     },
     {
       "id": "T9M3",
-      "category": "thermos",
-      "title": "Stainless Steel Thermos",
+      "category": "sweatshirt",
+      "title": "Oversized Sweatshirt",
       "onOffer": false,
-      "totalSold": 290,
-      "price": 39.9,
-      "detail": "Keep your drinks hot or cold for hours with this durable and stylish stainless steel thermos.",
+      "totalSold": 250,
+      "price": 69.9,
+      "detail": "An oversized sweatshirt for a relaxed and trendy look. Perfect for pairing with leggings or jeans.",
       "stars": [
-        {
-          "1": 0
-        },
-        {
-          "2": 0
-        },
-        {
-          "3": 3
-        },
-        {
-          "4": 8
-        },
-        {
-          "5": 12
-        }
+        { "1": 0 },
+        { "2": 1 },
+        { "3": 3 },
+        { "4": 14 },
+        { "5": 22 }
       ],
+      "averageStars": 4.5,
+      "totalReviews": 40,
       "stok": [
         {
-          "size": "500ml",
+          "size": "M",
           "colors": [
             {
-              "qtd": 20,
-              "color": "silver",
-              "image": "/src/images/products/thermos/cover-1.png"
+              "qtd": 10,
+              "color": "beige",
+              "image": "/src/images/products/sweatshirt/cover-4.png"
             },
             {
-              "qtd": 15,
-              "color": "black",
-              "image": "/src/images/products/thermos/cover-2.png"
+              "qtd": 7,
+              "color": "brown",
+              "image": "/src/images/products/sweatshirt/cover-2.png"
+            }
+          ]
+        },
+        {
+          "size": "L",
+          "colors": [
+            {
+              "qtd": 9,
+              "color": "yellow",
+              "image": "/src/images/products/sweatshirt/cover-5.png"
+            },
+            {
+              "qtd": 6,
+              "color": "navy",
+              "image": "/src/images/products/sweatshirt/cover-1.png"
             }
           ]
         }
@@ -512,42 +2293,49 @@
     },
     {
       "id": "T9M4",
-      "category": "thermos",
-      "title": "Stainless Steel Thermos",
-      "onOffer": false,
-      "totalSold": 290,
-      "price": 39.9,
-      "detail": "Keep your drinks hot or cold for hours with this durable and stylish stainless steel thermos.",
+      "category": "sweatshirt",
+      "title": "Crewneck Sweatshirt",
+      "onOffer": true,
+      "totalSold": 300,
+      "price": 44.9,
+      "detail": "A classic crewneck sweatshirt that offers both comfort and style. Great for everyday wear.",
       "stars": [
-        {
-          "1": 0
-        },
-        {
-          "2": 0
-        },
-        {
-          "3": 3
-        },
-        {
-          "4": 8
-        },
-        {
-          "5": 12
-        }
+        { "1": 1 },
+        { "2": 1 },
+        { "3": 6 },
+        { "4": 15 },
+        { "5": 17 }
       ],
+      "averageStars": 4.2,
+      "totalReviews": 40,
       "stok": [
         {
-          "size": "500ml",
+          "size": "S",
           "colors": [
             {
-              "qtd": 20,
-              "color": "silver",
-              "image": "/src/images/products/thermos/cover-1.png"
+              "qtd": 12,
+              "color": "black",
+              "image": "/src/images/products/sweatshirt/cover-3.png"
             },
             {
-              "qtd": 15,
-              "color": "black",
-              "image": "/src/images/products/thermos/cover-2.png"
+              "qtd": 8,
+              "color": "white",
+              "image": "/src/images/products/sweatshirt/cover-5.png"
+            }
+          ]
+        },
+        {
+          "size": "M",
+          "colors": [
+            {
+              "qtd": 10,
+              "color": "green",
+              "image": "/src/images/products/sweatshirt/cover-2.png"
+            },
+            {
+              "qtd": 5,
+              "color": "silver",
+              "image": "/src/images/products/sweatshirt/cover-1.png"
             }
           ]
         }
@@ -555,42 +2343,99 @@
     },
     {
       "id": "T9M5",
-      "category": "thermos",
-      "title": "Stainless Steel Thermos",
+      "category": "sweatshirt",
+      "title": "Graphic Sweatshirt",
       "onOffer": false,
-      "totalSold": 290,
-      "price": 39.9,
-      "detail": "Keep your drinks hot or cold for hours with this durable and stylish stainless steel thermos.",
+      "totalSold": 270,
+      "price": 54.9,
+      "detail": "A trendy graphic sweatshirt that adds a fun and artistic touch to your casual wardrobe.",
       "stars": [
-        {
-          "1": 0
-        },
-        {
-          "2": 0
-        },
-        {
-          "3": 3
-        },
-        {
-          "4": 8
-        },
-        {
-          "5": 12
-        }
+        { "1": 0 },
+        { "2": 2 },
+        { "3": 4 },
+        { "4": 18 },
+        { "5": 16 }
       ],
+      "averageStars": 4.3,
+      "totalReviews": 40,
       "stok": [
         {
-          "size": "500ml",
+          "size": "L",
           "colors": [
             {
-              "qtd": 20,
-              "color": "silver",
-              "image": "/src/images/products/thermos/cover-1.png"
+              "qtd": 11,
+              "color": "blue",
+              "image": "/src/images/products/sweatshirt/cover-4.png"
             },
             {
-              "qtd": 15,
+              "qtd": 7,
+              "color": "red",
+              "image": "/src/images/products/sweatshirt/cover-3.png"
+            }
+          ]
+        },
+        {
+          "size": "XL",
+          "colors": [
+            {
+              "qtd": 9,
               "color": "black",
-              "image": "/src/images/products/thermos/cover-2.png"
+              "image": "/src/images/products/sweatshirt/cover-5.png"
+            },
+            {
+              "qtd": 4,
+              "color": "white",
+              "image": "/src/images/products/sweatshirt/cover-2.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "T9M6",
+      "category": "sweatshirt",
+      "title": "Fleece Sweatshirt",
+      "onOffer": true,
+      "totalSold": 240,
+      "price": 64.9,
+      "detail": "A warm and cozy fleece sweatshirt, perfect for staying comfortable during colder months.",
+      "stars": [
+        { "1": 0 },
+        { "2": 1 },
+        { "3": 3 },
+        { "4": 12 },
+        { "5": 24 }
+      ],
+      "averageStars": 4.6,
+      "totalReviews": 40,
+      "stok": [
+        {
+          "size": "M",
+          "colors": [
+            {
+              "qtd": 10,
+              "color": "navy",
+              "image": "/src/images/products/sweatshirt/cover-1.png"
+            },
+            {
+              "qtd": 6,
+              "color": "gray",
+              "image": "/src/images/products/sweatshirt/cover-3.png"
+            }
+          ]
+        },
+        {
+          "size": "L",
+          "colors": [
+            {
+              "qtd": 8,
+              "color": "green",
+              "image": "/src/images/products/sweatshirt/cover-5.png"
+            },
+            {
+              "qtd": 5,
+              "color": "black",
+              "image": "/src/images/products/sweatshirt/cover-2.png"
             }
           ]
         }
@@ -598,26 +2443,7 @@
     }
   ],
   "newsletter": [
-    {
-      "id": "11cc",
-      "email": "raubach.adrianadw@gmail.com"
-    },
-    {
-      "id": "23cd",
-      "email": "raubach.adrianadw@gmail.com"
-    },
-    {
-      "id": "30bf",
-      "email": "raubach.adrianadw@gmail.com"
-    },
-    {
-      "id": "0750",
-      "email": "raubach.adrianadw@gmail.com"
-    },
-    {
-      "id": "bd9f",
-      "email": "raubach.adrianadw@gmail.com"
-    }
+
   ],
   "offers": [
     {
@@ -743,8 +2569,8 @@
       "products": [
         {
           "id": "T9M2",
-          "title": "Stainless Steel Thermos",
-          "image": "/src/images/products/thermos/cover-1.png",
+          "title": "Sweatshirt",
+          "image": "/src/images/products/sweatshirt/cover-1.png",
           "color": "black",
           "size": "500ml",
           "qtd": 3,
@@ -771,7 +2597,7 @@
           "title": "Summer Hat",
           "image": "/src/images/products/hat/cover-1.png",
           "color": "beige",
-          "size": "One Size",
+          "size": "U",
           "qtd": 1,
           "price": 49.9
         }
@@ -803,6 +2629,81 @@
           "title": "Casual T-Shirt",
           "image": "/src/images/products/t-shirt/cover-1.png",
           "color": "green",
+          "size": "M",
+          "qtd": 1,
+          "price": 79.9
+        }
+      ]
+    },
+    {
+      "id": "2b70",
+      "userId": "user_2uYOyKj0g5AlmDDKWX1VkosfHGj",
+      "date": "March 21, 2025",
+      "products": [
+        {
+          "id": "S4H5",
+          "title": "Running Shoes",
+          "image": "/src/images/products/shoe/cover-1.png",
+          "color": "black",
+          "size": "44",
+          "qtd": 1,
+          "price": 199.9
+        }
+      ]
+    },
+    {
+      "id": "0739",
+      "userId": "user_2uYOyKj0g5AlmDDKWX1VkosfHGj",
+      "date": "March 21, 2025",
+      "products": [
+        {
+          "id": "A1B4",
+          "title": "Casual T-Shirt",
+          "image": "/src/images/products/t-shirt/cover-1.png",
+          "color": "blue",
+          "size": "M",
+          "qtd": 1,
+          "price": 79.9
+        },
+        {
+          "id": "A1B4",
+          "title": "Casual T-Shirt",
+          "image": "/src/images/products/t-shirt/cover-1.png",
+          "color": "red",
+          "size": "M",
+          "qtd": 1,
+          "price": 79.9
+        },
+        {
+          "id": "T3R4",
+          "title": "Slim Fit Trousers",
+          "image": "/src/images/products/trousers/cover-1.png",
+          "color": "navy",
+          "size": "34",
+          "qtd": 1,
+          "price": 149.9
+        }
+      ]
+    },
+    {
+      "id": "d960",
+      "userId": "user_2uYOyKj0g5AlmDDKWX1VkosfHGj",
+      "date": "March 21, 2025",
+      "products": [
+        {
+          "id": "A1B4",
+          "title": "Casual T-Shirt",
+          "image": "/src/images/products/t-shirt/cover-1.png",
+          "color": "red",
+          "size": "M",
+          "qtd": 1,
+          "price": 79.9
+        },
+        {
+          "id": "A1B4",
+          "title": "Casual T-Shirt",
+          "image": "/src/images/products/t-shirt/cover-1.png",
+          "color": "blue",
           "size": "M",
           "qtd": 1,
           "price": 79.9

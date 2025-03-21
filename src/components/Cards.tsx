@@ -13,7 +13,7 @@ export const Cards = ({title, price, image, inStok, routeId } : CardProps) => {
 
     return (
         <Link to={`/product/${routeId}`} className="text-bk-900 dark:text-bk-100 font-inter text-sm flex flex-col gap-3">
-            <div className="w-240px h-312px bg-w-100 dark:bg-bk-700 mb-3">
+            <div className="w-240px h-312px bg-w-100 dark:bg-bk-700 mb-3 flex items-center">
                 <img className="w-full" src={image} alt={title} />
             </div>
             <h4 className="font-semibold">{title}</h4>

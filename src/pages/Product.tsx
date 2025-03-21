@@ -31,6 +31,9 @@ export const Product = () => {
     const [indexImage, setIndexImage] = useState<number>(0)
     const [errorAddItem, setErrorAddItem] = useState(false)
     const [messageError, setMessageError] = useState('')
+    const [colorList, setColorList] = useState<Array<string>>([])
+    const [availableSize, setAvailableSize] = useState<Array<string>>([])
+    const [loadPage, setLoadPage] = useState<boolean>(false)
 
     const dispatch = useDispatch()
       
@@ -38,15 +41,27 @@ export const Product = () => {
         api.get(`/products/${productId}`).then(response => {
             setProduct(response.data)
         })
+        setLoadPage(true)
     },[productId])
 
     useEffect(() => {
-        api.get(`/products`).then(response => {
+        api.get('/products?_start=0&_end=4', {
+            params: {
+                category: product?.category
+            }
+        }).then(response => {
             setProducts(response.data)
         })
-    },[])
+    },[product])
 
-    const filterSimilarProducts = products.filter((item) => item.category === product?.category).slice(0, 4)
+    useEffect(() => {
+        if(product !== null) {
+            const colors = [...new Set(product.stok.flatMap((item) => item.colors.map((colorItem) => colorItem.color)))]
+            setColorList(colors)
+            const size = product.stok.map((item) => item.size)
+            setAvailableSize(size)
+        }
+    },[product])
 
     const QtdAddPlus = () => {
         setQtdAdd(qtdAdd+1)
@@ -78,12 +93,37 @@ export const Product = () => {
         }
         setSizeChecked(e.target.name)
     }
+    
+    useEffect(() => {
+        if(product !== null && sizeChecked !== '' && loadPage === true) {
+            setColorList(product.stok.filter((item) => item.size === sizeChecked).flatMap((item) =>
+                item.colors.filter((colorItem) => colorItem.qtd > 0).map((colorItem) => colorItem.color)))
+        }
+        if(sizeChecked === '' && product != null) {
+            const colors = [...new Set(product.stok.flatMap((item) => item.colors.map((colorItem) => colorItem.color)))]
+            setColorList(colors)
+        }
+    }, [sizeChecked])
+
+    useEffect(() => {
+        if(product !== null && colorChecked !== '' && loadPage === true) {
+            setAvailableSize(product.stok
+                .filter((item) => 
+                    item.colors.some((colorItem) => colorItem.color === colorChecked && colorItem.qtd > 0)
+                ).map((item) => item.size))
+        }
+        if(colorChecked === '' && product != null) {
+            const size = product.stok.map((item) => item.size)
+            setAvailableSize(size)
+        }
+    },[colorChecked])
 
     if (!product) {
         return <div>Loading...</div>
     }
-    const colorList = [...new Set(product.stok.flatMap((item) => item.colors.map((colorItem) => colorItem.color)))]
+
     const imagesList = [...new Set(product.stok.flatMap((item) => item.colors.map((colorItem) => colorItem.image)))]
+
     const stokTotal = (product.stok.map((item) => 
         item.colors.map((colorQtd) => colorQtd.qtd))).flat().reduce(
         (accumulator, currentValue) => accumulator + currentValue,
@@ -119,13 +159,16 @@ export const Product = () => {
 
     return (
         <main className='mt-34 px-10 md:px-20 lg:px-45 font-inter dark:bg-bk-800'>
-            {messageError !== '' && <div className='fixed right-10'> <ModalErrorSuccess error={errorAddItem} message={messageError} onClick={() => setMessageError('')}/></div>}
+            {messageError !== '' && <div className='fixed right-10'> 
+                    <ModalErrorSuccess error={errorAddItem} message={messageError} onClick={() => setMessageError('')}/>
+                </div>
+            }
             <div className='border-t border-w-100 dark:border-bk-700 mt-42 sm:mt-35'><CurrentPage actualPage={product.title}/></div>
             <div className='flex flex-col md:flex-row md:justify-between gap-20 md:gap-10 xl:gap-30'>
-                <div className=' bg-w-100 flex flex-col items-center justify-center py-5 lg:px-12 xl:px-21 dark:bg-bk-700'>
+                <div className=' bg-w-100 flex flex-col items-center justify-center py-5 lg:px-12 xl:px-21 dark:bg-bk-700 relative'>
                     <img className='w-360px' src={imagesList[indexImage]} alt={product.title} />
-                    <div className='flex gap-3'>
-                        {imagesList.slice(0, 4).map((image, index) => 
+                    <div className='flex gap-3 absolute bottom-6'>
+                        {imagesList.slice(0,4).map((image, index) => 
                                             <button onClick={()=> setIndexImage(index)} className={`w-8px h-8px bg-bk-200 hover:bg-bk-300 rounded-full ${index===indexImage? 'bg-bk-900':''}`}/>
                                         )}
                     </div>
@@ -133,10 +176,10 @@ export const Product = () => {
                 <div className='flex flex-col gap-3 my-4'>
                     <h2 className='text-2xl font-bold text-bk-900 dark:text-w-100'>{product.title}</h2>
                     <div className='flex gap-3'>
-                        <p className="flex items-center gap-2 bg-w-100 text-bk-500 py-1.5 px-4 rounded-2xl text-xs dark:bg-bk-700 dark:text-gray-400">
+                        <div className="flex items-center gap-2 bg-w-100 text-bk-500 py-1.5 px-4 rounded-2xl text-xs dark:bg-bk-700 dark:text-gray-400">
                             <span className='text-lg'><FaStar /></span>
-                            stars and reviews
-                        </p>
+                            {product.averageStars}<hr className='w-3 text-bk-500' />{product.totalReviews} Reviews
+                        </div>
                         <StokLabel inStok={stokTotal>0} />
                     </div>
                     <p className='text-lg font-semibold text-bk-900 py-3 dark:text-w-100'>{FormatDolar(product.price)}</p>
@@ -145,9 +188,9 @@ export const Product = () => {
                             <div>
                                 <p className='text-xs text-bk-500 pb-4 dark:text-gray-400'>AVAIBLE COLORS</p>
                                 <div className='flex gap-3'>
-                                    {colorList.map((color) => 
+                                    {colorList.map((color:string) =>
                                         <label key={color}>
-                                            <input type="checkbox" className='hidden peer' name={color} checked={colorChecked === color} onChange={(e) => ColorSelect(e)} />
+                                            <input type="checkbox" className='hidden peer' name={(color)} checked={colorChecked === color} onChange={(e) => ColorSelect(e)} />
                                             <div className="hover:opacity-80 peer-checked:border cursor-pointer rounded-full border-bk-700 dark:border-gray-400 p-1 w-7.5 h-7.5 items-center">
                                                 <Colors color={color}/>
                                             </div>
@@ -158,11 +201,11 @@ export const Product = () => {
                             <div>
                                 <p className='text-xs text-bk-500 pb-4 dark:text-gray-400'>SELECT SIZE</p>
                                 <div className='flex gap-2'>
-                                    {product.stok.map((item) => 
-                                        <label key={item.size}>
-                                            <input type="checkbox" className='hidden peer' name={item.size} checked={sizeChecked === item.size} onChange={(e) => SizeSelect(e)} />
+                                    {availableSize.map((size:string) => 
+                                        <label key={size}>
+                                            <input type="checkbox" className='hidden peer' name={size} checked={sizeChecked === size} onChange={(e) => SizeSelect(e)} />
                                             <div className='cursor-pointer hover:bg-w-200 dark:border-bk-700 dark:hover:bg-bk-700 py-3 text-xs peer-checked:border-bk-900 dark:peer-checked:border-w-100 dark:peer-checked:text-w-100 peer-checked:text-bk-900 text-bk-500 border rounded-md border-bk-100 w-10 h-10 text-center'>
-                                                {item.size}
+                                                {size}
                                             </div>
                                         </label>  
                                     )}
@@ -207,9 +250,9 @@ export const Product = () => {
                     <h6 className='text-2xl font-bold dark:text-w-100 pb-2'>You might also like</h6>
                     <p className='text-bk-500 dark:text-gray-400 text-xs'>SIMILAR PRODUCTS</p>
                 </div>
-                    {filterSimilarProducts.length > 0 &&
+                    {products.length > 0 &&
                         <div className="flex flex-wrap justify-center sm:justify-between gap-5 w-full">
-                            {filterSimilarProducts.map(item => 
+                            {products.map(item => 
                                 <Cards key={item.id} routeId={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} inStok={stokTotal>0} />
                             )}
                         </div>

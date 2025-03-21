@@ -23,6 +23,8 @@ export type ProductsProps = {
     detail: string;
     stars: StarRating[];
     stok: SizeStock[];
+    averageStars: number;
+    totalReviews: number;
 }
 
 export type CartProps = {

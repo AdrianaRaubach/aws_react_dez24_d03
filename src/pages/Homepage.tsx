@@ -13,18 +13,27 @@ import { Btn } from '../components/Btn'
 
 export const Homepage = () => {
   
-  const [products, setProducts] = useState<ProductsProps[]>([])
+  const [productsOnOffer, setProductsOnOffer] = useState<ProductsProps[]>([])
+  const [productsBestSellers, setProductsBestSellers] = useState<ProductsProps[]>([])
   
     useEffect(() => {
-        api.get('/products').then(response => {
-          setProducts(response.data)
+        api.get('/products?_start=0&_end=4', {
+            params: {
+                onOffer: true
+            }
+        }).then(response => {
+          setProductsOnOffer(response.data)
+        })
+
+        api.get('/products?_start=0&_end=4', {
+          params: {
+            averageStars_gte: 4
+
+          }
+        }).then(response => {
+          setProductsBestSellers(response.data)
         })
     },[])
-  
-    const filterProductsOnOffer = products.filter((item) => item.onOffer).slice(0, 4)
-
-    const filterProductsBestSellers = products.sort((a, b) =>
-      +(a.totalSold < b.totalSold) || +(a.totalSold === b.totalSold) - 1).slice(0, 4)
        
     return (
       <main className='dark:bg-bk-800 font-inter'>
@@ -54,9 +63,9 @@ export const Homepage = () => {
             <h2 className='text-2xl font-bold text-black dark:text-w-100'>Best Selling</h2>
           </div>
           <div className='flex justify-center gap-5 sm:justify-between flex-wrap'>
-            {products.length > 0 &&
+            {productsBestSellers.length > 0 &&
               <div className="flex flex-wrap justify-center sm:justify-between gap-5 w-full">
-                  {filterProductsBestSellers.map(item => 
+                  {productsBestSellers.map(item => 
                       <Cards key={item.id} routeId={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} 
                         inStok={((item.stok.map((item) => 
                           item.colors.map((colorQtd) => colorQtd.qtd))).flat().reduce(
@@ -82,9 +91,9 @@ export const Homepage = () => {
         <div className='mt-40 pb-40 px-10 md:px-20 lg:px-45 flex flex-col gap-18'>
           <p className="self-center border border-bk-100 dark:text-w-100 py-1.5 px-4 font-medium rounded-2xl text-sm">On Offer</p>
           <div className='flex justify-center gap-5 sm:justify-between flex-wrap'>
-            {products.length > 0 &&
+            {productsOnOffer.length > 0 &&
               <div className="flex flex-wrap justify-center sm:justify-between gap-5 w-full">
-                  {filterProductsOnOffer.map(item => 
+                  {productsOnOffer.map(item => 
                       <Cards key={item.id} routeId={item.id} title={item.title} price={item.price} image={item.stok[0].colors[0].image} 
                         inStok={((item.stok.map((item) => 
                           item.colors.map((colorQtd) => colorQtd.qtd))).flat().reduce(

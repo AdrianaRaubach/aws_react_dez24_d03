@@ -1,54 +1,97 @@
-# React + TypeScript + Vite
+#  **Urban Fashion**
+<img src="src/images/exemple-website.png" alt="Exemplo imagem">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> This project was created as the third challenge of the Compass Uol scholarship program, aiming to improve technical skills in Front end development with the creation of an eccommerce.
 
-Currently, two official plugins are available:
+**Urban Fashion** urban fashion is an eccommerce focused on selling clothes and accessories, the website was developed according to the requirements requested by the project's PO.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📄 **Project requirements**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [x] **Development of several pages**
+- [x] **User authentication implementation**
+- [x] **Zip code search api implementation**
+- [x] **Shopping cart status management**
+- [x] **Responsive layout**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📄 **Optional requirements**
+
+- [x] **Light and dark themes**
+- [x] **password recovery page**
+- [ ] **automated tests**
+
+
+---
+
+## 💻 **Technologies Used**
+
+This project was developed using the following technologies:
+
+- ### <img align="center" alt="HTML" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"> React
+          
+- ### <img align="center" alt="CSS" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" /> Tailwind 
+- ### <img align="center" alt="Js" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/axios/axios-plain.svg"> Axios
+
+- ### <img align="center" alt="Js" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg"> JSON Server
+
+- ### <img align="center" alt="Js" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg"> Redux
+
+
+
+- ### <img align="center" alt="Js" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"> Typescript
+
+
+- ### <img align="center" alt="Js" height="40" width="40" src="https://ph-files.imgix.net/297bc3d4-bd2e-4eaa-8fb6-a289cf61ea91.png?auto=format">  Clerk
+
+
+
+## 🛠️ Installation and Setup
+
+1. Clone this repo
+
+```bash
+git clone https://github.com/AdrianaRaubach/aws_react_dez24_d03
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install the packages and dependencies using npm
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+3. Enter your API Key in .env
+
+```
+VITE_CLERK_PUBLISHABLE_KEY=your-key-here
+```
+
+4. Start json server
+
+```bash
+npx json-server db.json
+```
+
+5. Start the server
+
+```bash
+npm run dev
+```
+
+6. Visit the app
+
+```
+localhost:5173
+```
+
+
+
+### ⚙️  For authentication with the clerk and Google to work correctly, you need to follow the dedicated guide step by step:
+
+
+- ####  [Dedicated guide](https://clerk.com/docs/authentication/social-connections/google#configure-for-your-production-instance)
+
+
+## ✏️ Author
+
+- [Adriana Raubach](https://github.com/AdrianaRaubach)

@@ -57,7 +57,7 @@ export const Header = () => {
                             <div className="flex bg-bk-900 dark:bg-blue-400 rounded-full w-10 h-10 items-center justify-center">
                                 <img src={Logo} alt="ecommerce-logo" />
                             </div>
-                            <h2 className="font-bold text-xl dark:text-white">Ecommerce</h2>
+                            <h2 className="font-bold text-xl dark:text-white">Urban Fashion</h2>
                         </div>
                     </Link>
                     <ul className="font-inter text-sm font-medium hidden sm:flex gap-10">

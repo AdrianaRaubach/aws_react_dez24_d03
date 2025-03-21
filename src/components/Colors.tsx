@@ -15,6 +15,7 @@ const colorMap: { [key: string]: string } = {
     beige: 'bg-beige',
     silver: 'bg-silver',
     white: 'bg-w-100',
+    gray: 'bg-slate-500'
 };
 
 export const Colors = ({ color, small }: ColorProp) => {

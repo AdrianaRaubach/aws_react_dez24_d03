@@ -9,21 +9,30 @@ import { FiSearch } from "react-icons/fi";
 import { Filters } from "../components/Filters"
 import { SlArrowRight } from "react-icons/sl";
 import { SlArrowLeft } from "react-icons/sl";
+import { useDispatch, useSelector } from 'react-redux';
+import { activePage } from "../redux/actions";
 
 export const Listing = () => {
     const [valueRange, setValueRange] = useState<number>(0)
     const [searchInput, setSearchInput] = useState<string>('')
     const [products, setProducts] = useState<ProductsProps[]>([])
     const [inputChecked, setInputChecked] = useState<string>('')
-    const [activePage, setActivePage] = useState<number>(0)
     const itemsPerPage: number = 9
-    const startIndex = activePage * itemsPerPage
+    const actualPage: number = useSelector((state) => Number(state.filterProducts.page))
+    const startIndex = actualPage * itemsPerPage
     const endIndex = startIndex + itemsPerPage
+    const dispatch = useDispatch()
 
     useEffect(() => {
         api.get('/products').then(response => {
             setProducts(response.data)
         })
+    },[])
+
+    useEffect(() => {
+        if(localStorage.inputChecked !== undefined)setInputChecked(String(localStorage.inputChecked))
+        if(localStorage.searchInput !== undefined)setSearchInput(String(localStorage.searchInput))
+        if(localStorage.valueRange !== undefined)setValueRange(Number(localStorage.valueRange))
     },[])
 
     const maxValue = Math.max.apply(null, products.map((item) => item.price))
@@ -33,30 +42,36 @@ export const Listing = () => {
             setInputChecked('')
             return
         }
-        setActivePage(0)
+        dispatch(activePage(0))
         setInputChecked(e.target.name)
+        localStorage.inputChecked = e.target.name
     }
   
     const handleChangeRange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setActivePage(0)
+        dispatch(activePage(0))
         setValueRange(Number(e.target.value))
+        localStorage.valueRange = e.target.value
     }
 
     const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setActivePage(0)
+        dispatch(activePage(0))
         setSearchInput(e.target.value)
+        localStorage.searchInput = e.target.value
     }
 
     const handleCloseFilter = (filter : string) => {
         switch(filter){
             case "category":
                 setInputChecked('')
+                localStorage.removeItem('inputChecked')
                 break
             case "value":
                 setValueRange(0)
+                localStorage.removeItem('valueRange')
                 break
             case "search":
                 setSearchInput('')
+                localStorage.removeItem('searchInput')
                 break
         }
     }
@@ -72,13 +87,13 @@ export const Listing = () => {
     const filterItems = results.slice(startIndex, endIndex)
 
     const previousPage = () => {
-        if(activePage === 0) return
-        setActivePage(activePage - 1)
+        if(actualPage === 0) return
+        dispatch(activePage((actualPage - 1)))
     }
 
     const nextPage = () => {
         if(endIndex >= results.length) return
-        setActivePage(activePage + 1)
+        dispatch(activePage((actualPage + 1)))
     }
 
     return (
@@ -159,7 +174,7 @@ export const Listing = () => {
                     </div>
                     <div className="self-center flex border rounded border-w-200 py-1 px-2 text-xs gap-2">
                         <button className="px-3 cursor-pointer dark:text-w-100" onClick={previousPage}><SlArrowLeft /></button>
-                        <p className="bg-w-100 py-2 px-4 rounded dark:bg-bk-700 dark:text-w-100">{activePage + 1}</p>
+                        <p className="bg-w-100 py-2 px-4 rounded dark:bg-bk-700 dark:text-w-100">{actualPage + 1}</p>
                         <button className="px-3 cursor-pointer dark:text-w-100" onClick={nextPage}><SlArrowRight /></button>
                     </div>
                 </div>

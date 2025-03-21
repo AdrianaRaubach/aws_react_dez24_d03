@@ -12,3 +12,4 @@ export const removeValue = createAction<OrderSummaryProps>('order_summary/remove
 export const localStorageInfos = createAction<OrderSummaryProps>('order_summary/localStorageInfos')
 export const localStorageCartItems = createAction<OrderSummaryProps>('cart_products/localStorageCartItems')
 export const clearCart = createAction<OrderSummaryProps>('cart_products/clearCart')
+export const activePage = createAction<number>('filter_products/activePage')

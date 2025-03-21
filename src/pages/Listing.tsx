@@ -26,6 +26,8 @@ export const Listing = () => {
         })
     },[])
 
+    const maxValue = Math.max.apply(null, products.map((item) => item.price))
+    
     const handleCheckedInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         if(inputChecked === e.target.name) {
             setInputChecked('')
@@ -103,14 +105,14 @@ export const Listing = () => {
                     <h5 className="py-8">Price</h5>
                     <div className="flex flex-col items-center pb-15 gap-5 relative w-full">
                         <input className="w-full h-1 bg-bk-300 appearance-none cursor-pointer custom-thumb" 
-                            type="range" min={0} max={500} name="price-range" id="price" 
+                            type="range" min={0} max={Math.ceil(maxValue)} name="price-range" id="price" 
                             value={valueRange} 
                             onChange={handleChangeRange}
                         />
                         {valueRange > 0 && 
                             <div className="mt-6 text-xs px-2 py-1 rounded-sm bg-bk-900 text-white dark:bg-w-100 dark:text-bk-900 absolute transform -translate-x-1/2"
                                 style={{
-                                    left: `calc(${(valueRange / 500) * 100}% + ${(valueRange / 500 - 1.5) * 10}px)`
+                                    left: `calc(${(valueRange / maxValue) * 100}% + ${(valueRange / maxValue - 1.5) * 10}px)`
                                 }}
                             >
                                 <div className="absolute left-9 -top-1 w-0 h-0 border-l-4 border-l-transparent border-r-4 border-r-transparent border-b-4 border-b-bk-900 dark:border-b-w-100"></div>

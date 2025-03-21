@@ -3,7 +3,7 @@
 
 > This project was created as the third challenge of the Compass Uol scholarship program, aiming to improve technical skills in Front end development with the creation of an eccommerce.
 
-**Urban Fashion** urban fashion is an eccommerce focused on selling clothes and accessories, the website was developed according to the requirements requested by the project's PO.
+**Urban Fashion** is an eccommerce focused on selling clothes and accessories, the website was developed according to the requirements requested by the project's PO.
 
 ---
 
